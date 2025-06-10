@@ -1,9 +1,14 @@
 import './App.css';
+import Footer from './Components/Footer/Footer';
+import NavBar from './Components/Navbar/Navbar';
+import Home from './Components/Home/Home';
 
 function App() {
   return (
     <div className="App">
-    <h1 className='text-4xl'>Rayndi</h1>
+    <NavBar/>
+    <Home/>
+    <Footer/>
     </div>
   );
 }

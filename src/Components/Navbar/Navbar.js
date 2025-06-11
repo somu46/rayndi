@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 // import "./Navbar.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -32,18 +32,18 @@ const NavBar = () => {
             dragConstraints={{ left: -50, right: 110 }}
             className=" p-4 rounded-md cursor-pointer "
           >
-            <Link
-              to="/home"
+            <NavLink
+              to="/"
               className="text-3xl font-semibold bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent"
             >
               Rayndi
-            </Link>
+            </NavLink>
           </motion.div>
           {/* Desktop Menu Bar */}
           <ul className="hidden lg:flex flex-wrap justify-center items-center mx-10 gap-x-4  font-bold p-1 bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
             <li className="cursor-pointer  hover:text-green-600">
-              <Link
-                to="/home"
+              <NavLink
+                to="/"
                 spy={true}
                 smooth={true}
                 offset={-100}
@@ -51,10 +51,10 @@ const NavBar = () => {
                 activeClass="active"
               >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="cursor-pointer mx-1 hover:text-blue-600">
-              <Link
+              <NavLink
                 to="/about"
                 spy={true}
                 smooth={true}
@@ -63,46 +63,58 @@ const NavBar = () => {
                 activeClass="active"
               >
                 About
-              </Link>
+              </NavLink>
             </li>
             <li className="cursor-pointer mx-1 hover:text-cyan-500">
-              <Link
-                to="/resume"
+              <NavLink
+                to="/Company"
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={500}
                 activeClass="active"
               >
-                Resume
-              </Link>
+                Company
+              </NavLink>
             </li>
             <li className="cursor-pointer mx-1 hover:text-cyan-500">
-              <Link
-                to="/profile"
+              <NavLink
+                to="/Solutions"
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={500}
                 activeClass="active"
               >
-                Profile
-              </Link>
+                Solutions
+              </NavLink>
             </li>
             <li className="cursor-pointer mx-1 hover:text-yellow-500">
-              <Link
-                to="/projects"
+              <NavLink
+                to="/Services"
                 spy={true}
                 smooth={true}
                 offset={-100}
                 duration={500}
                 activeClass="active"
               >
-                Projects
-              </Link>
+                Services
+              </NavLink>
             </li>
             <li className="cursor-pointer mx-1 hover:text-teal-600">
-              <Link
+              <NavLink
+                to="/work"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                activeClass="active"
+              >
+                Work
+              </NavLink>
+            </li>
+            <li className="cursor-pointer mx-1 hover:text-teal-600">
+              <NavLink
                 to="/contact"
                 spy={true}
                 smooth={true}
@@ -111,7 +123,7 @@ const NavBar = () => {
                 activeClass="active"
               >
                 Contact
-              </Link>
+              </NavLink>
             </li>
           </ul>
 
@@ -145,8 +157,8 @@ const NavBar = () => {
             
             <ul className=" flex flex-wrap flex-col justify-center gap-4 font-bold py-1 mx-3 bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
               <li className="cursor-pointer mx-1 hover:text-green-600  ">
-                <Link
-                  to="/home"
+                <NavLink
+                  to="/"
                   spy={true}
                   smooth={true}
                   offset={-100}
@@ -156,12 +168,12 @@ const NavBar = () => {
                   className=""
                 >
                   Home
-                </Link>
+                </NavLink>
                 
               </li>
              
               <li className="cursor-pointer mx-1 hover:text-blue-600">
-                <Link
+                <NavLink
                   to="/about"
                   spy={true}
                   smooth={true}
@@ -171,10 +183,10 @@ const NavBar = () => {
                   onClick={handleToggle}
                 >
                   About
-                </Link>
+                </NavLink>
               </li>
               <li className="cursor-pointer mx-1 hover:text-cyan-500">
-                <Link
+                <NavLink
                   to="/resume"
                   spy={true}
                   smooth={true}
@@ -184,10 +196,10 @@ const NavBar = () => {
                   onClick={handleToggle}
                 >
                   Resume
-                </Link>
+                </NavLink>
               </li>
               <li className="cursor-pointer mx-1 hover:text-cyan-500">
-              <Link
+              <NavLink
                 to="/profile"
                 spy={true}
                 smooth={true}
@@ -197,10 +209,10 @@ const NavBar = () => {
                 onClick={handleToggle}
               >
                 Profile
-              </Link>
+              </NavLink>
             </li>
               <li className="cursor-pointer mx-1 hover:text-yellow-500">
-                <Link
+                <NavLink
                   to="/projects"
                   spy={true}
                   smooth={true}
@@ -210,10 +222,10 @@ const NavBar = () => {
                   onClick={handleToggle}
                 >
                   Projects
-                </Link>
+                </NavLink>
               </li>
               <li className="cursor-pointer mx-1 hover:text-teal-600">
-                <Link
+                <NavLink
                   to="/contact"
                   spy={true}
                   smooth={true}
@@ -223,7 +235,7 @@ const NavBar = () => {
                   onClick={handleToggle}
                 >
                   Contact
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </motion.nav>

@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 // import "./Navbar.css";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { GiCrossMark ,GiTripleScratches } from "react-icons/gi";
-
-
+// import { GiCrossMark ,GiTripleScratches } from "react-icons/gi";
+import { CgMenuRight } from "react-icons/cg";
+import { RxCross2 } from "react-icons/rx";
 
 
 const variants = {
@@ -130,13 +130,13 @@ const NavBar = () => {
           {/* mobile menu bar */}
 
           <div className="flex flex-wrap items-center justify-center p-1 lg:hidden ">
-            <GiTripleScratches
+            <CgMenuRight
               className={` ${
                 !isOpen ? "block" : "hidden"
               } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-amber-400 `}
               onClick={handleToggle}
             />
-            <GiCrossMark
+            <RxCross2
               className={`${
                 isOpen ? "block" : "hidden"
               } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-rose-500 `}
@@ -150,7 +150,7 @@ const NavBar = () => {
         {/* mobile menu bar */}
         <div
           className={`${isOpen ? "block" : "hidden"}
-           lg:hidden w-[95%] min-h-svh flex justify-start py-4 shadow-lg bg-transparent border-r-2 rounded-md  z-50
+           lg:hidden w-[95%] min-h-svh flex justify-start py-4 shadow-lg bg-transparent  rounded-md  z-50
            `}
         >
           <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
@@ -187,7 +187,7 @@ const NavBar = () => {
               </li>
               <li className="cursor-pointer mx-1 hover:text-cyan-500">
                 <NavLink
-                  to="/resume"
+                  to="/company"
                   spy={true}
                   smooth={true}
                   offset={-100}
@@ -195,12 +195,12 @@ const NavBar = () => {
                   activeClass="active"
                   onClick={handleToggle}
                 >
-                  Resume
+                  Company
                 </NavLink>
               </li>
               <li className="cursor-pointer mx-1 hover:text-cyan-500">
               <NavLink
-                to="/profile"
+                to="/Solutions"
                 spy={true}
                 smooth={true}
                 offset={-100}
@@ -208,12 +208,12 @@ const NavBar = () => {
                 activeClass="active"
                 onClick={handleToggle}
               >
-                Profile
+                Solutions
               </NavLink>
             </li>
               <li className="cursor-pointer mx-1 hover:text-yellow-500">
                 <NavLink
-                  to="/projects"
+                  to="/Services"
                   spy={true}
                   smooth={true}
                   offset={-100}
@@ -221,7 +221,20 @@ const NavBar = () => {
                   activeClass="active"
                   onClick={handleToggle}
                 >
-                  Projects
+                  Services
+                </NavLink>
+              </li>
+              <li className="cursor-pointer mx-1 hover:text-teal-600">
+                <NavLink
+                  to="/work"
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  activeClass="active"
+                  onClick={handleToggle}
+                >
+                  Work
                 </NavLink>
               </li>
               <li className="cursor-pointer mx-1 hover:text-teal-600">

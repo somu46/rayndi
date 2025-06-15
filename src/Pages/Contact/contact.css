@@ -1,0 +1,9 @@
+.bg_image{
+    background-image: url('../../Assets/contactImage.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    filter:opacity(0.5);
+    opacity: 100;
+}

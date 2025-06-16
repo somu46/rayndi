@@ -106,9 +106,17 @@ const ContactSection = () => {
       </div>
 
 </div>
-      <div>
-      <h1>Google Map i frame</h1>
-      </div>
+<div className="w-full aspect-[4/3] md:aspect-[16/9] mt-5">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2103.6918381696187!2d-0.210425!3d51.535692000000004!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1750097911889!5m2!1sen!2sus"
+    className="w-full h-full rounded-md border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="Google Map"
+  ></iframe>
+</div>
+
 
     </section>
   );

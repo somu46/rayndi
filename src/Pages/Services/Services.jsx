@@ -1,149 +1,237 @@
-import React from 'react'
-import { FaCode, FaMobileAlt, FaGlobe, FaBoxOpen, FaChartLine } from 'react-icons/fa';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { FiCode, FiTrendingUp, FiServer, FiBriefcase, FiTarget } from 'react-icons/fi';
 
-const Services = () => {
-  const services = [
-    {
-      icon: <FaCode className="text-3xl" />,
-      title: "Custom Software Development",
-      description: "Tailored software solutions designed to streamline your business operations and drive efficiency.",
-      features: [
-        "Enterprise applications",
-        "CRM/ERP systems",
-        "Cloud-based solutions",
-        "Legacy system modernization"
-      ],
-      link: "#"
+const services = [
+  {
+    category: "Software & Web Development",
+    icon: <FiCode className="w-8 h-8" />,
+    items: [
+      "Custom Software Development",
+      "Web Application Development",
+      "Mobile App Development",
+      "E-commerce Development",
+      "CMS Development",
+      "API Development & Integration",
+      "UI/UX Services",
+      "Progressive Web Apps"
+    ]
+  },
+  {
+    category: "Digital Marketing & Branding",
+    icon: <FiTrendingUp className="w-8 h-8" />,
+    items: [
+      "SEO Optimization",
+      "Google Ads & PPC",
+      "Social Media Marketing",
+      "Email Marketing",
+      "Content Marketing",
+      "Brand Identity Design",
+      "Influencer Marketing",
+      "Video Marketing"
+    ]
+  },
+  {
+    category: "Maintenance & Support",
+    icon: <FiServer className="w-8 h-8" />,
+    items: [
+      "Website Maintenance",
+      "App Maintenance",
+      "24/7 Technical Support",
+      "Bug Fixes & Patches",
+      "Performance Optimization"
+    ]
+  },
+  {
+    category: "IT Consulting",
+    icon: <FiBriefcase className="w-8 h-8" />,
+    items: [
+      "Technology Strategy",
+      "Digital Transformation",
+      "Business Automation",
+      "ERP/CRM Solutions",
+      "IT Audits",
+      "Project Management"
+    ]
+  },
+  {
+    category: "Industry Solutions",
+    icon: <FiTarget className="w-8 h-8" />,
+    items: [
+      "Healthcare IT",
+      "EdTech Platforms",
+      "Real Estate Systems",
+      "Travel Platforms",
+      "Food Delivery Software",
+      "Supply Chain Software"
+    ]
+  }
+];
+
+const ServiceCard = ({ category, items, icon, index }) => {
+  const variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { delay: index * 0.1, duration: 0.5 }
     },
-    {
-      icon: <FaMobileAlt className="text-3xl" />,
-      title: "App Development",
-      description: "Native and cross-platform mobile applications that engage users and deliver results.",
-      features: [
-        "iOS & Android development",
-        "Hybrid apps (React Native/Flutter)",
-        "UI/UX focused design",
-        "App maintenance & updates"
-      ],
-      link: "#"
-    },
-    {
-      icon: <FaGlobe className="text-3xl" />,
-      title: "Website Development",
-      description: "Responsive, high-performance websites that convert visitors into customers.",
-      features: [
-        "Custom web applications",
-        "CMS solutions (WordPress, Drupal)",
-        "E-commerce platforms",
-        "Progressive Web Apps"
-      ],
-      link: "#"
-    },
-    {
-      icon: <FaBoxOpen className="text-3xl" />,
-      title: "Product Development",
-      description: "End-to-end digital product development from concept to deployment.",
-      features: [
-        "MVP development",
-        "Scalable architecture",
-        "User-centered design",
-        "Continuous integration"
-      ],
-      link: "#"
-    },
-    {
-      icon: <FaChartLine className="text-3xl" />,
-      title: "E-commerce Solutions",
-      description: "Complete online store solutions to grow your digital sales.",
-      features: [
-        "Shopify/WordPress WooCommerce",
-        "Custom e-commerce platforms",
-        "Payment gateway integration",
-        "Inventory management"
-      ],
-      link: "#"
-    },
-    {
-      icon: <FaChartLine className="text-3xl" />,
-      title: "Digital Marketing",
-      description: "Data-driven marketing strategies to increase your online presence.",
-      features: [
-        "SEO & Content Marketing",
-        "Social Media Marketing",
-        "PPC & Conversion Optimization",
-        "Analytics & Reporting"
-      ],
-      link: "#"
-    }
-  ];
+    hover: { scale: 1.03 }
+  };
 
   return (
-    <div className="min-h-screen ">
-      {/* Header */}
-      <header className=" text-white py-20 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Comprehensive Digital Solutions</h1>
-          <p className="text-xl md:text-2xl font-light max-w-3xl mx-auto">
-            Bridging innovation with excellence across software development, digital products, and marketing
-          </p>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
+      variants={variants}
+      className="backdrop-blur-lg bg-white/10 border border-white/20 rounded-2xl p-8 shadow-lg overflow-hidden relative"
+    >
+      <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500/10 rounded-full filter blur-xl"></div>
+      <div className="relative z-10">
+        <div className="flex items-center mb-6">
+          <div className="p-3 bg-blue-500/20 rounded-lg mr-4">
+            {icon}
+          </div>
+          <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            {category}
+          </h3>
         </div>
-      </header>
-
-      {/* Services Grid */}
-      <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div 
-              key={index}
-              className="border border-lime-400 rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+        <ul className="space-y-3">
+          {items.map((item, i) => (
+            <motion.li 
+              key={i}
+              whileHover={{ x: 5 }}
+              className="flex items-start text-white/80 hover:text-white transition-colors"
             >
-              <div className="p-6">
-                <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100 text-blue-600 mx-auto">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl text-white font-semibold  mb-3 text-center">{service.title}</h3>
-                <p className=" mb-4 text-white text-center text-[16px]">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-start">
-                      <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-white text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="text-center text-sm ">
-                  <a 
-                    href={service.link} 
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-                  >
-                    Learn more
-                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
+              <svg className="h-5 w-5 text-blue-400 mt-1 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+              <span>{item}</span>
+            </motion.li>
           ))}
-        </div>
-      </section>
+        </ul>
+      </div>
+    </motion.div>
+  );
+};
 
-      {/* CTA Section */}
-      <section className=" py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to transform your digital presence?</h2>
-          <p className="text-xl text-white mb-8">
-            Let's discuss how we can help you achieve your business goals with our tailored solutions.
-          </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition duration-300">
-            Get in Touch
-          </button>
-        </div>
-      </section>
+const ServicesPage = () => {
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-indigo-900 text-white">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden">
+        {[...Array(10)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              x: [0, 100, 0],
+              y: [0, 50, 0],
+              rotate: [0, 360],
+            }}
+            transition={{
+              duration: Math.random() * 20 + 10,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            }}
+            className="absolute rounded-full bg-blue-500/10"
+            style={{
+              width: Math.random() * 300 + 100,
+              height: Math.random() * 300 + 100,
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <motion.section 
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="pt-32 pb-20 px-6 text-center"
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Our Services
+            </span>
+          </motion.h1>
+          <motion.p 
+            className="text-xl md:text-2xl max-w-3xl mx-auto text-white/80"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+          >
+            We craft <span className="text-blue-300">digital experiences</span> that transform businesses and delight users.
+          </motion.p>
+        </motion.section>
+
+        {/* Services Grid */}
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          animate="visible"
+          className="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {services.map((service, index) => (
+            <ServiceCard 
+              key={index}
+              index={index}
+              category={service.category}
+              items={service.items}
+              icon={service.icon}
+            />
+          ))}
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
+          className="py-20 px-6 text-center"
+        >
+          <div className="max-w-4xl mx-auto backdrop-blur-lg bg-white/5 rounded-3xl p-12 border border-white/10 relative overflow-hidden">
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-500/10 rounded-full filter blur-xl"></div>
+            <div className="relative z-10">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                Ready to <span className="text-blue-300">elevate</span> your digital presence?
+              </h2>
+              <p className="text-xl text-white/80 mb-8">
+                Let's build something extraordinary together.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg hover:shadow-xl"
+              >
+                Start Your Project
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
-export default Services;
+export default ServicesPage;

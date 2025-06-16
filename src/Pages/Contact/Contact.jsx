@@ -15,7 +15,7 @@ const ContactSection = () => {
       >
       </div>
       
-        <div className=" absolute -top-[35rem] sm:-top-[15rem] flex flex-col   gap-10 justify-center items-center text-white bg-transparent  min-h-full w-full">
+        <div className=" absolute -top-[40rem]  flex flex-col   gap-10 justify-center items-center text-white bg-transparent  min-h-full w-full">
           <h1 className="text-5xl font-bold mb-5 opacity-100">Contact Us  </h1>
           
         </div>

@@ -11,20 +11,20 @@ const ContactSection = () => {
       
       <div
       
-        className="  bg_image   flex flex-wrap justify-center items-center  h-[350px] "
+        className="  bg_image   flex flex-wrap justify-center items-center  h-[350px]  "
       >
       </div>
       
-        <div className=" absolute -top-[15rem] flex flex-col gap-10 justify-center items-center text-white bg-transparent   shadow-md  min-h-full w-full">
+        <div className=" absolute -top-[35rem] sm:-top-[15rem] flex flex-col   gap-10 justify-center items-center text-white bg-transparent  min-h-full w-full">
           <h1 className="text-5xl font-bold mb-5 opacity-100">Contact Us  </h1>
           
         </div>
       
    <div className="bg-[#1B1B1B] text-white py-16 px-4 md:px-20 w-full mx-0">
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10  ">
         {/* Left Content */}
-        <div>
+        <div className=''>
           <h4 className="text-orange-400 text-sm font-semibold mb-2">Contact With Us</h4>
           <h2 className="text-3xl md:text-3xl font-bold mb-6">Have Questions Get In Touch!</h2>
           <p className="text-gray-300 mb-8">
@@ -34,11 +34,11 @@ const ContactSection = () => {
           </p>
 
          
-          <div className="space-x-6 flex sm:flex-row justify-center items-center flex-col sm:items-start">
-            <div className="flex items-start gap-4 ">
-              <div className="bg-neutral-900 p-3 rounded-full">
+          <div className=" gap-y-6 flex  sm:flex-row sm:justify-center  flex-col sm:items-start">
+            <div className="flex items-start gap-4   ">
+              <div className="bg-neutral-900 p-3 size-[50px] sm:size-auto rounded-full  flex items-center justify-center">
                 <span className="text-orange-500 text-sm ">
-                  <img src={locationGIF} width="40px" alt="gif"  />
+                  <img src={locationGIF} className="min-w-[40px] sm:max-w-[30px]" alt="gif"  />
                 </span>
               </div>
               <div>
@@ -46,16 +46,16 @@ const ContactSection = () => {
                 <p className="text-gray-300">7515 Carriage Court, Coachella, CA, 922</p>
               </div>
             </div>
-            <div className="flex  items-start gap-4">
-              <div className="bg-neutral-900 p-3 rounded-full">
-                <span className="text-orange-500 text-sm ">
-                  <img src={emailGIF} width="70px" alt="gif"  />
+            <div className="flex  items-start gap-4 ">
+              <div className="bg-neutral-900 p-3 size-[50px] sm:size-auto rounded-full">
+                <span className="text-orange-500 text-sm  ">
+                  <img src={emailGIF}  className='min-w-[30px] sm:max-w-[30px]' alt="gif"  />
 
                 </span>
               </div>
               <div>
                 <p className="font-semibold">Email Us</p>
-                <p className="text-gray-300">gdghdybhab@gmail.com</p>
+                <p className="text-gray-300">example369963@gmail.com</p>
               </div>
             </div>
           </div>

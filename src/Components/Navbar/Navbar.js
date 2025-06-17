@@ -34,13 +34,13 @@ const NavBar = () => {
           >
             <NavLink
               to="/"
-              className="text-3xl font-semibold bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent"
+              className="text-3xl font-semibold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
             >
               Rayndi
             </NavLink>
           </motion.div>
           {/* Desktop Menu Bar */}
-          <ul className="hidden lg:flex flex-wrap justify-center items-center mx-10 gap-x-4  font-bold p-1 bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
+          <ul className="hidden lg:flex flex-wrap justify-center items-center mx-10 gap-x-4  font-bold p-1 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
             <li className="cursor-pointer  hover:text-green-600">
               <NavLink
                 to="/"

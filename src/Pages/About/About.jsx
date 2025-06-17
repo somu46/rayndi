@@ -1,6 +1,10 @@
 import { motion } from "framer-motion";
 import { FiUsers, FiAward, FiGlobe, FiCode, FiHeart } from "react-icons/fi";
-import TeamMemberCard from "./Teamcard"; // You'll create this component
+import EmployeeCard from '../../Components/UIVerse/EmployeeCard'
+import Suvo from '../../Assets/Suvo Halder.jpeg'
+import Arka from '../../Assets/Arkajyoti Kundu.jpeg'
+import Ananyo from '../../Assets/Ananya Dutta.jpeg'
+import Soumyajit from '../../Assets/Soumyajit Ray.jpg'
 
 const AboutPage = () => {
   // Team data
@@ -8,39 +12,39 @@ const AboutPage = () => {
     {
       name: "Soumyajit Ray",
       role: "CEO & Founder",
-      image: "/team/alex.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Soumyajit,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/",github: 'https://www.github.com/' },
     },
     {
       name: "Suvo Halder",
       role: "Co-Founder & Project Manager",
-      image: "/team/marcus.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Suvo,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/",github: 'https://www.github.com/' },
     },
     {
       name: "Arkajyoti Kundu",
       role: "CTO",
-      image: "/team/sarah.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Arka,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/",github: 'https://www.github.com/' },
     },
     
     {
       name: "Sourashis Chakraborty",
       role: "CMO",
-      image: "/team/priya.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Soumyajit,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/",github: 'https://www.github.com/' },
     },
     {
       name: "Ananyo Dutta",
       role: "Excel Sheet Updater",
-      image: "/team/priya.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Ananyo,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/",github: 'https://www.github.com/' },
     },
     {
       name: "Md Anisur Rahman",
       role: "Marketing Head",
-      image: "/team/priya.jpg",
-      social: { twitter: "#", linkedin: "#" },
+      image: Soumyajit,
+      social: { twitter: "https://x.com/", linkedin: "https://www.linkedin.com/" ,github: 'https://www.github.com/' },
     },
 
   ];
@@ -213,7 +217,7 @@ const AboutPage = () => {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {teamMembers.map((member, index) => (
-              <TeamMemberCard 
+              <EmployeeCard
                 key={index}
                 member={member}
                 index={index}

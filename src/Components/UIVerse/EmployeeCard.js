@@ -7,7 +7,7 @@ const Card = ({ member }) => {
       <div className="absolute w-[calc(100%-6px)] h-[calc(100%-6px)] top-[3px] left-[3px] rounded-[29px] z-[1] overflow-hidden transition-all duration-500 ease-in-out delay-200 group-hover:w-[100px] group-hover:h-[100px] group-hover:top-[10px] group-hover:left-[10px] group-hover:rounded-full group-hover:z-[3] group-hover:border-[7px] border-blue-700 group-hover:shadow-[0px_5px_5px_0px_rgba(96,75,74,0.19)]">
         <img
           src={member.image}
-          alt="photo"
+          alt={member.name}
           className="object-cover w-full h-full object-center transition-all duration-500 delay-500 group-hover:scale-100 group-hover:object-center"
         />
       </div>

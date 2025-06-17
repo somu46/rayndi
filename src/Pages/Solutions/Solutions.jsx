@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiCode, FiCloud, FiDatabase, FiLock, FiSmartphone, FiBarChart2, FiServer, FiLayers } from "react-icons/fi";
+import { FiCode, FiCloud, FiDatabase, FiLock, FiSmartphone, FiBarChart2 } from "react-icons/fi";
 
 const SolutionsPage = () => {
   // Solutions data

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiCheck, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
+import { FiArrowRight, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
 import OurProcess from '../../Components/UIVerse/OurProcess'
 const HomePage = () => {
   // Features data

@@ -272,9 +272,9 @@ const HomePage = () => {
                     <div className="bg-blue-100 p-2 rounded-full mr-4 mt-1">
                       <FiCheck className="text-blue-600 w-5 h-5" />
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">{step}</h3>
-                      <p className="text-gray-600">
+                    <div className="border border-red-700">
+                      <h3 className="text-xl font-bold text-white">{step}</h3>
+                      <p className="text-white">
                         {index === 0 && "We analyze your business needs and market landscape"}
                         {index === 1 && "Creating a detailed roadmap for success"}
                         {index === 2 && "Crafting user-centered interfaces and experiences"}

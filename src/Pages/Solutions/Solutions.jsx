@@ -61,9 +61,9 @@ const SolutionsPage = () => {
   ];
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gradient-to-br from-gray-900 to-blue-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+      <section className="relative overflow-hidden  text-white">
         {/* Animated background elements */}
         <motion.div
           animate={{
@@ -179,7 +179,7 @@ const SolutionsPage = () => {
       </section>
 
       {/* How We Work */}
-      <section className="py-20 bg-white">
+      <section className="py-20 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -257,7 +257,7 @@ const SolutionsPage = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -362,7 +362,7 @@ const SolutionsPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-28 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-28 text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

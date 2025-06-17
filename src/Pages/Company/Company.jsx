@@ -9,6 +9,7 @@ const CompanyPage = () => {
     { year: "2019", event: "International Expansion", description: "Opened offices in Europe and Asia" },
     { year: "2021", event: "Product Launch", description: "Released our flagship SaaS product" },
     { year: "2023", event: "100 Employees", description: "Grew to a team of 100+ professionals" },
+    { year: "2024", event: "200 employees", description: "Grew to a team of 200+ professionals" },
   ];
 
   // Services data
@@ -22,9 +23,9 @@ const CompanyPage = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-blue-900 to-indigo-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-900 text-white">
+      <section className="relative overflow-hidden  text-white">
         {/* Animated background elements */}
         <motion.div
           animate={{
@@ -87,7 +88,7 @@ const CompanyPage = () => {
       </section>
 
       {/* Logo Cloud */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -187,7 +188,7 @@ const CompanyPage = () => {
       </section>
 
       {/* Milestones */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -204,9 +205,9 @@ const CompanyPage = () => {
             </p>
           </motion.div>
           
-          <div className="relative">
+          <div className="relative ">
             {/* Timeline line */}
-            <div className="hidden lg:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 transform -translate-x-1/2"></div>
+            <div className="hidden  lg:block absolute left-1/2 top-0 h-full w-0.5 bg-gray-300 transform -translate-x-1/2"></div>
             
             <div className="space-y-16 lg:space-y-0">
               {milestones.map((milestone, index) => (
@@ -220,21 +221,21 @@ const CompanyPage = () => {
                 >
                   {/* Year */}
                   <div className={`lg:w-1/2 lg:px-12 mb-8 lg:mb-0 ${index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'}`}>
-                    <div className="inline-block bg-white p-4 rounded-lg shadow-lg">
-                      <div className="text-3xl font-bold text-blue-600">{milestone.year}</div>
+                    <div className="inline-block  p-4 rounded-lg ">
+                      <div className="text-3xl font-bold text-white">{milestone.year}</div>
                     </div>
                   </div>
                   
                   {/* Event */}
-                  <div className="lg:w-1/2 lg:px-12">
-                    <div className="bg-white p-8 rounded-xl shadow-lg relative">
+                  <div className="lg:w-1/2 lg:px-12 ">
+                    <div className=" p-8 rounded-xl shadow-lg relative border border-white">
                       {index % 2 === 0 ? (
                         <div className="hidden lg:block absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
                       ) : (
                         <div className="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
                       )}
-                      <h3 className="text-2xl font-bold mb-2 text-gray-900">{milestone.event}</h3>
-                      <p className="text-gray-600">{milestone.description}</p>
+                      <h3 className="text-2xl font-bold mb-2 text-white">{milestone.event}</h3>
+                      <p className="text-white">{milestone.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -285,7 +286,7 @@ const CompanyPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-28 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-28  text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

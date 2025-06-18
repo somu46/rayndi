@@ -5,7 +5,7 @@ import NavBar from "../Components/Navbar/Navbar";
 const Root = () => {
   return (
     <>
-    <div className="relative  font-sans bg-[#0F0F0F] pt-5">
+    <div className="relative  font-sans bg-gradient-to-br from-gray-900 to-blue-900 pt-5">
       <NavBar />
       <div className=" mt-[3.6rem]">
         <Outlet />

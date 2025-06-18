@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiCheck, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
-
+import { FiArrowRight, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
+import OurProcess from '../../Components/UIVerse/OurProcess'
 const HomePage = () => {
   // Features data
   const features = [
@@ -51,9 +51,9 @@ const HomePage = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-gray-900 to-blue-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-blue-900 text-white min-h-screen flex items-center">
+      <section className="relative overflow-hidden  text-white min-h-screen flex items-center">
         {/* Animated background elements */}
         <motion.div
           animate={{
@@ -136,7 +136,7 @@ const HomePage = () => {
       </section>
 
       {/* Clients Logo Cloud */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -163,7 +163,7 @@ const HomePage = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20">
+      <section className="py-20 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -203,7 +203,7 @@ const HomePage = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 ">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -248,70 +248,11 @@ const HomePage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold mb-8 text-gray-900">
-                Our <span className="text-blue-600">Process</span>
-              </h2>
-              <div className="space-y-6">
-                {[
-                  "Discovery & Research",
-                  "Strategy & Planning",
-                  "Design & Prototyping",
-                  "Development & Testing",
-                  "Launch & Optimization"
-                ].map((step, index) => (
-                  <div key={index} className="flex items-start">
-                    <div className="bg-blue-100 p-2 rounded-full mr-4 mt-1">
-                      <FiCheck className="text-blue-600 w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">{step}</h3>
-                      <p className="text-gray-600">
-                        {index === 0 && "We analyze your business needs and market landscape"}
-                        {index === 1 && "Creating a detailed roadmap for success"}
-                        {index === 2 && "Crafting user-centered interfaces and experiences"}
-                        {index === 3 && "Building robust, scalable technical solutions"}
-                        {index === 4 && "Deploying and continuously improving your product"}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl p-8 text-white shadow-xl"
-            >
-              <h3 className="text-2xl font-bold mb-6">Ready to start your project?</h3>
-              <p className="mb-8">
-                Let's discuss how we can help you achieve your business goals with our proven process.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-bold shadow-lg w-full"
-              >
-                Schedule a Consultation
-              </motion.button>
-            </motion.div>
-          </div>
-        </div>
-      </section>
+      
+      <OurProcess/>
 
       {/* CTA Section */}
-      <section className="py-28 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section className="py-28  text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

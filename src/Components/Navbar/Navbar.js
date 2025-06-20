@@ -133,13 +133,13 @@ const NavBar = () => {
             <CgMenuRight
               className={` ${
                 !isOpen ? "block" : "hidden"
-              } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-amber-400 `}
+              } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-blue-400 `}
               onClick={handleToggle}
             />
             <RxCross2
               className={`${
                 isOpen ? "block" : "hidden"
-              } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-rose-500 `}
+              } text-3xl  transition-transform duration-300 ease-in-out hover:translate-x-2.5 text-purple-400 `}
               onClick={handleToggle}
             />
 
@@ -155,7 +155,7 @@ const NavBar = () => {
         >
           <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
             
-            <ul className=" flex flex-wrap flex-col justify-center gap-4 font-bold py-1 mx-3 bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">
+            <ul className=" flex flex-wrap flex-col justify-center gap-4 font-bold py-1 mx-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               <li className="cursor-pointer mx-1 hover:text-green-600  ">
                 <NavLink
                   to="/"

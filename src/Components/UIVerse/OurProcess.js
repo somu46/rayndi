@@ -134,7 +134,7 @@ const ProductDevelopmentProcess = () => {
                       <div className="lg:max-w-lg">
                         <p className="text-white font-normal mb-3 text-sm lg:text-md xl:text-lg 2xl:text-xl">{`0${index + 1}/06`}</p>
                         <div className="overflow-hidden">
-                          <b className="font-bold text-theme text-4xl xl:text-5xl 2xl:text-6xl tracking-[-2px] lg:-translate-y-[7px] xl:!leading-[60px] 2xl:!leading-[75px]">
+                          <b className="font-bold text-white text-4xl xl:text-5xl 2xl:text-6xl tracking-[-2px] lg:-translate-y-[7px] xl:!leading-[60px] 2xl:!leading-[75px]">
                             {step.title}
                           </b>
                         </div>

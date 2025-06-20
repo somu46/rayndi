@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiExternalLink, FiGithub, FiEye, FiFilter } from "react-icons/fi";
 import { useState, useEffect } from "react";
+import demo from "../../Assets/coding.webp";
 const WorkPage = () => {
   // Projects data
   const projects = [
@@ -9,7 +10,7 @@ const WorkPage = () => {
       title: "E-Commerce Platform",
       description: "A full-featured online store with custom CMS and payment integration",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/projects/ecommerce.jpg",
+      image: demo,
       link: "#",
       github: "#",
       category: "web"
@@ -19,7 +20,7 @@ const WorkPage = () => {
       title: "Healthcare Dashboard",
       description: "Data visualization platform for patient analytics",
       tags: ["TypeScript", "D3.js", "Firebase", "Tailwind"],
-      image: "/projects/healthcare.jpg",
+      image: demo,
       link: "#",
       github: "#",
       category: "web"
@@ -29,7 +30,7 @@ const WorkPage = () => {
       title: "Mobile Banking App",
       description: "Secure financial management application",
       tags: ["React Native", "GraphQL", "Biometrics", "AWS"],
-      image: "/projects/banking.jpg",
+      image:demo ,
       link: "#",
       github: "#",
       category: "mobile"
@@ -39,7 +40,7 @@ const WorkPage = () => {
       title: "AR Interior Design",
       description: "Augmented reality app for home decoration",
       tags: ["Unity", "ARKit", "3D Modeling", "Swift"],
-      image: "/projects/ar-design.jpg",
+      image: demo,
       link: "#",
       github: "#",
       category: "mobile"
@@ -49,7 +50,7 @@ const WorkPage = () => {
       title: "SaaS Analytics Platform",
       description: "Business intelligence dashboard for SMBs",
       tags: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-      image: "/projects/saas.jpg",
+      image: demo,
       link: "#",
       github: "#",
       category: "web"
@@ -59,7 +60,7 @@ const WorkPage = () => {
       title: "Fitness Tracking App",
       description: "AI-powered workout and nutrition coach",
       tags: ["Flutter", "TensorFlow", "Firebase", "HealthKit"],
-      image: "/projects/fitness.jpg",
+      image: demo,
       link: "#",
       github: "#",
       category: "mobile"
@@ -140,7 +141,7 @@ const WorkPage = () => {
       </section>
 
       {/* Filter Controls */}
-      <section className="py-12  sticky top-0 z-10 shadow-sm">
+      <section className="py-12  sticky top-10 z-10 shadow-sm">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -193,8 +194,9 @@ const WorkPage = () => {
               >
                 <div className="relative group">
                   {/* Project image placeholder - replace with actual image */}
-                  <div className="h-60 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                    <span className="text-gray-500">Project Image</span>
+                  
+                  <div className="bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                    <img src={demo} alt='project'/>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                     <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -272,7 +274,7 @@ const WorkPage = () => {
 
       {/* Testimonials */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 z-10">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

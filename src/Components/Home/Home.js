@@ -173,32 +173,54 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Why Choose <span className="text-blue-600">Our Solutions</span>
+              <span className="text-blue-600">Why Choose Our Solutions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               We combine technical expertise with creative vision to deliver exceptional results
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-white p-8 rounded-xl shadow-lg border border-gray-100"
-              >
-                <div className="text-blue-600 text-3xl mb-4">
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  {features.map((feature, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true }}
+      whileHover={{ 
+        y: -10,
+        scale: 1.03,
+        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+      }}
+      className="relative bg-white p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden group"
+    >
+      {/* Gradient background overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+      
+      {/* Icon container with gradient border */}
+      <div className="relative inline-flex justify-center items-center mb-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></div>
+        <div className="relative bg-white text-blue-500 rounded-full w-14 h-14 flex items-center justify-center text-2xl shadow-sm group-hover:text-purple-600 transition-colors">
+          {feature.icon}
+        </div>
+      </div>
+      
+      <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-600 transition-all">
+        {feature.title}
+      </h3>
+      
+      <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
+        {feature.description}
+      </p>
+      
+      {/* Animated underline */}
+      <div className="mt-4">
+        <div className="w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></div>
+      </div>
+    </motion.div>
+  ))}
+</div>
         </div>
       </section>
 
@@ -212,10 +234,10 @@ const HomePage = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Our <span className="text-blue-600">Services</span>
+            <h2 className="text-4xl font-bold mb-4 ">
+              <span className="text-blue-600">Our Services</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Comprehensive digital solutions tailored to your needs
             </p>
           </motion.div>

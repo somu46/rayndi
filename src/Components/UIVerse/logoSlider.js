@@ -1,17 +1,17 @@
 import React from 'react';
-
+import logo from '../../Assets/try-demo.png';
 const LogoSlider = () => {
   const logos = [
-    { src: '', alt: 'logo-0' },
-    { src: '', alt: 'logo-1' },
-    { src: '', alt: 'logo-2' },
-    { src: '', alt: 'logo-3' },
-    { src: '', alt: 'logo-4' },
-    { src: '', alt: 'logo-5' },
-    { src: '', alt: 'logo-6' },
-    { src: '', alt: 'logo-7' },
-    { src: '', alt: 'logo-8' },
-    { src: '', alt: 'logo-9' },
+    { src: logo, alt: 'logo-0' },
+    { src: logo, alt: 'logo-1' },
+    { src: logo, alt: 'logo-2' },
+    { src: logo, alt: 'logo-3' },
+    { src: logo, alt: 'logo-4' },
+    { src: logo, alt: 'logo-5' },
+    { src: logo, alt: 'logo-6' },
+    { src: logo, alt: 'logo-7' },
+    { src: logo, alt: 'logo-8' },
+    { src: logo, alt: 'logo-9' },
 
   ];
 
@@ -19,12 +19,12 @@ const LogoSlider = () => {
   const duplicatedLogos = [...logos, ...logos];
 
   return (
-    <section className="logo-slider overflow-x-hidden sm:overflow-x-auto py-8">
-      <div className="border-b border-gray-300">
+    <section className="logo-slider overflow-x-hidden  py-8 ">
+      <div className="">
         <div className="relative">
-          <div className="slide-track flex animate-[scroll_20s_linear_infinite] hover:animation-pause">
+          <div className="slide-track flex animate-[scroll_20s_linear_infinite] hover:animation-pause ">
             {duplicatedLogos.map((logo, index) => (
-              <div key={index} className="slide flex-shrink-0">
+              <div key={index} className="slide flex-shrink-0 ">
                 <img 
                   className="h-[91px] mr-[52px]" 
                   loading="lazy" 

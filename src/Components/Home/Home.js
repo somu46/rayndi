@@ -301,16 +301,8 @@ const HomePage = () => {
             }}
             className="text-5xl mb-6 text-blue-600"
           >
-<<<<<<< HEAD
-            <h2 className="text-4xl font-bold mb-4 ">
-              <span className="text-blue-600">Our Services</span>
-            </h2>
-            <p className="text-xl text-white max-w-2xl mx-auto">
-              Comprehensive digital solutions tailored to your needs
-            </p>
-=======
             {service.icon}
->>>>>>> 187abf1 (bal added)
+
           </motion.div>
 
           <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>

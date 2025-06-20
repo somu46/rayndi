@@ -51,7 +51,6 @@ const SolutionsPage = () => {
   // Industries served
   const industries = [
     { name: "Healthcare", icon: "🏥" },
-    { name: "Finance", icon: "💳" },
     { name: "Education", icon: "🎓" },
     { name: "Retail", icon: "🛍️" },
     { name: "Manufacturing", icon: "🏭" },
@@ -348,7 +347,7 @@ const SolutionsPage = () => {
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Banking Platform Modernization</h3>
                 <p className="text-gray-600 mb-6">Transformed legacy systems into a modern digital banking platform that increased customer satisfaction by 35%.</p>
-                <motion.button
+                <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-medium"

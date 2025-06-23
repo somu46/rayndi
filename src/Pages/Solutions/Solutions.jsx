@@ -51,7 +51,6 @@ const SolutionsPage = () => {
   // Industries served
   const industries = [
     { name: "Healthcare", icon: "🏥" },
-    { name: "Finance", icon: "💳" },
     { name: "Education", icon: "🎓" },
     { name: "Retail", icon: "🛍️" },
     { name: "Manufacturing", icon: "🏭" },
@@ -129,9 +128,9 @@ const SolutionsPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Our <span className="text-blue-600">Solutions</span>
+              <span className="text-blue-600">Our Solutions</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Comprehensive technology services tailored to your specific needs
             </p>
           </motion.div>
@@ -189,9 +188,9 @@ const SolutionsPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Our <span className="text-blue-600">Approach</span>
+              <span className="text-blue-600">Our Approach</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               A proven methodology that delivers results
             </p>
           </motion.div>
@@ -207,8 +206,8 @@ const SolutionsPage = () => {
               <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">1</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Discover</h3>
-              <p className="text-gray-600">In-depth analysis of your business needs and challenges</p>
+              <h3 className="text-xl font-bold mb-3 text-white">Discover</h3>
+              <p className="text-white">In-depth analysis of your business needs and challenges</p>
             </motion.div>
             
             <motion.div
@@ -221,8 +220,8 @@ const SolutionsPage = () => {
               <div className="bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">2</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Design</h3>
-              <p className="text-gray-600">Custom solution architecture and UX planning</p>
+              <h3 className="text-xl font-bold mb-3 text-white">Design</h3>
+              <p className="text-white">Custom solution architecture and UX planning</p>
             </motion.div>
             
             <motion.div
@@ -235,8 +234,8 @@ const SolutionsPage = () => {
               <div className="bg-green-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">3</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Develop</h3>
-              <p className="text-gray-600">Agile development with continuous integration</p>
+              <h3 className="text-xl font-bold mb-3 text-white">Develop</h3>
+              <p className="text-white">Agile development with continuous integration</p>
             </motion.div>
             
             <motion.div
@@ -249,8 +248,8 @@ const SolutionsPage = () => {
               <div className="bg-yellow-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">4</span>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Deploy</h3>
-              <p className="text-gray-600">Seamless implementation and ongoing support</p>
+              <h3 className="text-xl font-bold mb-3 text-white">Deploy</h3>
+              <p className="text-white">Seamless implementation and ongoing support</p>
             </motion.div>
           </div>
         </div>
@@ -267,9 +266,9 @@ const SolutionsPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Industries <span className="text-blue-600">We Serve</span>
+              <span className="text-blue-600">Industries We Serve</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               Tailored solutions for diverse industry verticals
             </p>
           </motion.div>
@@ -304,9 +303,9 @@ const SolutionsPage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              Success <span className="text-blue-600">Stories</span>
+              <span className="text-blue-600">Success Stories</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-white max-w-2xl mx-auto">
               See how we've helped businesses like yours
             </p>
           </motion.div>
@@ -348,7 +347,7 @@ const SolutionsPage = () => {
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900">Banking Platform Modernization</h3>
                 <p className="text-gray-600 mb-6">Transformed legacy systems into a modern digital banking platform that increased customer satisfaction by 35%.</p>
-                <motion.button
+                <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border border-purple-600 text-purple-600 px-6 py-3 rounded-lg font-medium"

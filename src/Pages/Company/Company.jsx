@@ -149,10 +149,10 @@ const CompanyPage = () => {
               <h2 className="text-4xl font-bold mb-8 text-gray-900">
                 Who <span className="text-blue-600">We Are</span>
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-white mb-6">
                 We are a global technology company specializing in digital transformation, enterprise software, and cutting-edge solutions that drive business growth.
               </p>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-white mb-8">
                 Founded in 2015, we've grown from a small startup to an international organization with offices in 5 countries, serving clients across multiple industries.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
@@ -161,8 +161,8 @@ const CompanyPage = () => {
                     <FiGlobe className="text-blue-600 w-6 h-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">Global Presence</div>
-                    <div className="text-sm text-gray-600">5 countries</div>
+                    <div className="font-bold text-white">Global Presence</div>
+                    <div className="text-sm text-white">5 countries</div>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -170,8 +170,8 @@ const CompanyPage = () => {
                     <FiUsers className="text-purple-600 w-6 h-6" />
                   </div>
                   <div>
-                    <div className="font-bold text-gray-900">Expert Team</div>
-                    <div className="text-sm text-gray-600">100+ professionals</div>
+                    <div className="font-bold text-white">Expert Team</div>
+                    <div className="text-sm text-white">100+ professionals</div>
                   </div>
                 </div>
               </div>

@@ -1,8 +1,9 @@
-import React from 'react';
 import logo from '../../Assets/try-demo.png';
+import styled from 'styled-components';
 
-const LogoSlider = () => {
-  const logos = [
+const Card = () => {
+    
+    const logos = [
     { src: logo, alt: 'logo-0' },
     { src: logo, alt: 'logo-1' },
     { src: logo, alt: 'logo-2' },
@@ -14,40 +15,101 @@ const LogoSlider = () => {
     { src: logo, alt: 'logo-8' },
     { src: logo, alt: 'logo-9' },
   ];
-
-  // Duplicate the logos to create seamless infinite loop
-  const duplicatedLogos = [...logos, ...logos];
-
   return (
-    <section className="logo-slider overflow-hidden py-2">
-      <div className="relative">
-        <div className="slide-track flex animate-[scroll_5s_linear_infinite] sm:animate-[scroll_20s_linear_infinite] hover:animation-pause">
-          {duplicatedLogos.map((logo, index) => (
-            <div 
-              key={index} 
-              className="slide flex-shrink-0 px-4 flex items-center justify-center"
-              style={{ width: 'clamp(100px, 20vw, 200px)' }} // Responsive width
-            >
+    <StyledWrapper>
+      <div className="marquee ">
+        <div className="marquee_header text-white"> Our Brand</div>
+        <div className="marquee__inner">
+          <div className="marquee__group">
+          {logos.map((logo,index)=>(
+            
+            <span
+             key={index} >
               <img 
                 className="h-auto max-h-[60px] md:max-h-[91px] w-auto object-contain" 
                 loading="lazy" 
                 src={logo.src} 
                 alt={logo.alt} 
               />
-            </div>
-          ))}
+            </span>
+            
+          ))}  
+           
+          </div>
+          <div className="marquee__group">
+             {logos.map((logo,index)=>(
+            
+            <span
+             key={index} >
+              <img 
+                className="h-auto max-h-[60px] md:max-h-[91px] w-auto object-contain" 
+                loading="lazy" 
+                src={logo.src} 
+                alt={logo.alt} 
+              />
+            </span>
+            
+          ))}   
+          </div>
         </div>
       </div>
-      
-      {/* Add the animation to your Tailwind config or CSS */}
-      <style jsx global>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-      `}</style>
-    </section>
+    </StyledWrapper>
   );
-};
+}
 
-export default LogoSlider;
+const StyledWrapper = styled.div`
+  .marquee {
+    overflow: hidden;
+    /* hide the scrolling overflow */
+    width: 100%;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+  .marquee_header {
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .marquee__inner {
+    display: flex;
+    width: max-content;
+    animation: marquee 15s linear infinite;
+  }
+
+  .marquee__group {
+    display: flex;
+  }
+
+  .marquee__group span {
+    margin: 0 1.5rem;
+    white-space: nowrap;
+    background: #000000;
+    color: white;
+    padding: 4px 16px 4px 12px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }`;
+
+export default Card;

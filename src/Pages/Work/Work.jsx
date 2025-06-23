@@ -142,14 +142,14 @@ const WorkPage = () => {
       </section>
 
       {/* Filter Controls */}
-      <section className="py-12  sticky top-10 z-10 shadow-sm">
-        <div className="container mx-auto px-6">
+      <section className="py-12   top-10 z-10 shadow-sm ">
+        <div className="container mx-auto px-6 ">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-4 "
           >
             {categories.map((category) => (
               <motion.button
@@ -157,7 +157,7 @@ const WorkPage = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full font-medium flex items-center ${
+                className={`px-6 py-3 rounded-full font-medium flex items-center  ${
                   activeCategory === category
                     ? "bg-blue-600 text-white"
                     : "bg-gray-100 text-gray-800 hover:bg-gray-200"

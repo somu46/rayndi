@@ -1,6 +1,18 @@
 import { motion } from "framer-motion";
 import { FiCode, FiCloud, FiDatabase, FiLock, FiSmartphone, FiBarChart2 } from "react-icons/fi";
-
+import ApproachCard from "../../Components/UIVerse/ApproachCard";
+import {
+  FiClipboard,
+  FiSettings,
+  FiPenTool,
+  FiLayers,
+  FiMonitor,
+  FiServer,
+  FiCheckCircle,
+  FiUploadCloud,
+  FiRefreshCw,
+  FiTrendingUp,
+} from "react-icons/fi";
 const SolutionsPage = () => {
   // Solutions data
   const solutions = [
@@ -58,6 +70,111 @@ const SolutionsPage = () => {
     { name: "Government", icon: "🏛️" },
     { name: "Startups", icon: "🚀" }
   ];
+
+const steps = [
+  {
+    number: 1,
+    title: 'Requirement Gathering',
+    icon: <FiClipboard className="w-6 h-6 text-blue-600" />,
+    features: [
+      "Understand client goals",
+      "Define product features",
+      "Identify target audience",
+    ],
+  },
+  {
+    number: 2,
+    title: 'Planning & Feasibility',
+    icon: <FiSettings className="w-6 h-6 text-purple-600" />,
+    features: [
+      "Scope & timeline definition",
+      "Tech stack selection",
+      "Budget and MVP planning",
+    ],
+  },
+  {
+    number: 3,
+    title: 'UI/UX Design',
+    icon: <FiPenTool className="w-6 h-6 text-pink-600" />,
+    features: [
+      "Wireframes and user flows",
+      "Interactive prototypes",
+      "Brand-aligned visuals",
+    ],
+  },
+  {
+    number: 4,
+    title: 'Architecture & Tech Stack Setup',
+    icon: <FiLayers className="w-6 h-6 text-indigo-600" />,
+    features: [
+      "Codebase structuring",
+      "Environment configuration",
+      "Version control setup",
+    ],
+  },
+  {
+    number: 5,
+    title: 'Frontend Development',
+    icon: <FiMonitor className="w-6 h-6 text-green-600" />,
+    features: [
+      "Responsive UI development",
+      "API integration",
+      "Cross-platform compatibility",
+    ],
+  },
+  {
+    number: 6,
+    title: 'Backend Development',
+    icon: <FiServer className="w-6 h-6 text-red-600" />,
+    features: [
+      "Database schema design",
+      "Secure API development",
+      "Business logic implementation",
+    ],
+  },
+  {
+    number: 7,
+    title: 'Testing & QA',
+    icon: <FiCheckCircle className="w-6 h-6 text-yellow-600" />,
+    features: [
+      "Unit and integration tests",
+      "UI/UX testing",
+      "Bug fixing and QA cycles",
+    ],
+  },
+  {
+    number: 8,
+    title: 'Deployment',
+    icon: <FiUploadCloud className="w-6 h-6 text-blue-500" />,
+    features: [
+      "Live server configuration",
+      "CI/CD pipeline integration",
+      "SSL and DNS setup",
+    ],
+  },
+  {
+    number: 9,
+    title: 'Maintenance & Updates',
+    icon: <FiRefreshCw className="w-6 h-6 text-gray-600" />,
+    features: [
+      "Performance monitoring",
+      "Bug fixes and patches",
+      "Feature enhancements",
+    ],
+  },
+  {
+    number: 10,
+    title: 'Marketing & Launch',
+    icon: <FiTrendingUp className="w-6 h-6 text-green-700" />,
+    features: [
+      "SEO and analytics setup",
+      "Marketing campaign support",
+      "Launch strategy execution",
+    ],
+  },
+];
+
+
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900">
@@ -179,79 +296,17 @@ const SolutionsPage = () => {
 
       {/* How We Work */}
       <section className="py-20 ">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">
-              <span className="text-blue-600">Our Approach</span>
-            </h2>
-            <p className="text-xl text-white max-w-2xl mx-auto">
-              A proven methodology that delivers results
-            </p>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-blue-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">1</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Discover</h3>
-              <p className="text-white">In-depth analysis of your business needs and challenges</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-purple-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">2</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Design</h3>
-              <p className="text-white">Custom solution architecture and UX planning</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-green-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">3</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Develop</h3>
-              <p className="text-white">Agile development with continuous integration</p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="bg-yellow-100 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-3xl">4</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Deploy</h3>
-              <p className="text-white">Seamless implementation and ongoing support</p>
-            </motion.div>
-          </div>
+        <div className="flex flex-wrap justify-center gap-6">
+      {steps.map((step, index) => (
+        <ApproachCard
+  key={index}
+  title={step.title}
+  number={step.number}
+  icon={step.icon}
+  features={step.features}
+/>
+
+          ))}
         </div>
       </section>
 

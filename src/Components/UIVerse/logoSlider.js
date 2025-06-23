@@ -96,7 +96,7 @@ const StyledWrapper = styled.div`
   .marquee__group span {
     margin: 0 1.5rem;
     white-space: nowrap;
-    background: #000000;
+    
     color: white;
     padding: 4px 16px 4px 12px;
     border-radius: 6px;

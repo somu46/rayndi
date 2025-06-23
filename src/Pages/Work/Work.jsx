@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { FiExternalLink, FiGithub, FiEye, FiFilter } from "react-icons/fi";
+import {  FiFilter } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import demo from "../../Assets/coding.webp";
+import ProjectsCard from "../../Components/UIVerse/ProjectsCard"
 const WorkPage = () => {
   // Projects data
   const projects = [
@@ -10,7 +11,7 @@ const WorkPage = () => {
       title: "E-Commerce Platform",
       description: "A full-featured online store with custom CMS and payment integration",
       tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: demo,
+      // image: demo,
       link: "#",
       github: "#",
       category: "web"
@@ -174,103 +175,33 @@ const WorkPage = () => {
 
       {/* Projects Grid */}
       <section className="py-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100"
-              >
-                <div className="relative group">
-                  {/* Project image placeholder - replace with actual image */}
-                  
-                  <div className="bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
-                    <img src={demo} alt='project'/>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                      <p className="text-blue-100">{project.description}</p>
-                    </div>
-                  </div>
-                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {project.link && (
-                      <motion.a
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white p-2 rounded-full shadow-md"
-                      >
-                        <FiExternalLink className="text-gray-800" />
-                      </motion.a>
-                    )}
-                    {project.github && (
-                      <motion.a
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="bg-white p-2 rounded-full shadow-md"
-                      >
-                        <FiGithub className="text-gray-800" />
-                      </motion.a>
-                    )}
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="text-xs bg-gray-100 text-gray-800 px-3 py-1 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <motion.a
-                      whileHover={{ x: 5 }}
-                      href={project.link || project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 font-medium flex items-center"
-                    >
-                      View Project <FiEye className="ml-2" />
-                    </motion.a>
-                    <span className="text-xs text-gray-500">
-                      {project.category === "web" ? "Web Application" : "Mobile App"}
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+  <div className="container mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="flex flex-wrap justify-center gap-8"
+    >
+      {filteredProjects.map((project) => (
+        <ProjectsCard key={project.id} project={project} />
+      ))}
+    </motion.div>
 
-          {filteredProjects.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
-              <div className="text-5xl mb-4">🧐</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
-              <p className="text-gray-600">We don't have any projects in this category yet</p>
-            </motion.div>
-          )}
-        </div>
-      </section>
+    {filteredProjects.length === 0 && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="text-center py-20"
+      >
+        <div className="text-5xl mb-4">🧐</div>
+        <h3 className="text-2xl font-bold text-gray-800 mb-2">No projects found</h3>
+        <p className="text-gray-600">We don't have any projects in this category yet</p>
+      </motion.div>
+    )}
+  </div>
+</section>
+
 
       {/* Testimonials */}
       <section className="py-20">
@@ -358,6 +289,7 @@ const WorkPage = () => {
           </motion.div>
         </div>
       </section>
+      <ProjectsCard/>
     </div>
   );
 };

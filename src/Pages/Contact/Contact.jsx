@@ -1,4 +1,3 @@
-import React from 'react';
 import locationGIF from "../../Assets/Gif/location.gif";
 import emailGIF from "../../Assets/Gif/email.gif";
 import './contact.css'; 
@@ -7,7 +6,7 @@ import './contact.css';
 
 const ContactSection = () => {
   return (
-    <section className="relative bg-[#1B1B1B] text-white font-sans ">
+    <section className="relative bg-[#14203E] text-white font-sans ">
       
       <div
       
@@ -15,12 +14,12 @@ const ContactSection = () => {
       >
       </div>
       
-        <div className=" absolute -top-[40rem]  flex flex-col   gap-10 justify-center items-center text-white bg-transparent  min-h-full w-full">
+        <div className=" max-h-[60px] absolute top-[10rem]  flex flex-col   gap-10 justify-center items-center text-white bg-transparent   w-full">
           <h1 className="text-5xl font-bold mb-5 opacity-100">Contact Us  </h1>
           
         </div>
       
-   <div className="bg-[#1B1B1B] text-white py-16 px-4 md:px-20 w-full mx-0">
+   <div className="bg-[#14203E] text-white py-16 px-4 md:px-20 w-full mx-0">
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10  ">
         {/* Left Content */}
@@ -36,7 +35,7 @@ const ContactSection = () => {
          
           <div className=" gap-y-6 flex  sm:flex-row sm:justify-center  flex-col sm:items-start">
             <div className="flex items-start gap-4   ">
-              <div className="bg-neutral-900 p-3 size-[50px] sm:size-auto rounded-full  flex items-center justify-center">
+              <div className="bg-[#14203E] p-3 size-[50px] sm:size-auto rounded-full  flex items-center justify-center">
                 <span className="text-orange-500 text-sm ">
                   <img src={locationGIF} className="min-w-[40px] sm:max-w-[30px]" alt="gif"  />
                 </span>
@@ -47,7 +46,7 @@ const ContactSection = () => {
               </div>
             </div>
             <div className="flex  items-start gap-4 ">
-              <div className="bg-neutral-900 p-3 size-[50px] sm:size-auto rounded-full">
+              <div className="bg-[#14203E] p-3 size-[50px] sm:size-auto rounded-full">
                 <span className="text-orange-500 text-sm  ">
                   <img src={emailGIF}  className='min-w-[30px] sm:max-w-[30px]' alt="gif"  />
 
@@ -67,38 +66,38 @@ const ContactSection = () => {
             <input
               type="text"
               placeholder="Your Name"
-              className="bg-neutral-900 p-3 rounded text-white placeholder-gray-400"
+              className="bg-[#14203E] p-3 rounded text-white  shadow-lg border border-gray-400 placeholder-gray-400"
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="bg-neutral-900 p-3 rounded text-white placeholder-gray-400"
+              className="bg-[#14203E] p-3 rounded text-white shadow-lg border border-gray-400 placeholder-gray-400"
             />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <input
               type="text"
               placeholder="Your Number"
-              className="bg-neutral-900 p-3 rounded text-white placeholder-gray-400"
+              className="bg-[#14203E] p-3 rounded text-white shadow-lg border border-gray-400 placeholder-gray-400"
             />
             <input
               type="text"
               placeholder="Subject"
-              className="bg-neutral-900 p-3 rounded text-white placeholder-gray-400"
+              className="bg-[#14203E] p-3 rounded text-white shadow-lg border border-gray-400 placeholder-gray-400"
             />
           </div>
           <input
             type="text"
             placeholder="Your Company Name"
-            className="w-full bg-neutral-900 p-3 rounded text-white placeholder-gray-400"
+            className="w-full bg-[#14203E] p-3 rounded text-white shadow-lg border border-gray-400 placeholder-gray-400"
           />
           <textarea
             placeholder="Write your question here"
-            className="w-full bg-neutral-900 p-3 h-40 rounded text-white placeholder-gray-400 resize-none"
+            className="w-full bg-[#14203E] p-3 h-40 rounded text-white shadow-lg border border-gray-400 placeholder-gray-400 resize-none"
           />
           <button
             type="submit"
-            className="bg-black border border-orange-400 px-6 py-2 rounded hover:bg-orange-600 transition"
+            className="bg-[#14203E] border border-orange-400 px-6 py-2 rounded hover:bg-orange-600 transition"
           >
             Submit
           </button>

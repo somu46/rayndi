@@ -289,7 +289,7 @@ const WorkPage = () => {
           </motion.div>
         </div>
       </section>
-      <ProjectsCard/>
+      
     </div>
   );
 };

@@ -4,6 +4,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; 
-    filter:opacity(0.5);
-    opacity: 100;
+    filter: opacity(0.6);
+    opacity: 10;
 }

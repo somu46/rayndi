@@ -39,7 +39,7 @@ const WorkPage = () => {
     {
       id: 4,
       title: "AR Interior Design",
-      description: "Augmented reality app for home decoration",
+      // description: "Augmented reality app for home decoration",
       tags: ["Unity", "ARKit", "3D Modeling", "Swift"],
       image: demo,
       link: "#",

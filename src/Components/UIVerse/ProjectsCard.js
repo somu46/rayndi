@@ -49,6 +49,11 @@ const Card = ({ project = {} }) => {
                 </span>
               ))}
             </div>
+            <div className=" mt-2 ">
+                <span className="text-[12px] text-white ">
+                  {description}
+                </span>
+            </div>
 
             <div className="flex justify-between mt-[20px]">
               <div className="flex-1 text-center px-[5px] text-[rgba(170,222,243,0.721)]">
@@ -80,11 +85,6 @@ const Card = ({ project = {} }) => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Back Side */}
-        <div className="absolute w-full h-full rounded-[20px] bg-[#1b233d] p-6 backface-hidden rotate-y-180 flex items-center justify-center text-center text-white text-sm">
-          {description || "No description provided."}
         </div>
       </div>
     </div>

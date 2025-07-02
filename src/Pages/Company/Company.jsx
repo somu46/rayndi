@@ -133,7 +133,7 @@ const CompanyPage = () => {
                   <span className="text-gray-500">Company Overview</span>
                 </div>
               </div>
-              <div className="absolute -bottom-8 -right-8 w-48 h-48 bg-blue-600 rounded-2xl shadow-lg flex items-center justify-center">
+              <div className="absolute -bottom-8 -right-4 w-42 h-42 bg-blue-600 rounded-2xl shadow-lg flex items-center justify-center">
                 <div className="text-center p-4 text-white">
                   <div className="text-4xl font-bold">10+</div>
                   <div className="text-sm">Years Experience</div>
@@ -189,70 +189,78 @@ const CompanyPage = () => {
       </section>
 
       {/* Milestones */}
-      <section className="py-20 ">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4 text-white">
-            Our <span className="text-blue-600">Journey</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            Key milestones in our company history
-          </p>
-        </motion.div>
+     <section className="py-12 md:py-20">
+  <div className="container mx-auto px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center mb-12 md:mb-16"
+    >
+      <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-white">
+        Our <span className="text-blue-600">Journey</span>
+      </h2>
+      <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
+        Key milestones in our company history
+      </p>
+    </motion.div>
 
-        <div className="relative">
-          {/* Timeline vertical line */}
-          <div className="hidden lg:block absolute left-1/2 top-0 h-full w-0.5 bg-white transform -translate-x-1/2"></div>
+    <div className="relative">
+      {/* Timeline vertical line - shown on md+ screens */}
+      <div className="hidden md:block absolute left-1/2 top-0 h-full w-0.5 bg-white transform -translate-x-1/2"></div>
 
-          <div className="space-y-16 lg:space-y-0">
-            {[...milestones]
-              .sort((a, b) => parseInt(b.year) - parseInt(a.year))
-              .map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative lg:flex ${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } items-center justify-between`}
-                >
-                  {/* Year */}
-                  <div
-                    className={`lg:w-1/2 lg:px-12 mb-8 lg:mb-0 ${
-                      index % 2 === 0 ? 'lg:text-right' : 'lg:text-left'
-                    }`}
-                  >
-                    <div className="inline-block p-4 rounded-lg">
-                      <div className="text-3xl font-bold text-white">{milestone.year}</div>
-                    </div>
+      {/* Mobile timeline dot connector - shown on small screens */}
+      <div className="md:hidden absolute left-6 top-0 h-full w-1 bg-blue-600 transform -translate-x-1/2"></div>
+
+      <div className="space-y-12 md:space-y-0">
+        {[...milestones]
+          .sort((a, b) => parseInt(b.year) - parseInt(a.year))
+          .map((milestone, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`relative md:flex ${
+                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+              } items-start md:items-center justify-between`}
+            >
+              {/* Year - mobile shows on left, desktop alternates */}
+              <div
+                className={`w-full md:w-1/2 px-0 md:px-12 mb-4 md:mb-0 ${
+                  index % 2 === 0 ? 'md:text-right' : 'md:text-left'
+                }`}
+              >
+                <div className="flex items-center md:block">
+                  {/* Mobile dot */}
+                  <div className="md:hidden absolute left-6 w-4 h-4 bg-blue-600 rounded-full border-2 border-white transform -translate-x-1/2"></div>
+                  <div className="ml-10 md:ml-0 inline-block p-3 md:p-4 rounded-lg">
+                    <div className="text-2xl md:text-3xl font-bold text-white">{milestone.year}</div>
                   </div>
+                </div>
+              </div>
 
-                  {/* Event */}
-                  <div className="lg:w-1/2 lg:px-12">
-                    <div className="p-8 rounded-xl shadow-lg relative border border-white ">
-                      {index % 2 === 0 ? (
-                        <div className="hidden lg:block absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
-                      ) : (
-                        <div className="hidden lg:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
-                      )}
-                      <h3 className="text-2xl font-bold mb-2 text-white">{milestone.event}</h3>
-                      <p className="text-gray-300">{milestone.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-          </div>
-        </div>
+              {/* Event */}
+              <div className="w-full md:w-1/2 px-0 md:px-12">
+                <div className="p-6 md:p-8 rounded-xl shadow-lg relative border border-white bg-gray-900 ml-10 md:ml-0">
+                  {/* Desktop dots */}
+                  {index % 2 === 0 ? (
+                    <div className="hidden md:block absolute -left-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
+                  ) : (
+                    <div className="hidden md:block absolute -right-4 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white"></div>
+                  )}
+                  <h3 className="text-xl md:text-2xl font-bold mb-2 text-white">{milestone.event}</h3>
+                  <p className="text-gray-300 text-sm md:text-base">{milestone.description}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
       {/* Capabilities */}
       <section className="py-20">

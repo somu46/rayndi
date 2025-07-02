@@ -5,7 +5,7 @@ const Card = ({ project = {} }) => {
   const { image, title, tags, link, github, description } = project;
 
   return (
-    <div className="w-[280px] h-[360px] perspective">
+    <div className="w-[350px] h-[360px] perspective">
       <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group hover:rotate-y-180">
         {/* Front Side */}
         <div className="absolute w-full h-full backface-hidden rounded-[20px] bg-[#1b233d] p-[5px] shadow-[rgba(100,100,111,0.2)_0px_7px_20px_0px]">

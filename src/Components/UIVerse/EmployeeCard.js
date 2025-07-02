@@ -3,7 +3,7 @@ import { FaXTwitter, FaGithub, FaLinkedin } from 'react-icons/fa6';
 
 const Card = ({ member }) => {
   return (
-    <div className="w-[250px] h-[250px] bg-red-600 rounded-[32px] p-[3px] relative shadow-[0px_70px_30px_-50px_rgba(96,75,74,0.19)] transition-all duration-500 ease-in-out group hover:rounded-tl-[55px]">
+    <div className="mx-auto w-[250px] h-[250px] bg-transparent rounded-[32px] p-[3px] relative shadow-[0px_70px_30px_-50px_rgba(96,75,74,0.19)] transition-all duration-500 ease-in-out group hover:rounded-tl-[55px]">
       <div className="absolute w-[calc(100%-6px)] h-[calc(100%-6px)] top-[3px] left-[3px] rounded-[29px] z-[1] overflow-hidden transition-all duration-500 ease-in-out delay-200 group-hover:w-[100px] group-hover:h-[100px] group-hover:top-[10px] group-hover:left-[10px] group-hover:rounded-full group-hover:z-[3] group-hover:border-[7px] border-blue-700 group-hover:shadow-[0px_5px_5px_0px_rgba(96,75,74,0.19)]">
         <img
           src={member.image}

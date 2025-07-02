@@ -3,12 +3,14 @@ import { FaStar } from 'react-icons/fa';
 import { BsCheckCircle, BsFillPersonFill } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 
+
 const testimonials = [
   {
     name: 'Michael Chen',
     role: 'Senior Developer at TechCorp',
     review:
       'The attention to detail and premium quality exceeded my expectations. The customer service was exceptional, and the product arrived earlier than expected.',
+    summary:'Outstanding Experience',
     rating: 5,
     verified: true,
   },
@@ -17,7 +19,8 @@ const testimonials = [
     role: 'Marketing Manager at BrandEdge',
     review:
       'Incredible service! The team was responsive and professional. I was amazed by how smooth the entire process was.',
-    rating: 4,
+    summary:'Outstanding Experience',
+      rating: 4,
     verified: true,
   },
   {
@@ -25,6 +28,34 @@ const testimonials = [
     role: 'Freelancer & Consultant',
     review:
       'Very reliable and prompt delivery. The interface is easy to use and the support team resolved my issue within hours.',
+    summary:'Outstanding Experience',
+      rating: 5,
+    verified: false,
+  },
+    {
+    name: 'Rahul Mehta',
+    role: 'Freelancer & Consultant',
+    review:
+      'Very reliable and prompt delivery. The interface is easy to use and the support team resolved my issue within hours.',
+    summary:'Outstanding Experience',
+      rating: 5,
+    verified: false,
+  },
+    {
+    name: 'Rahul Mehta',
+    role: 'Freelancer & Consultant',
+    review:
+      'Very reliable and prompt delivery. The interface is easy to use and the support team resolved my issue within hours.',
+    summary:'Outstanding Experience',
+      rating: 5,
+    verified: false,
+  },
+    {
+    name: 'Rahul Mehta',
+    role: 'Freelancer & Consultant',
+    review:
+      'Very reliable and prompt delivery. The interface is easy to use and the support team resolved my issue within hours.',
+    summary:'good',
     rating: 5,
     verified: false,
   },
@@ -32,8 +63,8 @@ const testimonials = [
 
 const Card = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 py-10 px-4">
-                  <motion.div
+    <div>
+      <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
@@ -47,8 +78,9 @@ const Card = () => {
               What our clients say about working with us
             </p>
           </motion.div>
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-2">
       {testimonials.map((item, index) => (
-        <div key={index} className="group relative w-[350px] mx-auto">
+        <div key={index} className="group relative w-[350px] mx-auto ">
           <div className="relative overflow-hidden rounded-2xl bg-slate-950 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-indigo-500/10">
             {/* Glowing background circles */}
             <div className="absolute -left-16 -top-16 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70" />
@@ -87,13 +119,14 @@ const Card = () => {
 
               {/* Review Content */}
               <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-white">Outstanding Experience!</h3>
+                <h3 className="text-xl font-semibold text-white">{item.summary}</h3>
                 <p className="text-slate-400">{item.review}</p>
               </div>
             </div>
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

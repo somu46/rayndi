@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
 import OurProcess from '../../Components/UIVerse/OurProcess'
 import LogoSlider from "../UIVerse/logoSlider";
+import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaCloud } from 'react-icons/fa';
+import ExploreButton from '../UIVerse/ExploreButton';
 const HomePage = () => {
   // Features data
   const features = [
@@ -28,28 +30,31 @@ const HomePage = () => {
   ];
 
   // Services preview
-  const services = [
-    {
-      title: "Web Development",
-      description: "Custom websites and web applications",
-      icon: "💻"
-    },
-    {
-      title: "Mobile Apps",
-      description: "iOS & Android development",
-      icon: "📱"
-    },
-    {
-      title: "UI/UX Design",
-      description: "User-centered interfaces",
-      icon: "🎨"
-    },
-    {
-      title: "Cloud Solutions",
-      description: "Scalable infrastructure",
-      icon: "☁️"
-    }
-  ];
+
+
+const services = [
+  {
+    title: "Web Development",
+    description: "Custom websites and web applications",
+    icon: <FaLaptopCode className="w-10 h-10 text-purple-400" />
+  },
+  {
+    title: "Mobile Apps",
+    description: "iOS & Android development",
+    icon: <FaMobileAlt className="w-10 h-10 text-purple-400" />
+  },
+  {
+    title: "UI/UX Design",
+    description: "User-centered interfaces",
+    icon: <FaPaintBrush className="w-10 h-10 text-purple-400" />
+  },
+  {
+    title: "Cloud Solutions",
+    description: "Scalable infrastructure",
+    icon: <FaCloud className="w-10 h-10 text-purple-400" />
+  }
+];
+
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900">
@@ -137,31 +142,7 @@ const HomePage = () => {
       </section>
 
       {/* Clients Logo Cloud */}
-      {/* <section className="py-16 ">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <p className="text-gray-600 mb-4">TRUSTED BY INNOVATIVE COMPANIES</p>
-          </motion.div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.1 }}
-                className="bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-24"
-              >
-                <span className="text-gray-400 font-bold text-xl">Client {i+1}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+
       <LogoSlider/>
 
       {/* Features Section */}
@@ -195,24 +176,24 @@ const HomePage = () => {
         scale: 1.03,
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
       }}
-      className="relative bg-white p-8 rounded-xl shadow-lg border border-gray-100 overflow-hidden group"
+      className="relative bg-slate-900 p-8 rounded-xl shadow-lg border border-blue-100 overflow-hidden group"
     >
       {/* Gradient background overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
       
       {/* Icon container with gradient border */}
       <div className="relative inline-flex justify-center items-center mb-6">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition-opacity"></div>
-        <div className="relative bg-white text-blue-500 rounded-full w-14 h-14 flex items-center justify-center text-2xl shadow-sm group-hover:text-purple-600 transition-colors">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-md opacity-100 group-hover:opacity-100 transition-opacity"></div>
+        <div className="relative bg-black text-blue-500 rounded-full w-14 h-14 flex items-center justify-center text-2xl shadow-sm group-hover:text-purple-600 transition-colors">
           {feature.icon}
         </div>
       </div>
       
-      <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-600 transition-all">
+      <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-600 transition-all">
         {feature.title}
       </h3>
       
-      <p className="text-gray-600 group-hover:text-gray-700 transition-colors">
+      <p className="text-gray-300 group-hover:text-gray-700 transition-colors">
         {feature.description}
       </p>
       
@@ -225,135 +206,112 @@ const HomePage = () => {
 </div>
         </div>
       </section>
+      
 
       {/* Services Preview */}
-<section className="py-28 ">
+<section className="py-28 relative overflow-hidden">
+  {/* Background elements */}
+  <div className="absolute inset-0 overflow-hidden -z-10">
+    <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>
+    <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full filter blur-3xl"></div>
+  </div>
+
   <div className="container mx-auto px-6">
-    {/* Header with animated gradient text */}
+    {/* Header */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true }}
       className="text-center mb-20"
     >
       <h2 className="text-5xl font-bold mb-6">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400  animate-gradient-x">
           Our Services
         </span>
       </h2>
-      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-        A comprehensive, iterative approach to building digital solutions that deliver real results
+      <p className="text-xl text-white max-w-3xl mx-auto">
+        Crafted solutions that transform your digital presence
       </p>
     </motion.div>
 
-    {/* Animated background elements */}
-    <motion.div
-      animate={{
-        x: [0, 50, 0],
-        rotate: [0, 5, 0],
-      }}
-      transition={{
-        duration: 20,
-        repeat: Infinity,
-        repeatType: "reverse",
-        ease: "linear",
-      }}
-      className="absolute left-0 w-1/3 h-1/2 bg-blue-100/20 rounded-full blur-3xl -z-10"
-    />
-
-    {/* Services grid with enhanced animations */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+    {/* Services grid - Creative Card Design */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       {services.map((service, index) => (
         <motion.div
           key={index}
-          initial={{ opacity: 0, y: 50, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          whileHover={{ 
-            y: -15,
-            boxShadow: "0 20px 25px -5px rgba(59, 130, 246, 0.2), 0 10px 10px -5px rgba(59, 130, 246, 0.1)"
-          }}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -10 }}
           transition={{ 
-            duration: 0.6, 
+            duration: 0.6,
             delay: index * 0.1,
             hover: { duration: 0.3 }
           }}
           viewport={{ once: true, margin: "-50px" }}
-          className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden relative"
+          className="relative group"
         >
-          {/* Animated background highlight on hover */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileHover={{ opacity: 1, scale: 1 }}
-            className="absolute inset-0 bg-gradient-to-br from-blue-50/50 to-purple-50/50 -z-10"
-          />
-
-          {/* Icon with floating animation */}
-          <motion.div
-            animate={{
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 6,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "easeInOut",
-            }}
-            className="text-5xl mb-6 text-blue-600"
-          >
-            {service.icon}
-
-          </motion.div>
-
-          <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
-          <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-
-          {/* Enhanced "Learn more" link with animated arrow */}
-          <motion.div whileHover="hover" className="inline-block">
-            <motion.a
-              href="#"
-              className="flex items-center text-blue-600 font-medium group"
-            >
-              <span className="mr-2">Learn more</span>
-              <motion.span
-                variants={{
-                  hover: { x: 5 }
+          {/* Card with creative border */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md group-hover:blur-lg -z-10"></div>
+          
+          <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg group-hover:shadow-xl transition-all duration-300">
+            {/* Large floating icon with gradient background */}
+            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mx-auto mt-8 mb-6">
+              <motion.div
+                animate={{
+                  rotate: [0, 10, -10, 0],
                 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+                className="text-4xl text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               >
-                <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
-              </motion.span>
-            </motion.a>
-            <motion.div
-              initial={{ width: 0 }}
-              variants={{
-                hover: { width: "100%" }
-              }}
-              transition={{ duration: 0.3 }}
-              className="h-0.5 bg-blue-600 mt-1"
-            />
-          </motion.div>
-
-          {/* Floating tags */}
-          <div className="mt-6 flex flex-wrap gap-2">
-            {service.tags?.map((tag, tagIndex) => (
-              <motion.span
-                key={tagIndex}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 + tagIndex * 0.05 }}
-                viewport={{ once: true }}
-                className="text-xs font-medium px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
-              >
-                {tag}
-              </motion.span>
-            ))}
+                {service.icon}
+              </motion.div>
+            </div>
+            
+            {/* Content */}
+            <div className="p-8 pt-0">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-center">{service.description}</p>
+              
+              {/* Animated underline link - centered */}
+              <motion.div whileHover="hover" className="flex justify-center">
+                <a href="#" className="relative text-blue-600 dark:text-blue-400 font-medium group">
+                  <ExploreButton/>
+                </a>
+              </motion.div>
+              
+              {/* Floating tags - appear on hover */}
+              <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {service.tags?.map((tag, tagIndex) => (
+                    <motion.span
+                      key={tagIndex}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: tagIndex * 0.05 }}
+                      viewport={{ once: true }}
+                      className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-200"
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Decorative corner elements */}
+            <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-blue-500 rounded-bl-3xl opacity-30"></div>
+            <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-purple-500 rounded-tr-3xl opacity-30"></div>
           </div>
         </motion.div>
       ))}
     </div>
 
-    {/* CTA at bottom */}
+    {/* CTA with animated gradient border */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -361,19 +319,22 @@ const HomePage = () => {
       viewport={{ once: true }}
       className="text-center mt-20"
     >
-      <motion.button
+      <motion.div
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
-        className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all"
+        className="relative inline-block"
       >
-        Start Your Project Today
-      </motion.button>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 animate-pulse opacity-75 -z-10"></div>
+        <button className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl transition-all">
+          Start Your Project Today
+          <span className="absolute -right-2 -top-2 w-5 h-5 bg-yellow-400 rounded-full animate-ping opacity-75"></span>
+        </button>
+      </motion.div>
     </motion.div>
   </div>
 </section>
 
       {/* Process Section */}
-      
       <OurProcess/>
 
       {/* CTA Section */}

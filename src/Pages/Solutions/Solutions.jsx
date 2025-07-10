@@ -562,9 +562,6 @@ const SolutionsPage = () => {
         </div>
       </section>
 
-      {/* Case Studies */}
-     
-
       {/* CTA */}
       <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden px-4">
         <motion.div

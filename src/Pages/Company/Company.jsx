@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { FiGlobe, FiUsers, FiAward, FiLayers, FiClock, FiBarChart2 ,FiArrowRight } from "react-icons/fi";
+import { FiGlobe, FiUsers, FiAward, FiLayers, FiClock, FiBarChart2 } from "react-icons/fi";
 import ExploreButton from "../../Components/UIVerse/ExploreButton";
+import LogoSlider from "../../Components/UIVerse/logoSlider"
 const CompanyPage = () => {
   // Milestones data
   const milestones = [
@@ -90,31 +91,9 @@ const CompanyPage = () => {
 
       {/* Logo Cloud */}
       <section className="py-16 ">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h3 className="text-lg font-semibold text-blue-600 mb-2">TRUSTED BY INDUSTRY LEADERS</h3>
-            <p className="text-gray-600">We partner with organizations of all sizes</p>
-          </motion.div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[...Array(6)].map((_, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.1 }}
-                className="bg-white p-6 rounded-xl shadow-sm flex items-center justify-center h-24"
-              >
-                <span className="text-gray-400 font-bold text-xl">Client {i+1}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <LogoSlider/>
       </section>
+      
 
       {/* About Section */}
       <section className="py-20">
@@ -335,7 +314,7 @@ const CompanyPage = () => {
               
               {/* Animated underline link - centered */}
               <motion.div whileHover="hover" className="flex justify-center">
-                <a href="#" className={`relative ${
+                <a href="https://rayndi.com/" className={`relative ${
                   index % 2 === 0 ? 'text-blue-600 dark:text-blue-400' : 'text-purple-600 dark:text-purple-400'
                 } font-medium group`}>
                   <ExploreButton/>

@@ -502,65 +502,65 @@ const SolutionsPage = () => {
 
       {/* Industries */}
       <section className="py-12 sm:py-16 md:py-20 px-4">
-        <div className="container mx-auto px-2 sm:px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12 sm:mb-16"
-          >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Industries We Serve</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
-              Tailored solutions for diverse industry verticals
-            </p>
-          </motion.div>
+  <div className="container mx-auto px-2 sm:px-4 md:px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="text-center mb-12 sm:mb-16"
+    >
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Industries We Serve</span>
+      </h2>
+      <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
+        Tailored solutions for diverse industry verticals
+      </p>
+    </motion.div>
+    
+    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
+      {industries.map((industry, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ 
+            duration: 0.5, 
+            delay: index * 0.05,
+            type: "spring",
+            stiffness: 100
+          }}
+          viewport={{ once: true }}
+          whileHover={{ 
+            y: -10,
+            scale: 1.05
+          }}
+          className="relative group w-[calc(50%-6px)] sm:w-[calc(33.333%-16px)] md:w-[calc(25%-24px)] min-w-[120px] max-w-[200px]"
+        >
+          <div className={`absolute inset-0 rounded-lg md:rounded-xl ${industry.color.replace('text', 'bg')}/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500 -z-10`} />
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
-            {industries.map((industry, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ 
-                  duration: 0.5, 
-                  delay: index * 0.05,
-                  type: "spring",
-                  stiffness: 100
-                }}
-                viewport={{ once: true }}
-                whileHover={{ 
-                  y: -10,
-                  scale: 1.05
-                }}
-                className="relative group"
-              >
-                <div className={`absolute inset-0 rounded-lg md:rounded-xl ${industry.color.replace('text', 'bg')}/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500 -z-10`} />
-                
-                <div className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-lg md:rounded-xl border border-gray-700/30 shadow-md sm:shadow-lg text-center transition-all duration-300 h-full">
-                  <motion.div
-                    animate={{
-                      y: [0, -10, 0],
-                    }}
-                    transition={{
-                      duration: 4 + index,
-                      repeat: Infinity,
-                      repeatType: "reverse",
-                      ease: "easeInOut",
-                    }}
-                    className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 md:mb-4"
-                  >
-                    {industry.icon}
-                  </motion.div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold text-white">{industry.name}</h3>
-                </div>
-              </motion.div>
-            ))}
+          <div className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-lg md:rounded-xl border border-gray-700/30 shadow-md sm:shadow-lg text-center transition-all duration-300 h-full">
+            <motion.div
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4 + index,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut",
+              }}
+              className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 md:mb-4"
+            >
+              {industry.icon}
+            </motion.div>
+            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white">{industry.name}</h3>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden px-4">

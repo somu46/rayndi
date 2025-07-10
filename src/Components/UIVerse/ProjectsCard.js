@@ -5,11 +5,12 @@ const Card = ({ project = {} }) => {
   const { image, title, tags, link, github, description } = project;
 
   return (
-    <div className="w-[350px] h-[360px] perspective">
+    <div className="w-[450px] h-[420px] perspective">
       <div className="relative w-full h-full transition-transform duration-700 transform-style-preserve-3d group hover:rotate-y-180">
         {/* Front Side */}
-        <div className="absolute w-full h-full backface-hidden rounded-[20px] bg-[#1b233d] p-[5px] shadow-[rgba(100,100,111,0.2)_0px_7px_20px_0px]">
-          <div className="h-[150px] rounded-[15px] relative overflow-hidden">
+        <div className="absolute w-full h-full backface-hidden rounded-[20px] bg-[#1b233d] p-4 shadow-[rgba(100,100,111,0.2)_0px_7px_20px_0px] flex flex-col">
+          {/* Image Area (Fixed Height) */}
+          <div className="h-[200px] rounded-[15px] relative overflow-hidden mb-4">
             {image ? (
               <img
                 src={image}
@@ -23,8 +24,8 @@ const Card = ({ project = {} }) => {
             )}
 
             {/* Rayndi label */}
-            <div className="absolute top-2 left-3 z-10">
-              <p className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-sm font-semibold">
+            <div className="absolute top-1 left-6 z-10 ">
+              <p className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-[20px] font-semibold">
                 Rayndi
               </p>
             </div>
@@ -34,55 +35,60 @@ const Card = ({ project = {} }) => {
             <div className="absolute top-[30px] left-0 w-[15px] h-[15px] bg-transparent rounded-tl-[15px] shadow-[-5px_-5px_0_2px_#1b233d]" />
           </div>
 
-          <div className="mt-[15px] px-[5px] py-[10px]">
-            <span className="block text-[17px] font-bold text-white text-center tracking-[2px]">
+          {/* Title Area (Fixed Height) */}
+          <div className="h-[30px] flex items-center justify-center mb-2">
+            <span className="text-lg font-bold text-white tracking-[2px] truncate max-w-full">
               {title || "Untitled"}
             </span>
+          </div>
 
-            <div className="flex flex-wrap justify-center mt-2 gap-1">
-              {tags?.map((tag, index) => (
-                <span
-                  key={index}
-                  className="text-[12px] px-2 py-0.5 bg-gray-700 text-white rounded-full"
+          {/* Tags Area (Fixed Height) */}
+          <div className="h-[30px] flex flex-wrap justify-center items-center gap-1 mb-3 overflow-hidden">
+            {tags?.map((tag, index) => (
+              <span
+                key={index}
+                className="text-[15px] px-2 py-0.5 bg-gray-700 text-white rounded-full whitespace-nowrap"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Description Area (Flexible Height) */}
+          <div className="flex-grow min-h-[40px] max-h-[100px] overflow-y-auto mb-2 text-center">
+            <p className="text-[13px] text-white line-clamp-4">
+              {description || "No description available"}
+            </p>
+          </div>
+
+          {/* Links Area (Fixed Height) */}
+          <div className="h-[50px] flex border-t border-[rgba(255,255,255,0.126)] pt-3">
+            <div className="flex-1 flex flex-col items-center justify-center">
+              {link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center"
                 >
-                  {tag}
-                </span>
-              ))}
+                  <FaLink className="text-white text-[20px] mb-1" />
+                  <span className="text-white text-[15px]">Preview</span>
+                </a>
+              )}
             </div>
-            <div className=" mt-2 ">
-                <span className="text-[12px] text-white ">
-                  {description}
-                </span>
-            </div>
-
-            <div className="flex justify-between mt-[20px]">
-              <div className="flex-1 text-center px-[5px] text-[rgba(170,222,243,0.721)]">
-                {link && (
-                  <a
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center"
-                  >
-                    <FaLink className="text-white font-bold text-[12px]" />
-                    <span className="text-[9px]">Preview</span>
-                  </a>
-                )}
-              </div>
-              <div className="border-x border-[rgba(255,255,255,0.126)]" />
-              <div className="flex-1 text-center px-[5px] text-[rgba(170,222,243,0.721)]">
-                {github && (
-                  <a
-                    href={github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center"
-                  >
-                    <FaGithub className="text-white" />
-                    <span className="text-[9px]">Source Code</span>
-                  </a>
-                )}
-              </div>
+            <div className="border-x border-[rgba(255,255,255,0.126)]" />
+            <div className="flex-1 flex flex-col items-center justify-center">
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center"
+                >
+                  <FaGithub className="text-white text-[20px] mb-1" />
+                  <span className="text-white text-[15px]">Source Code</span>
+                </a>
+              )}
             </div>
           </div>
         </div>

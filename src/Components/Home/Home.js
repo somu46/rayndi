@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FiArrowRight, FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
+import {  FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
 import OurProcess from '../../Components/UIVerse/OurProcess'
 import LogoSlider from "../UIVerse/logoSlider";
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaCloud } from 'react-icons/fa';
@@ -163,7 +163,7 @@ const services = [
             </p>
           </motion.div>
           
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 ">
   {features.map((feature, index) => (
     <motion.div
       key={index}
@@ -176,13 +176,12 @@ const services = [
         scale: 1.03,
         boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
       }}
-      className="relative bg-slate-900 p-8 rounded-xl shadow-lg border border-blue-100 overflow-hidden group"
+      className="relative bg-slate-900 p-8 rounded-xl shadow-lg border border-blue-100 overflow-hidden group "
     >
-      {/* Gradient background overlay on hover */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+      
       
       {/* Icon container with gradient border */}
-      <div className="relative inline-flex justify-center items-center mb-6">
+      <div className="relative inline-flex justify-center items-center mb-6 ">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-md opacity-100 group-hover:opacity-100 transition-opacity"></div>
         <div className="relative bg-black text-blue-500 rounded-full w-14 h-14 flex items-center justify-center text-2xl shadow-sm group-hover:text-purple-600 transition-colors">
           {feature.icon}
@@ -236,80 +235,80 @@ const services = [
     </motion.div>
 
     {/* Services grid - Creative Card Design */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-      {services.map((service, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -10 }}
-          transition={{ 
-            duration: 0.6,
-            delay: index * 0.1,
-            hover: { duration: 0.3 }
-          }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="relative group"
-        >
-          {/* Card with creative border */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md group-hover:blur-lg -z-10"></div>
+    <div className="flex flex-wrap justify-center gap-10 ">
+  {services.map((service, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -10 }}
+      transition={{ 
+        duration: 0.6,
+        delay: index * 0.1,
+        hover: { duration: 0.3 }
+      }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="relative group w-full sm:w-[calc(50%-40px)] lg:w-[calc(33.333%-40px)] min-w-[300px] max-w-[450px]"
+    >
+      {/* Card with creative border */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-md group-hover:blur-lg -z-10"></div>
+      
+      <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg group-hover:shadow-xl transition-all duration-300">
+        {/* Large floating icon with gradient background */}
+        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mx-auto mt-8 mb-6">
+          <motion.div
+            animate={{
+              rotate: [0, 10, -10, 0],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="text-4xl text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+          >
+            {service.icon}
+          </motion.div>
+        </div>
+        
+        {/* Content */}
+        <div className="p-8 pt-0">
+          <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">{service.title}</h3>
+          <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-center">{service.description}</p>
           
-          <div className="relative h-full bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 shadow-lg group-hover:shadow-xl transition-all duration-300">
-            {/* Large floating icon with gradient background */}
-            <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 opacity-80 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mx-auto mt-8 mb-6">
-              <motion.div
-                animate={{
-                  rotate: [0, 10, -10, 0],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
-                className="text-4xl text-gradient bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-              >
-                {service.icon}
-              </motion.div>
+          {/* Animated underline link - centered */}
+          <motion.div whileHover="hover" className="flex justify-center">
+            <a href="/" className="relative text-blue-600 dark:text-blue-400 font-medium group">
+              <ExploreButton/>
+            </a>
+          </motion.div>
+          
+          {/* Floating tags - appear on hover */}
+          <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="flex flex-wrap gap-2 justify-center">
+              {service.tags?.map((tag, tagIndex) => (
+                <motion.span
+                  key={tagIndex}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: tagIndex * 0.05 }}
+                  viewport={{ once: true }}
+                  className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-200"
+                >
+                  {tag}
+                </motion.span>
+              ))}
             </div>
-            
-            {/* Content */}
-            <div className="p-8 pt-0">
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white text-center">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed text-center">{service.description}</p>
-              
-              {/* Animated underline link - centered */}
-              <motion.div whileHover="hover" className="flex justify-center">
-                <a href="#" className="relative text-blue-600 dark:text-blue-400 font-medium group">
-                  <ExploreButton/>
-                </a>
-              </motion.div>
-              
-              {/* Floating tags - appear on hover */}
-              <div className="mt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="flex flex-wrap gap-2 justify-center">
-                  {service.tags?.map((tag, tagIndex) => (
-                    <motion.span
-                      key={tagIndex}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: tagIndex * 0.05 }}
-                      viewport={{ once: true }}
-                      className="inline-block px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-800 dark:text-blue-200"
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative corner elements */}
-            <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-blue-500 rounded-bl-3xl opacity-30"></div>
-            <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-purple-500 rounded-tr-3xl opacity-30"></div>
           </div>
-        </motion.div>
-      ))}
-    </div>
+        </div>
+        
+        {/* Decorative corner elements */}
+        <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-blue-500 rounded-bl-3xl opacity-30"></div>
+        <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-purple-500 rounded-tr-3xl opacity-30"></div>
+      </div>
+    </motion.div>
+  ))}
+</div>
 
     {/* CTA with animated gradient border */}
     <motion.div

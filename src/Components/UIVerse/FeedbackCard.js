@@ -78,55 +78,55 @@ const Card = () => {
               What our clients say about working with us
             </p>
           </motion.div>
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 p-2">
-      {testimonials.map((item, index) => (
-        <div key={index} className="group relative w-[350px] mx-auto ">
-          <div className="relative overflow-hidden rounded-2xl bg-slate-950 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-indigo-500/10">
-            {/* Glowing background circles */}
-            <div className="absolute -left-16 -top-16 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70" />
-            <div className="absolute -right-16 -bottom-16 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70" />
+    <div className="flex flex-wrap justify-center gap-10 p-2">
+  {testimonials.map((item, index) => (
+    <div key={index} className="group relative w-full sm:w-[350px] flex-shrink-0">
+      <div className="relative h-full overflow-hidden rounded-2xl bg-slate-950 shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-indigo-500/10">
+        {/* Glowing background circles */}
+        <div className="absolute -left-16 -top-16 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 to-purple-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70" />
+        <div className="absolute -right-16 -bottom-16 h-32 w-32 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/0 blur-2xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-70" />
 
-            {/* Card Content */}
-            <div className="relative p-6">
-              {/* User Info */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="group/avatar relative">
-                  <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-75 blur transition-all duration-300 group-hover/avatar:opacity-100" />
-                  <div className="relative h-12 w-12 rounded-full bg-slate-950 ring-2 ring-slate-950 flex items-center justify-center">
-                    <BsFillPersonFill className="h-6 w-6 text-indigo-500" />
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-white">{item.name}</h4>
-                  <p className="text-sm text-slate-400">{item.role}</p>
-                </div>
-                {item.verified && (
-                  <div className="ml-auto">
-                    <div className="flex items-center gap-1 rounded-full bg-indigo-500/10 px-3 py-1">
-                      <BsCheckCircle className="h-4 w-4 text-indigo-500" />
-                      <span className="text-xs font-medium text-indigo-500">Verified</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Rating */}
-              <div className="flex items-center gap-1 mb-4">
-                {[...Array(item.rating)].map((_, i) => (
-                  <FaStar key={i} className="h-5 w-5 text-amber-400" />
-                ))}
-              </div>
-
-              {/* Review Content */}
-              <div className="space-y-2">
-                <h3 className="text-xl font-semibold text-white">{item.summary}</h3>
-                <p className="text-slate-400">{item.review}</p>
+        {/* Card Content - using flex-col to ensure equal height */}
+        <div className="relative p-6 h-full flex flex-col">
+          {/* User Info */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="group/avatar relative">
+              <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-75 blur transition-all duration-300 group-hover/avatar:opacity-100" />
+              <div className="relative h-12 w-12 rounded-full bg-slate-950 ring-2 ring-slate-950 flex items-center justify-center">
+                <BsFillPersonFill className="h-6 w-6 text-indigo-500" />
               </div>
             </div>
+            <div className="min-w-0">
+              <h4 className="font-semibold text-white truncate">{item.name}</h4>
+              <p className="text-sm text-slate-400 truncate">{item.role}</p>
+            </div>
+            {item.verified && (
+              <div className="ml-auto flex-shrink-0">
+                <div className="flex items-center gap-1 rounded-full bg-indigo-500/10 px-3 py-1">
+                  <BsCheckCircle className="h-4 w-4 text-indigo-500" />
+                  <span className="text-xs font-medium text-indigo-500">Verified</span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Rating */}
+          <div className="flex items-center gap-1 mb-4">
+            {[...Array(item.rating)].map((_, i) => (
+              <FaStar key={i} className="h-5 w-5 text-amber-400" />
+            ))}
+          </div>
+
+          {/* Review Content - flex-grow to take remaining space */}
+          <div className="space-y-2 flex-grow">
+            <h3 className="text-xl font-semibold text-white">{item.summary}</h3>
+            <p className="text-slate-400 line-clamp-3">{item.review}</p>
           </div>
         </div>
-      ))}
+      </div>
     </div>
+  ))}
+</div>
     </div>
   );
 };

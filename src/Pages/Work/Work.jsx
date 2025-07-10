@@ -182,7 +182,7 @@ const WorkPage = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="flex flex-wrap justify-center gap-8"
+      className="flex flex-wrap justify-center gap-10"
     >
       {filteredProjects.map((project) => (
         <ProjectsCard key={project.id} project={project} />
@@ -208,7 +208,7 @@ const WorkPage = () => {
       <FeedbackCard/>
 
       {/* CTA */}
-      <section className="py-28 text-white">
+      <section className="py-28 text-white ">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

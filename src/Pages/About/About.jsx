@@ -101,13 +101,7 @@ const AboutPage = () => {
             <p className="text-xl text-gray-600 mb-10">
               We're a passionate team of creators, developers, and strategists dedicated to building digital experiences that matter.
             </p>
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-medium shadow-lg"
-            >
-              Our Story
-            </motion.button> */}
+            
           </motion.div>
         </div>
       </section>
@@ -215,7 +209,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+          <div className="flex flex-wrap justify-center gap-8 ">
             {teamMembers.map((member, index) => (
               <EmployeeCard
                 key={index}

@@ -1,7 +1,13 @@
 import { motion } from "framer-motion";
+<<<<<<< HEAD
 import { FiGlobe, FiUsers, FiAward, FiLayers, FiClock, FiBarChart2 } from "react-icons/fi";
 import ExploreButton from "../../Components/UIVerse/ExploreButton";
 import LogoSlider from "../../Components/UIVerse/logoSlider"
+=======
+import { FiGlobe, FiUsers, FiAward, FiLayers, FiClock, FiBarChart2  } from "react-icons/fi";
+import ExploreButton from "../../Components/UIVerse/ExploreButton";
+import LogoSlider from "../../Components/UIVerse/logoSlider";
+>>>>>>> bfb2e1c (nothing)
 const CompanyPage = () => {
   // Milestones data
   const milestones = [
@@ -90,10 +96,14 @@ const CompanyPage = () => {
       </section>
 
       {/* Logo Cloud */}
+<<<<<<< HEAD
       <section className="py-16 ">
         <LogoSlider/>
       </section>
       
+=======
+          <LogoSlider/>
+>>>>>>> bfb2e1c (nothing)
 
       {/* About Section */}
       <section className="py-20">

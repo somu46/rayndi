@@ -24,8 +24,8 @@ const Card = ({ project = {} }) => {
             )}
 
             {/* Rayndi label */}
-            <div className="absolute top-1 left-6 z-10 ">
-              <p className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-[20px] font-semibold">
+            <div className="absolute top-0 left-6 z-10 ">
+              <p className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-[18px] font-semibold">
                 Rayndi
               </p>
             </div>

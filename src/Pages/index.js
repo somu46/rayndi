@@ -5,7 +5,9 @@ import Solutions from "./Solutions/Solutions";
 import Contact from "./Contact/Contact";
 import Work from "./Work/Work";
 import LandingPage from "./LandingPage/LandingPage";
+import IndustriesPage from "./Industry/Industry";
 import ErrorPage from "./Error/Error";
+
 
 export {
     About,
@@ -15,5 +17,6 @@ export {
     Contact,
     Work,
     LandingPage,
+    IndustriesPage,
     ErrorPage
 };  

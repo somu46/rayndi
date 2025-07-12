@@ -4,7 +4,7 @@ import {  createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Root from './Root/Root.jsx';
-import { About, Company, Contact, Services, Solutions, Work,LandingPage } from "./Pages/index.js";
+import { About, Company, Contact, Services, Solutions, Work,LandingPage,IndustriesPage } from "./Pages/index.js";
 import ErrorPage from './Pages/Error/Error.js';
 
 
@@ -41,6 +41,11 @@ const Routes= createBrowserRouter([
         path: '/work',
         element:<Work/>,
       },
+      {
+        path: '/industries',
+        element:<IndustriesPage/>,
+      },
+      
       { 
         path: '/lp',
         element: <LandingPage />,

@@ -6,6 +6,19 @@ import {
   FiServer, FiCheckCircle, FiUploadCloud,
   FiRefreshCw, FiTrendingUp, FiArrowRight
 } from "react-icons/fi";
+import {
+  FaClinicMedical,
+  FaUniversity,
+  FaShoppingCart,
+  FaPlane,
+  FaMoneyBillWave,
+  FaFilm,
+
+} from 'react-icons/fa';
+
+import { MdRealEstateAgent } from 'react-icons/md';
+
+import { Link } from "react-router-dom";
 
 const SolutionsPage = () => {
   // Solutions data with enhanced color schemes
@@ -62,13 +75,65 @@ const SolutionsPage = () => {
 
   // Industries served with animated emojis
   const industries = [
-    { name: "Healthcare", icon: "🏥", color: "bg-blue-100 text-blue-800" },
-    { name: "Education", icon: "🎓", color: "bg-purple-100 text-purple-800" },
-    { name: "Retail", icon: "🛍️", color: "bg-pink-100 text-pink-800" },
-    { name: "Manufacturing", icon: "🏭", color: "bg-amber-100 text-amber-800" },
-    { name: "Logistics", icon: "🚚", color: "bg-emerald-100 text-emerald-800" },
-    { name: "Government", icon: "🏛️", color: "bg-gray-100 text-gray-800" },
-    { name: "Startups", icon: "🚀", color: "bg-indigo-100 text-indigo-800" }
+    {
+      name: "Healthcare",
+      slug: "healthcare",
+      icon: FaClinicMedical ,
+      color: "text-blue-400",
+      tagline: "Transforming patient care",
+      bgGradient: "bg-gradient-to-br from-blue-500 to-blue-700"
+    },
+    {
+      name: "Education",
+      slug: "education",
+      icon: FaUniversity ,
+      color: "text-purple-400",
+      tagline: "Next-gen learning platforms",
+      bgGradient: "bg-gradient-to-br from-purple-500 to-purple-700"
+    },
+    {
+      name: "Retail & E-commerce",
+      slug: "retail-ecommerce",
+      icon: FaShoppingCart ,
+      color: "text-amber-400",
+      tagline: "Seamless shopping experiences",
+      bgGradient: "bg-gradient-to-br from-amber-500 to-amber-700"
+    },
+    
+    {
+      name: "Travel",
+      slug: "travel",
+      icon: FaPlane ,
+      color: "text-sky-400",
+      tagline: "Smart aviation technologies",
+      bgGradient: "bg-gradient-to-br from-sky-500 to-sky-700"
+    },
+    {
+      name: "Finance",
+      slug: "finance",
+      icon: FaMoneyBillWave ,
+      color: "text-green-400",
+      tagline: "Fintech innovation",
+      bgGradient: "bg-gradient-to-br from-green-500 to-green-700"
+    }, 
+    {
+      name: "Real Estate",
+      slug: "real-estate",
+      icon: MdRealEstateAgent ,
+      color: "text-yellow-400",
+      tagline: "Property tech innovations",
+      bgGradient: "bg-gradient-to-br from-yellow-500 to-yellow-700"
+    },
+    
+    {
+      name: "Entertainment",
+      slug: "entertainment",
+      icon: FaFilm ,
+      color: "text-fuchsia-400",
+      tagline: "Immersive experiences",
+      bgGradient: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-700"
+    },
+    
   ];
 
   // Process steps with 3D effect
@@ -501,66 +566,100 @@ const SolutionsPage = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-12 sm:py-16 md:py-20 px-4">
-  <div className="container mx-auto px-2 sm:px-4 md:px-6">
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-      className="text-center mb-12 sm:mb-16"
-    >
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-white">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">Industries We Serve</span>
-      </h2>
-      <p className="text-base sm:text-lg md:text-xl text-blue-100 max-w-2xl mx-auto">
-        Tailored solutions for diverse industry verticals
-      </p>
-    </motion.div>
-    
-    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6">
-      {industries.map((industry, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ 
-            duration: 0.5, 
-            delay: index * 0.05,
-            type: "spring",
-            stiffness: 100
-          }}
-          viewport={{ once: true }}
-          whileHover={{ 
-            y: -10,
-            scale: 1.05
-          }}
-          className="relative group w-[calc(50%-6px)] sm:w-[calc(33.333%-16px)] md:w-[calc(25%-24px)] min-w-[120px] max-w-[200px]"
-        >
-          <div className={`absolute inset-0 rounded-lg md:rounded-xl ${industry.color.replace('text', 'bg')}/20 opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-500 -z-10`} />
+      <section className="py-16 sm:py-20 md:py-24 px-4 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-purple-500 blur-3xl"></div>
+          <div className="absolute bottom-10 right-20 w-60 h-60 rounded-full bg-blue-500 blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-2 sm:px-4 md:px-6 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-14 sm:mb-20"
+          >
+            <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
+              <span className="relative inline-block">
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30"></span>
+                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                  Industries We Empower
+                </span>
+              </span>
+            </h2>
+            <p className="text-lg sm:text-xl md:text-2xl text-blue-100/80 max-w-3xl mx-auto">
+              Customized digital solutions transforming businesses across sectors
+            </p>
+          </motion.div>
           
-          <div className="bg-gray-800/50 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-lg md:rounded-xl border border-gray-700/30 shadow-md sm:shadow-lg text-center transition-all duration-300 h-full">
-            <motion.div
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 4 + index,
-                repeat: Infinity,
-                repeatType: "reverse",
-                ease: "easeInOut",
-              }}
-              className="text-3xl sm:text-4xl md:text-5xl mb-2 sm:mb-3 md:mb-4"
-            >
-              {industry.icon}
-            </motion.div>
-            <h3 className="text-sm sm:text-base md:text-lg font-bold text-white">{industry.name}</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6 md:gap-8">
+            {industries.map((industry, index) => (
+              <Link to={`/industries/${industry.slug}`} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.1,
+                    type: "spring",
+                    stiffness: 80
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{ 
+                    y: -8,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="relative group"
+                >
+                  {/* Hover effect background */}
+                  <div className={`absolute inset-0 rounded-2xl ${industry.color.replace('text', 'bg')}/10 group-hover:opacity-100 opacity-0 blur-md transition-all duration-500 -z-10`} />
+                  
+                  {/* Main card */}
+                  <div className="bg-gray-800/30 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center hover:border-blue-400/30 hover:bg-gray-800/50">
+                    {/* Animated icon container */}
+                    <div className="relative mb-4 sm:mb-5">
+                      <div className={`absolute inset-0 rounded-full ${industry.color.replace('text', 'bg')}/20 group-hover:opacity-100 opacity-0 blur-md transition-opacity duration-500 -z-10`} />
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className={`p-3 sm:p-4 rounded-full ${industry.color.replace('text', 'bg')}/10 border ${industry.color.replace('text', 'border')}/20 inline-flex`}
+                      >
+                        <industry.icon className={`text-3xl sm:text-4xl ${industry.color}`} />
+                      </motion.div>
+                    </div>
+                    
+                    <h3 className="text-base sm:text-lg font-semibold text-white text-center mb-2">{industry.name}</h3>
+                    <p className="text-xs sm:text-sm text-gray-300/80 text-center mb-3">{industry.tagline}</p>
+                    
+                    {/* Learn more link */}
+                    <div className="mt-auto pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
+                      <span className="text-xs sm:text-sm text-blue-400 font-medium">Explore</span>
+                      <FiArrowRight className="ml-1 text-blue-400" />
+                    </div>
+                  </div>
+                </motion.div>
+              </Link>
+            ))}
           </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+          
+          {/* View all button */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center mt-16"
+          >
+            <Link to="/industries">
+              <button className="px-8 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow-lg hover:shadow-xl transition-all hover:from-blue-500 hover:to-purple-500 hover:scale-[1.02] relative overflow-hidden group">
+                <span className="relative z-10">View All Industries</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              </button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
       {/* CTA */}
       <section className="py-16 sm:py-20 md:py-28 relative overflow-hidden px-4">

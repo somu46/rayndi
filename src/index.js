@@ -4,10 +4,8 @@ import {  createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Root from './Root/Root.jsx';
-import { About, Company, Contact, Services, Solutions, Work } from "./Pages/index.js";
-
-
-
+import { About, Company, Contact, Services, Solutions, Work,LandingPage } from "./Pages/index.js";
+import ErrorPage from './Pages/Error/Error.js';
 
 
 const Routes= createBrowserRouter([
@@ -42,6 +40,10 @@ const Routes= createBrowserRouter([
       {
         path: '/work',
         element:<Work/>,
+      },
+      { 
+        path: '/lp',
+        element: <LandingPage />,
       }
     ]
     
@@ -49,7 +51,7 @@ const Routes= createBrowserRouter([
   },
   {
     path: '*',
-    element: <div>404 Not Found</div>
+    element: <ErrorPage/>
   }
 ]);
 

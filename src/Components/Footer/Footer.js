@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaFacebookF,  FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import {FaXTwitter} from 'react-icons/fa6';
 import { MdSend } from 'react-icons/md';
-import { IoIosArrowUp } from "react-icons/io";
+// import { IoIosArrowUp } from "react-icons/io";
 
 
 const Footer = () => {
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex flex-col items-center md:items-start">
               {/* <img src={logo} alt="Rayndi Logo" className="w-48 h-auto mb-4" /> */}
-              <p className="text-lg font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Rayndi</p>
+              <p className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Rayndi</p>
               <p className="text-slate-300 text-center md:text-left text-sm leading-relaxed">
                 Transforming digital visions into reality with cutting-edge web development, 
                 mobile applications, and strategic digital solutions.
@@ -128,8 +128,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FaPhoneAlt className="text-amber-400 flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-slate-300 hover:text-amber-400 transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+919123813528" className="text-slate-300 hover:text-amber-400 transition-colors">
+                  91238 13528
                 </a>
               </div>
               <div className="flex items-start space-x-3">
@@ -189,13 +189,13 @@ const Footer = () => {
         </div>
 
         {/* Back to Top Button */}
-        <button 
+        {/* <button 
           onClick={handleScrollToTop}
-          className="fixed bottom-20 right-6 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 z-50"
+          className="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 z-50"
           aria-label="Back to top"
         >
           <IoIosArrowUp className='text-2xl'/>
-        </button>
+        </button> */}
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiArrowRight } from "react-icons/fi";
 import {
   FaClinicMedical,
@@ -12,6 +12,23 @@ import {
 import { MdRealEstateAgent } from 'react-icons/md';
 
 const IndustriesPage = () => {
+
+ const navigate = useNavigate();
+
+
+const handleNvigate=(path)=>{
+ navigate(`/industries/${path}`,{
+  
+  state: {
+    path,
+  }
+
+ }); // Redirect to the industries page
+}
+
+
+
+
   const industries = [
     {
       name: "Healthcare",
@@ -111,7 +128,7 @@ const IndustriesPage = () => {
                 viewport={{ once: true, margin: "-50px" }}
                 whileHover={{ y: -10 }}
               >
-                <Link to={`/industries/${industry.slug}`}>
+                <div onClick={() => handleNvigate(industry.slug)} >
                   <div className="h-full bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/30 p-6 hover:shadow-lg transition-all duration-300 hover:border-blue-400/30">
                     <div className="flex flex-col items-center text-center">
                       <div className={`p-4 rounded-full ${industry.color.replace('text', 'bg')}/10 mb-4`}>
@@ -125,7 +142,7 @@ const IndustriesPage = () => {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>

@@ -6,6 +6,7 @@ import App from './App';
 import Root from './Root/Root.jsx';
 import { About, Company, Contact, Services, Solutions, Work,LandingPage,IndustriesPage } from "./Pages/index.js";
 import ErrorPage from './Pages/Error/Error.js';
+import Layout from './Pages/Industry/Layout/Layout.js';
 
 
 const Routes= createBrowserRouter([
@@ -32,6 +33,10 @@ const Routes= createBrowserRouter([
       {
         path: '/solutions',
         element:<Solutions/>,
+      },
+      {
+        path:'/industries/:id',
+        element:<Layout/>,
       },
       {
         path: '/services',

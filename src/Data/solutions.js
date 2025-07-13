@@ -50,3 +50,5 @@ import { FiCode, FiCloud, FiDatabase, FiLock, FiSmartphone, FiBarChart2 } from "
       bgColor: "bg-gradient-to-br from-indigo-500/10 to-violet-500/10"
     }
   ];
+
+  export default solutions;

@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle,FiArrowRight } from "react-icons/fi";
 import { useState } from "react";
-import { FaXTwitter, FaLinkedinIn, FaGithub} from "react-icons/fa6";
+import { FaXTwitter, FaLinkedinIn, FaGithub , FaFacebook} from "react-icons/fa6";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -195,7 +195,7 @@ const ContactPage = () => {
       className="w-10 h-10 flex items-center justify-center  rounded-full shadow-sm border border-gray-100 hover:bg-blue-50 hover:text-blue-500 transition-colors"
       aria-label="Twitter"
     >
-      <FaXTwitter className="text-xl text-blue-400" />
+      <FaXTwitter className="text-xl text-white" />
     </motion.a>
 
     {/* LinkedIn */}
@@ -218,15 +218,15 @@ const ContactPage = () => {
       <FaGithub className="text-xl text-gray-100" />
     </motion.a>
 
-    {/* Dribbble */}
-    {/* <motion.a
+    {/* Facebook */}
+    <motion.a
       whileHover={{ y: -3 }}
       href="#"
       className="w-10 h-10 flex items-center justify-center bg-transparent rounded-full shadow-sm border border-gray-100 hover:bg-pink-50 hover:text-pink-500 transition-colors"
       aria-label="Dribbble"
     >
-      <FaDribbble className="text-xl text-pink-500" />
-    </motion.a> */}
+      <FaFacebook className="text-xl text-blue-500" />
+    </motion.a>
   </div>
 </div>
           </motion.div>

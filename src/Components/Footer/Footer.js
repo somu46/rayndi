@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaFacebookF,  FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import {FaXTwitter} from 'react-icons/fa6';
 import { MdSend } from 'react-icons/md';
 import { IoIosArrowUp } from "react-icons/io";
-import logo from '../../Assets/Ray-Verse-logo.png';
+
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -51,16 +52,16 @@ const Footer = () => {
             </div>
             
             <div className="flex justify-center md:justify-start space-x-4">
-              <a href="#" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+              <a href="/" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
                 <FaFacebookF className="text-lg" />
               </a>
-              <a href="#" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
-                <FaTwitter className="text-lg" />
+              <a href="/" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+                <FaXTwitter className="text-lg" />
               </a>
-              <a href="#" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+              <a href="/" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
                 <FaInstagram className="text-lg" />
               </a>
-              <a href="#" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
+              <a href="/" className="bg-slate-800 hover:bg-amber-500 text-white p-3 rounded-full transition-all duration-300 transform hover:-translate-y-1">
                 <FaLinkedinIn className="text-lg" />
               </a>
             </div>
@@ -104,7 +105,7 @@ const Footer = () => {
               ].map((service, index) => (
                 <li key={index}>
                   <a 
-                    href="#" 
+                    href="/" 
                     className="text-slate-300 hover:text-amber-400 transition-colors flex items-center group"
                   >
                     <span className="w-2 h-2 bg-amber-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -168,19 +169,19 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-slate-800 pt-8">
+        <div className="border-t border-slate-800 pt-8 px-10">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm mb-4 md:mb-0">
               &copy; {new Date().getFullYear()} - {new Date().getFullYear() + 3} Rayndi. All rights reserved.
             </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
+            <div className="flex space-x-6 ">
+              <a href="/" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
+              <a href="/" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
+              <a href="/" className="text-slate-400 hover:text-amber-400 text-sm transition-colors">
                 Cookies
               </a>
             </div>
@@ -190,7 +191,7 @@ const Footer = () => {
         {/* Back to Top Button */}
         <button 
           onClick={handleScrollToTop}
-          className="fixed bottom-6 right-6 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 z-50"
+          className="fixed bottom-20 right-6 bg-amber-500 hover:bg-amber-600 text-white p-3 rounded-full shadow-lg transition-all transform hover:scale-110 z-50"
           aria-label="Back to top"
         >
           <IoIosArrowUp className='text-2xl'/>

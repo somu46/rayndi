@@ -22,7 +22,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0 bg-transparent bg-opacity-70  backdrop-blur-md">
+      <div className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0 bg-transparent bg-opacity-70  backdrop-blur-xl">
         <nav className=" flex flex-wrap justify-between flex-row w-full  mx-5 my-1  text-lg ">
           
           <motion.div
@@ -150,13 +150,13 @@ const NavBar = () => {
         {/* mobile menu bar */}
         <div
           className={`${isOpen ? "block" : "hidden"}
-           lg:hidden w-[95%] min-h-svh flex justify-start py-4 shadow-lg bg-transparent  rounded-md  z-50
+           lg:hidden w-[95%] min-h-svh flex justify-center py-4 shadow-lg bg-transparent  rounded-md  z-50
            `}
         >
           <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
             
-            <ul className=" flex flex-wrap flex-col justify-center gap-4 font-bold py-1 mx-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              <li className="cursor-pointer mx-1 hover:text-green-600  ">
+            <ul className="text-2xl items-center flex flex-wrap flex-col justify-center gap-6 font-bold py-1 mx-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <li className="cursor-pointer mx-1 hover:text-purple-500  ">
                 <NavLink
                   to="/"
                   spy={true}
@@ -172,7 +172,7 @@ const NavBar = () => {
                 
               </li>
              
-              <li className="cursor-pointer mx-1 hover:text-blue-600">
+              <li className="cursor-pointer mx-1 hover:text-blue-500">
                 <NavLink
                   to="/about"
                   spy={true}

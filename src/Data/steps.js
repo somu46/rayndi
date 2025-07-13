@@ -112,3 +112,5 @@ const steps = [
       color: "bg-emerald-500"
     },
   ];
+
+  export default steps;

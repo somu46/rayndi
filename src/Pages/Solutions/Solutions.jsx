@@ -1,255 +1,24 @@
 import { motion } from "framer-motion";
-import { 
-  FiCode, FiCloud, FiDatabase, FiLock, 
-  FiSmartphone, FiBarChart2, FiClipboard,
-  FiSettings, FiPenTool, FiLayers, FiMonitor,
-  FiServer, FiCheckCircle, FiUploadCloud,
-  FiRefreshCw, FiTrendingUp, FiArrowRight
-} from "react-icons/fi";
-import {
-  FaClinicMedical,
-  FaUniversity,
-  FaShoppingCart,
-  FaPlane,
-  FaMoneyBillWave,
-  FaFilm,
+import {  FiArrowRight} from "react-icons/fi";
+import steps from "../../Data/steps";
+import solutions from "../../Data/solutions";
+import industries from "../../Data/industries";
+import { Link, useNavigate } from "react-router-dom";
 
-} from 'react-icons/fa';
 
-import { MdRealEstateAgent } from 'react-icons/md';
-
-import { Link } from "react-router-dom";
 
 const SolutionsPage = () => {
-  // Solutions data with enhanced color schemes
-  const solutions = [
-    {
-      icon: <FiCode className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Custom Software Development",
-      description: "Tailored solutions designed specifically for your business needs and workflows.",
-      features: ["Web Applications", "Desktop Software", "Cross-Platform", "Legacy Modernization"],
-      color: "from-blue-500 to-cyan-500",
-      bgColor: "bg-gradient-to-br from-blue-500/10 to-cyan-500/10"
-    },
-    {
-      icon: <FiCloud className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and services to power your digital transformation.",
-      features: ["Cloud Migration", "Hybrid Cloud", "Serverless Architecture", "Cloud Security"],
-      color: "from-purple-500 to-fuchsia-500",
-      bgColor: "bg-gradient-to-br from-purple-500/10 to-fuchsia-500/10"
-    },
-    {
-      icon: <FiDatabase className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Data Analytics",
-      description: "Turn your data into actionable insights with our advanced analytics solutions.",
-      features: ["BI Dashboards", "Predictive Analytics", "Data Warehousing", "ETL Pipelines"],
-      color: "from-emerald-500 to-teal-500",
-      bgColor: "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
-    },
-    {
-      icon: <FiLock className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Cybersecurity",
-      description: "Comprehensive security solutions to protect your digital assets.",
-      features: ["Risk Assessment", "Penetration Testing", "Security Monitoring", "Compliance"],
-      color: "from-rose-500 to-pink-500",
-      bgColor: "bg-gradient-to-br from-rose-500/10 to-pink-500/10"
-    },
-    {
-      icon: <FiSmartphone className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Mobile Solutions",
-      description: "Engaging mobile experiences for iOS, Android and cross-platform.",
-      features: ["Native Apps", "React Native", "Progressive Web Apps", "Mobile Backend"],
-      color: "from-amber-500 to-yellow-500",
-      bgColor: "bg-gradient-to-br from-amber-500/10 to-yellow-500/10"
-    },
-    {
-      icon: <FiBarChart2 className="w-6 h-6 md:w-8 md:h-8" />,
-      title: "Digital Transformation",
-      description: "End-to-end digital transformation services for enterprises.",
-      features: ["Process Automation", "AI Integration", "IoT Solutions", "Blockchain"],
-      color: "from-indigo-500 to-violet-500",
-      bgColor: "bg-gradient-to-br from-indigo-500/10 to-violet-500/10"
-    }
-  ];
+ 
+  const navigate = useNavigate();
 
-  // Industries served with animated emojis
-  const industries = [
-    {
-      name: "Healthcare",
-      slug: "healthcare",
-      icon: FaClinicMedical ,
-      color: "text-blue-400",
-      tagline: "Transforming patient care",
-      bgGradient: "bg-gradient-to-br from-blue-500 to-blue-700"
-    },
-    {
-      name: "Education",
-      slug: "education",
-      icon: FaUniversity ,
-      color: "text-purple-400",
-      tagline: "Next-gen learning platforms",
-      bgGradient: "bg-gradient-to-br from-purple-500 to-purple-700"
-    },
-    {
-      name: "Retail & E-commerce",
-      slug: "retail-ecommerce",
-      icon: FaShoppingCart ,
-      color: "text-amber-400",
-      tagline: "Seamless shopping experiences",
-      bgGradient: "bg-gradient-to-br from-amber-500 to-amber-700"
-    },
-    
-    {
-      name: "Travel",
-      slug: "travel",
-      icon: FaPlane ,
-      color: "text-sky-400",
-      tagline: "Smart aviation technologies",
-      bgGradient: "bg-gradient-to-br from-sky-500 to-sky-700"
-    },
-    {
-      name: "Finance",
-      slug: "finance",
-      icon: FaMoneyBillWave ,
-      color: "text-green-400",
-      tagline: "Fintech innovation",
-      bgGradient: "bg-gradient-to-br from-green-500 to-green-700"
-    }, 
-    {
-      name: "Real Estate",
-      slug: "real-estate",
-      icon: MdRealEstateAgent ,
-      color: "text-yellow-400",
-      tagline: "Property tech innovations",
-      bgGradient: "bg-gradient-to-br from-yellow-500 to-yellow-700"
-    },
-    
-    {
-      name: "Entertainment",
-      slug: "entertainment",
-      icon: FaFilm ,
-      color: "text-fuchsia-400",
-      tagline: "Immersive experiences",
-      bgGradient: "bg-gradient-to-br from-fuchsia-500 to-fuchsia-700"
-    },
-    
-  ];
-
-  // Process steps with 3D effect
-  const steps = [
-    {
-      number: 1,
-      title: 'Requirement Gathering',
-      icon: <FiClipboard className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Understand client goals",
-        "Define product features",
-        "Identify target audience",
-      ],
-      color: "bg-blue-500"
-    },
-    {
-      number: 2,
-      title: 'Planning & Feasibility',
-      icon: <FiSettings className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Scope & timeline definition",
-        "Tech stack selection",
-        "Budget and MVP planning",
-      ],
-      color: "bg-purple-500"
-    },
-    {
-      number: 3,
-      title: 'UI/UX Design',
-      icon: <FiPenTool className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Wireframes and user flows",
-        "Interactive prototypes",
-        "Brand-aligned visuals",
-      ],
-      color: "bg-pink-500"
-    },
-    {
-      number: 4,
-      title: 'Architecture & Tech Stack Setup',
-      icon: <FiLayers className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Codebase structuring",
-        "Environment configuration",
-        "Version control setup",
-      ],
-      color: "bg-indigo-500"
-    },
-    {
-      number: 5,
-      title: 'Frontend Development',
-      icon: <FiMonitor className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Responsive UI development",
-        "API integration",
-        "Cross-platform compatibility",
-      ],
-      color: "bg-green-500"
-    },
-    {
-      number: 6,
-      title: 'Backend Development',
-      icon: <FiServer className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Database schema design",
-        "Secure API development",
-        "Business logic implementation",
-      ],
-      color: "bg-red-500"
-    },
-    {
-      number: 7,
-      title: 'Testing & QA',
-      icon: <FiCheckCircle className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Unit and integration tests",
-        "UI/UX testing",
-        "Bug fixing and QA cycles",
-      ],
-      color: "bg-yellow-500"
-    },
-    {
-      number: 8,
-      title: 'Deployment',
-      icon: <FiUploadCloud className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Live server configuration",
-        "CI/CD pipeline integration",
-        "SSL and DNS setup",
-      ],
-      color: "bg-cyan-500"
-    },
-    {
-      number: 9,
-      title: 'Maintenance & Updates',
-      icon: <FiRefreshCw className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "Performance monitoring",
-        "Bug fixes and patches",
-        "Feature enhancements",
-      ],
-      color: "bg-gray-500"
-    },
-    {
-      number: 10,
-      title: 'Marketing & Launch',
-      icon: <FiTrendingUp className="w-6 h-6 md:w-8 md:h-8" />,
-      features: [
-        "SEO and analytics setup",
-        "Marketing campaign support",
-        "Launch strategy execution",
-      ],
-      color: "bg-emerald-500"
-    },
-  ];
-
+  const handleNavigate=(path)=>{
+    navigate(`/industries/${path}`,{
+      state: {
+        path,
+      }
+    }); // Redirect to the industries page
+  }
+  
   return (
     <div className="bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900 min-h-screen">
       {/* Floating Particles Background - Reduced on mobile */}
@@ -596,7 +365,7 @@ const SolutionsPage = () => {
           
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6 md:gap-8">
             {industries.map((industry, index) => (
-              <Link to={`/industries/${industry.slug}`} key={index}>
+              <div  onClick={()=>handleNavigate(industry.slug)} key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -639,7 +408,7 @@ const SolutionsPage = () => {
                     </div>
                   </div>
                 </motion.div>
-              </Link>
+              </div>
             ))}
           </div>
           

@@ -62,3 +62,6 @@ import { MdRealEstateAgent } from "react-icons/md";
     },
     
   ];
+
+
+  export default industries;

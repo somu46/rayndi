@@ -319,7 +319,7 @@ const CompanyPage = () => {
               
               {/* Animated underline link - centered */}
               <motion.div whileHover="hover" className="flex justify-center">
-                <a href="https://rayndi.com/" className={`relative ${
+                <a href="/" className={`relative ${
                   index % 2 === 0 ? 'text-blue-600 dark:text-blue-400' : 'text-purple-600 dark:text-purple-400'
                 } font-medium group`}>
                   <ExploreButton/>

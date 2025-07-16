@@ -88,7 +88,7 @@ const services = [
           className="absolute bottom-1/3 right-20 w-64 h-64 bg-purple-700/20 rounded-full blur-xl"
         />
 
-        <div className="container mx-auto px-6 py-32 relative z-10">
+        <div className="container mx-auto px-6 py-2 relative z-10 border border-red-700 mb-10   ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -103,18 +103,18 @@ const services = [
               <p className="text-xl text-blue-100 mb-10 max-w-lg">
                 We design and develop cutting-edge digital solutions that transform businesses and create exceptional user experiences.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-row gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-900 px-8 py-4 rounded-full font-bold shadow-lg"
+                  className="bg-white text-blue-900 px-6 py-2 rounded-full font-bold shadow-lg"
                 >
                   Get Started
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-8 py-4 rounded-full font-bold"
+                  className="border-2 border-white text-white px-6 py-2 rounded-full font-bold"
                 >
                   Explore Our Work
                 </motion.button>

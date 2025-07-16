@@ -7,7 +7,7 @@ const Root = () => {
     <>
     <div className="relative  font-sans bg-gradient-to-br from-gray-900 to-blue-900 pt-5">
       <NavBar />
-      <div className=" mt-[3.6rem]">
+      <div className=" mt-[3.5rem]">
         <Outlet />
       </div>
       <Footer />

@@ -155,7 +155,7 @@ const NavBar = () => {
         >
           <motion.nav animate={isOpen ? "open" : "closed"} variants={variants}>
             
-            <ul className="text-2xl items-center flex flex-wrap flex-col justify-center gap-6 font-bold py-1 mx-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <ul className="text-3xl items-center flex flex-wrap flex-col justify-center gap-6 font-bold py-1 mx-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               <li className="cursor-pointer mx-1 hover:text-purple-500  ">
                 <NavLink
                   to="/"

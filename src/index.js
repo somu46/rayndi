@@ -49,12 +49,9 @@ const Routes= createBrowserRouter([
       {
         path: '/industries',
         element:<IndustriesPage/>,
-      },
-      
-      { 
-        path: '/lp',
-        element: <LandingPage />,
       }
+      
+      
     ]
     
     
@@ -62,6 +59,10 @@ const Routes= createBrowserRouter([
   {
     path: '*',
     element: <ErrorPage/>
+  },
+  { 
+    path: '/lp',
+    element: <LandingPage />,
   }
 ]);
 

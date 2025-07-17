@@ -59,7 +59,7 @@ const services = [
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden  text-white min-h-screen flex items-center">
+      <section className="relative overflow-hidden  text-white min-h-screen flex items-center ">
         {/* Animated background elements */}
         <motion.div
           animate={{
@@ -88,7 +88,7 @@ const services = [
           className="absolute bottom-1/3 right-20 w-64 h-64 bg-purple-700/20 rounded-full blur-xl"
         />
 
-        <div className="container mx-auto px-6 py-2 relative z-10 border border-red-700 mb-10   ">
+        <div className="container mx-auto px-6 py-2 relative z-10  mb-10   ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

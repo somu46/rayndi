@@ -363,7 +363,7 @@ const SolutionsPage = () => {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 sm:gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-8">
             {industries.map((industry, index) => (
               <div  onClick={()=>handleNavigate(industry.slug)} key={index}>
                 <motion.div

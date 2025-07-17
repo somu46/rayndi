@@ -136,7 +136,7 @@ const AboutPage = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium"
+                  className="border border-gray-300 text-white px-6 py-3 rounded-lg font-medium"
                 >
                   Careers
                 </motion.button>
@@ -165,31 +165,66 @@ const AboutPage = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-20 ">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -10 }}
-                className=" p-8 rounded-2xl shadow-lg"
-              >
-                <div className="text-blue-600 text-3xl mb-4 flex justify-center">
-                  {stat.icon}
-                </div>
-                <h3 className="text-4xl font-bold text-blue-500 mb-2">{stat.value}</h3>
-                <p className="text-blue-500">{stat.label}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+      <section className="py-20  ">
+  <div className="container mx-auto px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+    >
+      {stats.map((stat, index) => (
+        <motion.div
+          key={index}
+          initial={{ y: 50, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.03 }}
+          className="bg-slate-800 p-8 rounded-2xl relative overflow-hidden group"
+          style={{
+            boxShadow: `
+              -10px -10px 20px rgba(30, 41, 59, 0.5),
+              10px 10px 20px rgba(0, 0, 0, 0.3)
+            `
+          }}
+        >
+          {/* Icon with inner glow */}
+          <div className="text-blue-400 text-4xl mb-6 flex justify-center">
+            <div className="p-4 rounded-full bg-slate-700 
+              shadow-[inset_-3px_-3px_5px_rgba(255,255,255,0.05),inset_3px_3px_5px_rgba(0,0,0,0.5)]">
+              {stat.icon}
+            </div>
+          </div>
+          
+          {/* Stat value with gradient */}
+          <h3 className="text-5xl font-bold text-center mb-3">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-300">
+              {stat.value}
+            </span>
+          </h3>
+          
+          {/* Label with animated underline */}
+          <div className="relative inline-block w-full text-center">
+            <p className="text-slate-300 uppercase tracking-wider text-sm font-medium">
+              {stat.label}
+            </p>
+            <motion.div 
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent mt-2"
+            />
+          </div>
+          
+          {/* Hover effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-cyan-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Team */}
       <section className="py-20 ">

@@ -112,6 +112,7 @@ const NavBar = () => {
             <li key={item.path} className={`cursor-pointer mx-1 ${item.color}`}>
   <NavLink
     to={item.path}
+    onClick={handleToggle}
     className={({ isActive }) => 
       isActive ? activeLink : inactiveLink
     }

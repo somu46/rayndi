@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import {  FiGlobe, FiUsers, FiAward, FiLayers } from "react-icons/fi";
+import {  FiGlobe, FiUsers, FiAward, FiLayers,FiArrowRight } from "react-icons/fi";
 import OurProcess from '../../Components/UIVerse/OurProcess'
 import LogoSlider from "../UIVerse/logoSlider";
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaCloud } from 'react-icons/fa';
 import ExploreButton from '../UIVerse/ExploreButton';
+import { FaChevronDown, FaStar } from 'react-icons/fa';
+import TechStack from '../../Components/TechStack/TechStack';
+
 const HomePage = () => {
   // Features data
   const features = [
@@ -56,94 +59,324 @@ const services = [
 ];
 
 
+
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden  text-white min-h-screen flex items-center ">
-        {/* Animated background elements */}
-        <motion.div
-          animate={{
-            x: [0, 100, 0],
-            rotate: [0, 180],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "linear",
-          }}
-          className="absolute top-1/4 -left-40 w-80 h-80 bg-blue-700/20 rounded-full blur-xl"
-        />
-        
-        <motion.div
-          animate={{
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/3 right-20 w-64 h-64 bg-purple-700/20 rounded-full blur-xl"
-        />
+    <section className="relative overflow-hidden text-white min-h-screen flex items-center justify-center pb-20">
+      {/* Particle Background with improved animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(30)].map((_, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: [0, 0.3, 0],
+              x: [0, Math.random() * 400 - 200],
+              y: [0, Math.random() * 400 - 200]
+            }}
+            transition={{
+              duration: Math.random() * 15 + 10,
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: Math.random() * 5
+            }}
+            className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              filter: 'blur(1px)'
+            }}
+          />
+        ))}
+      </div>
 
-        <div className="container mx-auto px-6 py-2 relative z-10  mb-10   ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* Floating gradient blobs with improved motion */}
+      <motion.div
+        animate={{
+          x: [0, 100, 0],
+          y: [0, -50, 0],
+          rotate: [0, 180],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "linear",
+        }}
+        className="absolute top-1/4 -left-40 w-96 h-96 bg-gradient-to-br from-blue-700/20 to-purple-700/20 rounded-full blur-3xl"
+      />
+      
+      <motion.div
+        animate={{
+          y: [0, 60, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-1/3 -right-20 w-72 h-72 bg-gradient-to-br from-purple-700/20 to-pink-700/20 rounded-full blur-3xl"
+      />
+
+      {/* Content container */}
+      <div className="container mx-auto px-2 py-2 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Text content with enhanced animations */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, staggerChildren: 0.1 }}
+          >
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-lg text-blue-300 mb-4 font-medium"
             >
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  Digital Innovation
-                </span> <br />That Drives Growth
-              </h1>
-              <p className="text-xl text-blue-100 mb-10 max-w-lg">
-                We design and develop cutting-edge digital solutions that transform businesses and create exceptional user experiences.
-              </p>
-              <div className="flex flex-row gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-900 px-6 py-2 rounded-full font-bold shadow-lg"
-                >
-                  Get Started
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="border-2 border-white text-white px-6 py-2 rounded-full font-bold"
-                >
-                  Explore Our Work
-                </motion.button>
-              </div>
+              Digital Transformation Experts
             </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            >
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                Next-Gen Solutions
+              </span>{' '}
+              <br />
+              <motion.span 
+                className="relative inline-block"
+                whileHover={{ scale: 1.05 }}
+              >
+                That <span className="text-purple-300">Accelerate</span>
+              </motion.span>{' '}
+              Your Business
+            </motion.h1>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-xl text-blue-100 mb-10 max-w-lg leading-relaxed"
+            >
+              We craft immersive digital experiences that drive engagement, conversion, and growth. Our full-service approach delivers measurable results.
+            </motion.p>
             
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-row gap-2"
             >
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl p-8 shadow-xl">
-                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-xl h-80 flex items-center justify-center">
-                  <span className="text-4xl">✨</span>
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-white text-blue-900 p-6 rounded-xl shadow-lg">
-                  <div className="text-2xl font-bold">100+</div>
-                  <div className="text-sm">Successful Projects</div>
-                </div>
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05, 
+                  boxShadow: "0 8px 25px rgba(59, 130, 246, 0.5)",
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="relative overflow-hidden group bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <span className="relative z-10">Get Started</span>
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0 }}
+                />
+              </motion.button>
+
+              <motion.button
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 8px 20px rgba(139, 92, 246, 0.3)"
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="border border-white/30 text-white px-4 py-4 rounded-full font-semibold backdrop-blur-md hover:bg-white/10 transition-all duration-300 flex items-center gap-4"
+              >
+                <span>Explore Our Work</span>
+                <FiArrowRight className="text-blue-400 text-xl transition-transform group-hover:translate-x-1" />
+              </motion.button>
+            </motion.div>
+
+            {/* Trust indicators */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="mt-12 flex flex-wrap items-center gap-6"
+            >
+              <div className="flex items-center gap-2">
+                <div className="text-2xl font-bold text-blue-300">250+</div>
+                <div className="text-blue-100">Successful Projects</div>
+              </div>
+              <div className="flex items-center gap-2">
+                <FaStar className="text-yellow-400" />
+                <div className="text-blue-100">4.9/5 (120+ Reviews)</div>
               </div>
             </motion.div>
-          </div>
+          </motion.div>
+          
+          {/* 3D device mockup with enhanced effects */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
+            <motion.div
+              whileHover={{ y: -15 }}
+              className="relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl overflow-hidden"
+              style={{
+                transformStyle: 'preserve-3d',
+                perspective: '1000px'
+              }}
+            >
+              {/* 3D floating effect */}
+              <motion.div 
+                animate={{ 
+                  y: [0, -20, 0],
+                  rotateY: [0, 5, 0],
+                  rotateX: [0, 3, 0]
+                }}
+                transition={{ 
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative h-96 w-full"
+                style={{
+                  transformStyle: 'preserve-3d'
+                }}
+              >
+                {/* Device frame */}
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800 rounded-xl overflow-hidden border border-slate-700/50 shadow-lg">
+                  {/* Device chrome */}
+                  <div className="p-3 flex items-center justify-between bg-slate-800 border-b border-slate-700/50">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div className="text-xs text-slate-300">rayndi.com</div>
+                    <div className="w-6"></div>
+                  </div>
+                  
+                  {/* Screen content */}
+                  <div className="h-full flex flex-col items-center justify-center p-6">
+                    <motion.div 
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 6, repeat: Infinity }}
+                      className="text-6xl mb-6"
+                    >
+                      🚀
+                    </motion.div>
+                    <h3 className="text-2xl font-bold mb-4 text-center">Interactive Demo</h3>
+                    <p className="text-slate-300 text-center mb-6 max-w-xs">
+                      Experience our cutting-edge platform
+                    </p>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full font-medium shadow-lg"
+                    >
+                      Launch Experience
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+              
+              {/* Floating stats with improved animation */}
+              <motion.div
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.8 }}
+                className="absolute -bottom-4 -left-1 bg-gradient-to-br from-blue-600 to-purple-600 text-white p-4 rounded-xl shadow-lg z-10"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="text-3xl font-bold">100+</div>
+                <div className="text-sm">Happy Clients</div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1 }}
+                className="absolute -top-4 -right-2 bg-gradient-to-br from-purple-600 to-pink-600 text-white p-5 rounded-xl shadow-lg z-10 flex items-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaStar className="text-yellow-300 mr-2" />
+                <div>
+                  <div className="font-bold">4.9/5</div>
+                  <div className="text-xs">Rating</div>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Floating decorative elements */}
+            <motion.div
+              animate={{
+                rotate: [0, 360],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+              className="absolute -top-12 -left-12 w-28 h-28 border-2 border-blue-400/20 rounded-full pointer-events-none"
+            />
+            
+            <motion.div
+              animate={{
+                rotate: [360, 0],
+                y: [0, 20, 0]
+              }}
+              transition={{
+                duration: 15,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute -bottom-8 -right-8 w-20 h-20 border-2 border-purple-400/20 rounded-full pointer-events-none"
+            />
+          </motion.div>
         </div>
-      </section>
+      </div>
+
+      {/* Animated scroll arrow with improved interaction */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-2  transform -translate-x-1/2 flex flex-col items-center cursor-pointer group"
+        onClick={() => window.scrollBy({ top: window.innerHeight - 100, behavior: 'smooth' })}
+      >
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-blue-300 mb-2 text-2xl group-hover:text-purple-300 transition-colors"
+        >
+          <FaChevronDown />
+        </motion.div>
+        <motion.span 
+          className="text-sm text-blue-300 group-hover:text-purple-300 transition-colors"
+          whileHover={{ scale: 1.05 }}
+        >
+          Explore More
+        </motion.span>
+      </motion.div>
+    </section>
 
       {/* Clients Logo Cloud */}
 
       <LogoSlider/>
+
+{/* Technologies Section */}
+      <section className="py-10">
+        <TechStack/>
+      </section>
 
       {/* Features Section */}
       <section className="py-20 ">

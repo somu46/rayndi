@@ -16,6 +16,7 @@ const NavBar = () => {
   
   const handleToggle = () => {
     setIsOpen(!isOpen);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Active link style
@@ -72,7 +73,7 @@ const NavBar = () => {
               
             </li>
           ))}
-          <CallButton />
+          <CallButton/>
         </ul>
 
         {/* Mobile Menu Toggle */}

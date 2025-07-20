@@ -6,7 +6,6 @@ import industries from "../../Data/industries";
 import { Link, useNavigate } from "react-router-dom";
 
 
-
 const SolutionsPage = () => {
  
   const navigate = useNavigate();
@@ -17,6 +16,7 @@ const SolutionsPage = () => {
         path,
       }
     }); // Redirect to the industries page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   
   return (

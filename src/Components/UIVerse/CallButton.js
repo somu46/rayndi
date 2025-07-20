@@ -38,7 +38,7 @@ const Button = () => {
         group
       ">
         <a href='tel:+919123813528' className="flex items-center gap-2">
-            <span>Contact Now</span>
+            <span>Connect Us</span>
         </a>
         
         <FiArrowRight className="

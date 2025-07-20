@@ -408,13 +408,13 @@ const CompanyPage = () => {
               >
                 Contact Us
               </motion.button>
-              <motion.button
+              {/* <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-bold"
               >
                 View Case Studies
-              </motion.button>
+              </motion.button> */}
             </div>
           </motion.div>
         </div>

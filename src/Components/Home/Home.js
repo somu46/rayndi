@@ -6,6 +6,7 @@ import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaCloud } from 'react-icons/fa
 import ExploreButton from '../UIVerse/ExploreButton';
 import { FaChevronDown, FaStar } from 'react-icons/fa';
 import TechStack from '../../Components/TechStack/TechStack';
+import FAQSection from '../../Components/Faqs/Faqs';
 
 const HomePage = () => {
   // Features data
@@ -568,6 +569,11 @@ const services = [
 
       {/* Process Section */}
       <OurProcess/>
+
+      {/* FAQs Section */}
+      <section className="py-20">
+          <FAQSection />
+      </section>
 
       {/* CTA Section */}
       <section className="py-28  text-white">

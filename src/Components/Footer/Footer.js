@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white pt-20 pb-10 px-4 border-t border-amber-400/20">
+    <footer className="bg-gradient-to-b from-slate-900 to-slate-950 text-white pt-20 pb-10 px-4 border-t border-amber-400/20 ">
   <div className="max-w-7xl mx-auto">
     {/* Main Footer Content */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -97,9 +97,12 @@ const Footer = () => {
         <ul className="space-y-3">
           {[
             { path: "/", label: "Home" },
-            { path: "/about-us", label: "About Us" },
+            { path: "/about", label: "About Us" },
+            { path: "/solutions", label: "Solutions" },
+            { path: "/industries", label: "Industries" },
+            { path:"/company", label: "Company" },
             { path: "/services", label: "Services" },
-            { path: "/portfolio", label: "Portfolio" },
+            { path: "/work", label: "Portfolio" },
             { path: "/contact", label: "Contact" }
           ].map((link, index) => (
             <motion.li 
@@ -133,24 +136,26 @@ const Footer = () => {
         </h3>
         <ul className="space-y-3">
           {[
-            "Web Development",
-            "Mobile Applications",
-            "Admin Portals",
-            "SEO & Marketing",
-            "Tech Consultation"
-          ].map((service, index) => (
+            { path: "/", label: "Web Development" },
+            { path: "/", label: "App development" },
+            { path: "/", label: "Digital Marketing" },
+            { path: "/", label: "Business Analytics" },
+            
+          ].map((link, index) => (
             <motion.li 
               key={index}
               whileHover={{ x: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <a 
-                href="/" 
+              <Link 
+                to={link.path} 
+                onClick={handleScrollToTop}
                 className="text-slate-300 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text transition-all flex items-center group"
               >
                 <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                {service}
-              </a>
+                {link.label}
+                <FaChevronRight className="ml-2 text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
             </motion.li>
           ))}
         </ul>

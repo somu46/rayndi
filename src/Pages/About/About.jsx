@@ -312,7 +312,7 @@ const AboutPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-28">
+      {/* <section className="py-28">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -336,7 +336,7 @@ const AboutPage = () => {
             </motion.button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

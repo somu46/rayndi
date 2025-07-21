@@ -58,7 +58,7 @@ const LogoCarousel = () => {
             {duplicatedLogos.map((logo, index) => (
               <motion.div
                 key={`${logo.alt}-${index}`}
-                className="flex-shrink-0 px-2 "
+                className="flex-shrink-0 px-2 lg:px-12 "
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="rounded-xl p-6 h-full flex flex-col items-center justify-center shadow-sm hover:shadow-md transition-all duration-300">

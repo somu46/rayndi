@@ -188,7 +188,7 @@ const TechnologiesWeUse = () => {
 
   return (
     <section className="technology overflow-x-hidden sm:overflow-x-auto">
-      <div className="px-2 lg:px-8 pt-14 md:pt-24 lg:pt-[10.5rem] max-w-7xl mx-auto">
+      <div className="px-2 lg:px-8 pt-4 md:pt-12 lg:pt-[10.5rem] max-w-7xl mx-auto">
         <div className="max-w-3xl xl:max-w-4xl">
           <div className="lg:overflow-hidden">
             <h2 className="font-bold -translate-y-[3px] text-4xl xl:text-5xl 2xl:text-6xl tracking-[-2px] lg:-translate-y-[7px] xl:!leading-[55px] 2xl:!leading-[65px] text-white">

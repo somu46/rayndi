@@ -7,6 +7,7 @@ import Root from './Root/Root.jsx';
 import { About, Company, Contact, Services, Solutions, Work,LandingPage,IndustriesPage } from "./Pages/index.js";
 import ErrorPage from './Pages/Error/Error.js';
 import Layout from './Pages/Industry/Layout/Layout.js';
+import ThankYouPage from './Pages/LandingPage/ThankYou.js';
 
 
 const Routes= createBrowserRouter([
@@ -63,6 +64,10 @@ const Routes= createBrowserRouter([
   { 
     path: '/lp',
     element: <LandingPage />,
+  },
+  {
+    path: '/thank-you',
+    element: <ThankYouPage />,
   }
 ]);
 

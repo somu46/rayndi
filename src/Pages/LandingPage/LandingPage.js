@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheck} from 'react-icons/fi';
 import { FaRocket, FaLightbulb, FaChartLine, FaLaptopCode, FaMobileAlt, FaCloud } from 'react-icons/fa';
@@ -12,13 +13,38 @@ import Team from '../../Assets/Team1.jpg'
 import LogoCarousel from '../../Components/UIVerse/logoSlider';
 import { CgMenuRight } from 'react-icons/cg';
 import { RxCross2 } from 'react-icons/rx';
+import './ThankYou'
+
 
 const LandingPage = () => {
-  const [email, setEmail] = useState('');
   const [isOpen, setIsOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+    message: ''
+  });
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you would typically send the form data to your backend
+    console.log('Form submitted:', formData);
+    
+    // Redirect to thank you page with form data
+    navigate('/thank-you', { state: { formData } });
   };
   const features = [
     {
@@ -165,62 +191,70 @@ const LandingPage = () => {
               </div>
             </div>
             
-            <div className="lg:w-1/2 lg:pl-12">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-                className="border-white p-8 rounded-xl shadow-xl"
-              >
-                <h3 className="text-2xl font-semibold text-center mb-6">Schedule a Free Consultation</h3>
-                <form className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block  mb-2">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block  mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="you@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block  mb-2">Company</label>
-                    <input 
-                      type="text" 
-                      id="company" 
-                      className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Your Company"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block  mb-2">How Can We Help?</label>
-                    <textarea 
-                      id="message" 
-                      rows="3"
-                      className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Tell us about your project..."
-                    ></textarea>
-                  </div>
-                  <button 
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition shadow-md"
-                  >
-                    Request Consultation
-                  </button>
-                </form>
-              </motion.div>
+                  <div className="lg:w-1/2 lg:pl-12">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="border-white p-8 rounded-xl shadow-xl"
+        >
+          <h3 className="text-2xl font-semibold text-center mb-6">Schedule a Free Consultation</h3>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name" className="block mb-2">Full Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="John Doe"
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+              />
             </div>
+            <div>
+              <label htmlFor="email" className="block mb-2">Email Address</label>
+              <input 
+                type="email" 
+                id="email" 
+                className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="you@example.com"
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="company" className="block mb-2">Company</label>
+              <input 
+                type="text" 
+                id="company" 
+                className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Your Company"
+                value={formData.company}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block mb-2">How Can We Help?</label>
+              <textarea 
+                id="message" 
+                rows="3"
+                className="w-full px-4 py-2 bg-transparent border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="Tell us about your project..."
+                value={formData.message}
+                onChange={handleInputChange}
+              ></textarea>
+            </div>
+            <button 
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition shadow-md"
+            >
+              Request Consultation
+            </button>
+          </form>
+        </motion.div>
+      </div>
           </div>
         </div>
       </section>
@@ -465,6 +499,11 @@ const LandingPage = () => {
       {/* Industries Section */}
       <section id="industries" className="py-10">
         <IndustryStack/>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 ">
+        
       </section>
 
       {/* Technology Stack */}

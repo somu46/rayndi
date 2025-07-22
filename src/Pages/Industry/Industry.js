@@ -42,7 +42,7 @@ const handleNvigate=(path)=>{
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10"
+            className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-4"
           >
             Tailored solutions for diverse industry verticals
           </motion.p>
@@ -50,9 +50,9 @@ const handleNvigate=(path)=>{
       </section>
 
       {/* Industries Grid */}
-      <section className="py-12 sm:py-16 px-4">
+      <section className="py-4 sm:py-6 px-1">
         <div className="container mx-auto max-w-7xl">
-          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 ">
             {industries.map((industry, index) => (
               <motion.div
                 key={industry.slug}
@@ -63,19 +63,19 @@ const handleNvigate=(path)=>{
                 whileHover={{ y: -10 }}
               >
                 <div onClick={() => handleNvigate(industry.slug)} >
-                  <div className="h-full bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/30 p-6 hover:shadow-lg transition-all duration-300 hover:border-blue-400/30">
-                    <div className="flex flex-col items-center text-center">
-                      <div className={`p-4 rounded-full ${industry.color.replace('text', 'bg')}/10 mb-4`}>
-                        <industry.icon className={`text-4xl ${industry.color}`} />
-                      </div>
-                      <h3 className="text-xl font-bold text-white mb-2">{industry.name}</h3>
-                      <p className="text-gray-300 mb-4">{industry.tagline}</p>
-                      <div className="flex items-center text-blue-400 group">
-                        <span className="text-sm font-medium">Learn more</span>
-                        <FiArrowRight className="ml-1 transition-transform group-hover:translate-x-1" />
-                      </div>
-                    </div>
-                  </div>
+                 <div className="h-[210px] w-[170px] bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-700/30 p-2 hover:shadow-lg transition-all duration-300 hover:border-blue-400/30 flex flex-col">
+  <div className="flex flex-col items-center text-center flex-1">
+    <div className={`p-2 rounded-full ${industry.color.replace('text', 'bg')}/10 mb-2`}>
+      <industry.icon className={`text-4xl ${industry.color}`} />
+    </div>
+    <h3 className="text-xl font-bold text-white mb-2">{industry.name}</h3>
+    <p className="text-gray-300 mb-2 flex-1">{industry.tagline}</p>
+    <div className="flex items-center text-blue-400 group mt-auto">
+      <span className="text-sm font-medium">Learn more</span>
+      <FiArrowRight className="ml-1 transition-transform group-hover:translate-x-1" />
+    </div>
+  </div>
+</div>
                 </div>
               </motion.div>
             ))}

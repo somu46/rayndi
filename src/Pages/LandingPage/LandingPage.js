@@ -105,7 +105,7 @@ const LandingPage = () => {
   return (
     <div className="bg-black text-white">
       {/* Navigation */}
-      <nav className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0  bg-opacity-90 backdrop-blur-xl">
+      <nav className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0 bg-white bg-opacity-30 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
@@ -113,7 +113,7 @@ const LandingPage = () => {
             </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8 text-gray-700">
+            <div className="hidden md:flex space-x-8 ">
               <a href="#services" className="hover:text-blue-600 transition">Services</a>
               <a href="#industries" className="hover:text-blue-600 transition">Industries</a>
               <a href="#about" className="hover:text-blue-600 transition">About</a>
@@ -174,7 +174,7 @@ const LandingPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-6"
+                className="text-4xl md:text-5xl font-bold leading-tight mb-6"
               >
                 Transform Your Business With <span className="text-blue-600">Digital Innovation</span>
               </motion.h1>
@@ -190,8 +190,8 @@ const LandingPage = () => {
                 </button>
               </div>
             </div>
-            
-                  <div className="lg:w-1/2 lg:pl-12">
+            {/* Lead Form */}
+            <div className="lg:w-1/2 lg:pl-12">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -254,7 +254,7 @@ const LandingPage = () => {
             </button>
           </form>
         </motion.div>
-      </div>
+            </div>
           </div>
         </div>
       </section>
@@ -371,7 +371,7 @@ const LandingPage = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-28 relative overflow-hidden">
+      <section id='services' className="py-28 relative overflow-hidden">
   {/* Background elements */}
   <div className="absolute inset-0 overflow-hidden -z-10">
     <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full filter blur-3xl"></div>

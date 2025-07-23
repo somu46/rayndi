@@ -188,8 +188,8 @@ const TechnologiesWeUse = () => {
 
   return (
     <section className="technology overflow-x-hidden sm:overflow-x-auto">
-      <div className="px-2 lg:px-8 pt-4 md:pt-12 lg:pt-[10.5rem] max-w-7xl mx-auto">
-        <div className="max-w-3xl xl:max-w-4xl">
+      <div className="px-2 lg:px-8 pt-4 md:pt-2 lg:pt-[1.5rem] max-w-7xl mx-auto">
+        <div className="max-w-3xl xl:max-w-4xl text-center px-2">
           <div className="lg:overflow-hidden">
             <h2 className="font-bold -translate-y-[3px] text-4xl xl:text-5xl 2xl:text-6xl tracking-[-2px] lg:-translate-y-[7px] xl:!leading-[55px] 2xl:!leading-[65px] text-white">
               <span>technologies we use</span>
@@ -201,7 +201,7 @@ const TechnologiesWeUse = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap flex-col md:flex-row mt-8 md:mt-12 lg:mt-20 md:border-t border-gray-300">
+        <div className="flex flex-wrap flex-col md:flex-row mt-8 md:mt-12 lg:mt-20 md:border-t border-gray-300 px-2">
           {/* Tab Navigation */}
           <div className="scrollbar-hide w-full md:w-[30%] lg:w-[21.5%] 2xl:w-[24%] overflow-auto md:overflow-hidden md:border-r border-gray-300 md:pt-12 md:border-b-0 border-b">
             <div className="flex md:block gap-x-5" role="tablist" aria-orientation="horizontal">
@@ -235,7 +235,7 @@ const TechnologiesWeUse = () => {
                   {subcategory.technologies.map((tech) => (
                     <a href={`https://www.google.com/search?q=${tech.name}`}
                       key={tech.name}
-                      className="home-module--buttonChange--28cf1 md:w-52 lg:w-[215px] w-[150px] customClasse bg-gray-100 px-3.5 py-5 border-transparent rounded-3xl sm:rounded-[2.45rem] font-normal md:text-lg text-sm hover:bg-black hover:text-white transition duration-500 flex flex-row items-center lg:gap-5 gap-3 md:hover:shadow-lg md:hover:shadow-slate-400 text-black"
+                      className="home-module--buttonChange--28cf1 md:w-52 lg:w-[215px] w-[150px] customClasse bg-gray-100 px-3.5 py-5 border-transparent rounded-3xl sm:rounded-[2.45rem] font-normal md:text-lg text-sm hover:bg-gray-800 hover:text-white transition duration-500 flex flex-row items-center lg:gap-5 gap-3 md:hover:shadow-sm md:hover:shadow-slate-400 text-black"
                     >
                       <img
                         className="md:h-[35px] md:w-[35px] h-[25px] w-[25px] hoverClass"

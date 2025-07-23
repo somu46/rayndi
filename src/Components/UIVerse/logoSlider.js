@@ -35,7 +35,7 @@ const LogoCarousel = () => {
   return (
     <div className=" py-10 overflow-hidden">
       <div className="container mx-auto">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 ">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-center">
               <span className="relative inline-block">
                 <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30"></span>
                 <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">

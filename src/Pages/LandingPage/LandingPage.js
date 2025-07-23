@@ -196,7 +196,7 @@ const LandingPage = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="border-white p-8 rounded-xl shadow-xl"
+          className="border-white p-2 rounded-xl shadow-xl"
         >
           <h3 className="text-2xl font-semibold text-center mb-6">Schedule a Free Consultation</h3>
           <form className="space-y-4" onSubmit={handleSubmit}>

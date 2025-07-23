@@ -71,7 +71,7 @@ const Card = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">
+            <h2 className="text-4xl font-bold mb-4 text-gray-200">
               Client <span className="text-blue-600">Testimonials</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">

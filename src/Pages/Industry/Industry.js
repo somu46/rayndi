@@ -18,14 +18,10 @@ const handleNvigate=(path)=>{
  }); // Redirect to the industries page
 }
 
-
-
-
-  
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-950">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="relative py-20 sm:py-28 px-4 text-center">
+      <section className="relative py-10 sm:py-28 px-4 text-center">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/30 to-purple-900/30 -z-10" />
         <div className="container mx-auto max-w-6xl">
           <motion.h1

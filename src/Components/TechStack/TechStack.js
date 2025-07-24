@@ -225,34 +225,38 @@ const TechnologiesWeUse = () => {
           </div>
 
           {/* Tab Content */}
-          <div className="pt-8 w-full md:w-8/12 lg:w-9/12 md:ps-12 lg:pb-[18px] ">
-            {activeCategory?.subcategories?.map((subcategory) => (
-              <div key={subcategory.title} className="mb-12 text-white">
-                <h4 className="mb-4 font-bold text-xl xl:text-2xl 2xl:text-3xl tracking-[0px] ">
-                  {subcategory.title}
-                </h4>
-                <div className="flex flex-wrap gap-4 md:gap-6 lg:gap-8 justify-center">
-                  {subcategory.technologies.map((tech) => (
-                    <a href={`https://www.google.com/search?q=${tech.name}`}
-                      key={tech.name}
-                      className="home-module--buttonChange--28cf1 md:w-52 lg:w-[215px] w-[150px] customClasse bg-gray-100 px-3.5 py-5 border-transparent rounded-3xl sm:rounded-[2.45rem] font-normal md:text-lg text-sm hover:bg-gray-800 hover:text-white transition duration-500 flex flex-row items-center lg:gap-5 gap-3 md:hover:shadow-sm md:hover:shadow-slate-400 text-black"
-                    >
-                      <img
-                        className="md:h-[35px] md:w-[35px] h-[25px] w-[25px] hoverClass"
-                        src={`https://skillicons.dev/icons?i=${tech.icon}`}
-                        alt={tech.name}
-                        loading="lazy"
-                      />
-                      <div className="hoverClassTitle">
-                        <span>{tech.name}</span>
-                        <span>{tech.name}</span>
-                      </div>
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="pt-8 w-full md:w-8/12 lg:w-9/12 md:ps-12 lg:pb-6  rounded-lg backdrop-blur-sm">
+  {activeCategory?.subcategories?.map((subcategory) => (
+    <div key={subcategory.title} className="mb-12 text-white">
+      <h4 className="mb-6 font-bold text-xl xl:text-2xl 2xl:text-[1.75rem] tracking-wide text-center text-indigo-200">
+        {subcategory.title}
+      </h4>
+      <div className="flex flex-wrap gap-4 md:gap-5 lg:gap-6 justify-center">
+        {subcategory.technologies.map((tech) => (
+          <a
+            href={`https://www.google.com/search?q=${tech.name}`}
+            key={tech.name}
+            className="group md:w-48 lg:w-52 w-[140px] bg-gray-800/80 hover:bg-gray-700/90 px-4 py-4 border border-gray-700 rounded-2xl sm:rounded-3xl font-medium md:text-base text-sm hover:border-indigo-400/50 transition-all duration-300 flex flex-row items-center gap-3 hover:shadow-lg hover:shadow-indigo-500/10 text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="h-6 w-6 md:h-7 md:w-7 group-hover:scale-110 transition-transform"
+              src={`https://skillicons.dev/icons?i=${tech.icon}`}
+              alt={tech.name}
+              loading="lazy"
+            />
+            <div className="text-left overflow-hidden">
+              <span className="block group-hover:translate-x-1 transition-transform">
+                {tech.name}
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
         </div>
       </div>
     </section>

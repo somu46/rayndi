@@ -7,31 +7,36 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const featuredFaqs = [
-    {
-      question: "Who should attend Data + AI Summit?",
-      answer: "Data scientists, engineers, analysts, and business leaders who want to learn about the latest trends in data and AI technologies."
-    },
-    {
-      question: "What is Data + AI Summit?",
-      answer: "The premier conference for the data and AI community, featuring keynotes, technical sessions, and networking opportunities."
-    }
-  ];
+  {
+    question: "Who should use our tech services?",
+    answer: "Startups, SMEs, and large enterprises looking for high-quality web, app, cloud, and Data Analytics solutions tailored to their business goals."
+  },
+  {
+    question: "What services do you offer?",
+    answer: "We specialize in web development, mobile app development, cloud infrastructure setup, and DevOps automation to streamline your software lifecycle."
+  }
+];
 
-  const allFaqs = [
-    ...featuredFaqs,
-    {
-      question: "Where in San Francisco will the event take place?",
-      answer: "The Moscone Center in downtown San Francisco."
-    },
-    {
-      question: "Where should I stay for the event?",
-      answer: "We have partnered with several hotels near the venue. Check our accommodations page for discounted rates."
-    },
-    {
-      question: "What is included in the full conference pass?",
-      answer: "Access to all keynotes, breakout sessions, expo hall, networking events, and conference materials."
-    }
-  ];
+const allFaqs = [
+  ...featuredFaqs,
+  {
+    question: "Do you provide end-to-end web development?",
+    answer: "Yes, we handle everything from UI/UX design and frontend/backend development to deployment and maintenance."
+  },
+  {
+    question: "What cloud platforms do you work with?",
+    answer: "We work with AWS, Microsoft Azure, and Google Cloud to deliver scalable and secure cloud solutions."
+  },
+  {
+    question: "Can you help us implement DevOps?",
+    answer: "Absolutely. We offer CI/CD pipeline setup, infrastructure as code, monitoring, and automation to streamline your development process."
+  },
+  {
+    question: "Do you offer support after project delivery?",
+    answer: "Yes, we provide ongoing maintenance, performance optimization, and support to ensure your product runs smoothly post-launch."
+  }
+];
+
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);

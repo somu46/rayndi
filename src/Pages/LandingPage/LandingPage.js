@@ -41,7 +41,7 @@ const LandingPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
     
     // Redirect to thank you page with form data
     navigate('/thank-you', { state: { formData } });
@@ -103,9 +103,9 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       {/* Navigation */}
-      <nav className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0 bg-white bg-opacity-30 backdrop-blur-xl">
+      <nav className="flex flex-wrap w-auto h-auto shadow-md z-30 fixed top-0 left-0 right-0 bg-gray-600 bg-opacity-30 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center">
@@ -151,6 +151,8 @@ const LandingPage = () => {
               animate={{ opacity: 1, height: 'auto' }}
               transition={{ duration: 0.3 }}
               className="md:hidden mt-4 space-y-4 pb-4"
+              onClick={handleToggle}
+              
             >
               <a href="#services" className="block hover:text-blue-600 transition">Services</a>
               <a href="#industries" className="block hover:text-blue-600 transition">Industries</a>
@@ -181,12 +183,12 @@ const LandingPage = () => {
               <p className="text-xl text-gray-600 mb-8">
                 We deliver cutting-edge technology solutions that drive growth, efficiency, and competitive advantage for your business.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-row sm:flex-row gap-6 ">
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg hover:shadow-xl flex items-center justify-center">
                   Get Started <FiArrowRight className="ml-2" />
                 </button>
-                <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition flex items-center justify-center">
-                  Learn More
+                <button className="border border-white text-blue-500 px-8 py-3 rounded-full hover:bg-blue-50 transition flex items-center justify-center">
+                  Bal <FiArrowRight className="ml-2" />
                 </button>
               </div>
             </div>
@@ -497,17 +499,19 @@ const LandingPage = () => {
       </section>
 
       {/* Industries Section */}
-      <section id="industries" className="py-10">
+      <section id="industries" className="">
         <IndustryStack/>
       </section>
 
       {/* Projects Section */}
       <section className="py-20 ">
-        
+        <h1 className='text-xl text-center'>Project Section</h1>
+        <h2 className='text-red-500 text-center'>This Part is Under Progress</h2>
+        <p className='text-center text-gray-500'>This section will showcase various projects and case studies.</p>
       </section>
 
       {/* Technology Stack */}
-      <section className="py-20 ">
+      <section className=" ">
         <TechStack/>
       </section>
 

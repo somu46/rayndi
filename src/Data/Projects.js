@@ -1,3 +1,5 @@
+import demo from "../Assets/coding.webp";
+
 const projects = [
     {
       id: 1,
@@ -60,3 +62,6 @@ const projects = [
       category: "mobile"
     }
   ];
+
+
+  export default projects;

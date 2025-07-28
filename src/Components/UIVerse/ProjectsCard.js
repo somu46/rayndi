@@ -1,8 +1,9 @@
-import React from "react";
 import { FaGithub, FaLink } from "react-icons/fa";
 
 const Card = ({ project = {} }) => {
   const { image, title, tags, link, github, description } = project;
+// console.log("Project Data:", project);
+
 
   return (
     <div className="w-[450px] h-[420px] perspective">

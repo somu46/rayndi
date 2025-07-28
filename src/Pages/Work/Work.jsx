@@ -1,73 +1,11 @@
 import { motion } from "framer-motion";
 import {  FiFilter } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import demo from "../../Assets/coding.webp";
+import projects from "../../Data/Projects.js";
 import ProjectsCard from "../../Components/UIVerse/ProjectsCard"
 import FeedbackCard from "../../Components/UIVerse/FeedbackCard"
 const WorkPage = () => {
-  // Projects data
-  const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with custom CMS and payment integration",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      // image: demo,
-      link: "#",
-      github: "#",
-      category: "web"
-    },
-    {
-      id: 2,
-      title: "Healthcare Dashboard",
-      description: "Data visualization platform for patient analytics",
-      tags: ["TypeScript", "D3.js", "Firebase", "Tailwind"],
-      image: demo,
-      link: "#",
-      github: "#",
-      category: "web"
-    },
-    {
-      id: 3,
-      title: "Mobile Banking App",
-      description: "Secure financial management application",
-      tags: ["React Native", "GraphQL", "Biometrics", "AWS"],
-      image:demo ,
-      link: "#",
-      github: "#",
-      category: "mobile"
-    },
-    {
-      id: 4,
-      title: "AR Interior Design",
-      // description: "Augmented reality app for home decoration",
-      tags: ["Unity", "ARKit", "3D Modeling", "Swift"],
-      image: demo,
-      link: "#",
-      github: "#",
-      category: "mobile"
-    },
-    {
-      id: 5,
-      title: "SaaS Analytics Platform",
-      description: "Business intelligence dashboard for SMBs",
-      tags: ["Vue.js", "Python", "PostgreSQL", "Docker"],
-      image: demo,
-      link: "#",
-      github: "#",
-      category: "web"
-    },
-    {
-      id: 6,
-      title: "Fitness Tracking App",
-      description: "AI-powered workout and nutrition coach",
-      tags: ["Flutter", "TensorFlow", "Firebase", "HealthKit"],
-      image: demo,
-      link: "#",
-      github: "#",
-      category: "mobile"
-    }
-  ];
+
 
   // Categories for filtering
   const categories = ["all", "web", "mobile", "design"];
@@ -230,13 +168,6 @@ const WorkPage = () => {
               >
                 Get in Touch
               </motion.button>
-              {/* <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold"
-              >
-                View Pricing
-              </motion.button> */}
             </div>
           </motion.div>
         </div>

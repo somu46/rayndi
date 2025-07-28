@@ -124,7 +124,7 @@ const services = [
 
       {/* Content container */}
       <div className="container mx-auto px-2 py-2 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center text-left">
           {/* Text content with enhanced animations */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}

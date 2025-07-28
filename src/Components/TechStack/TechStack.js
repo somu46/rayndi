@@ -228,7 +228,7 @@ const TechnologiesWeUse = () => {
           <div className="pt-8 w-full md:w-8/12 lg:w-9/12 md:ps-12 lg:pb-6  rounded-lg backdrop-blur-sm">
   {activeCategory?.subcategories?.map((subcategory) => (
     <div key={subcategory.title} className="mb-12 text-white">
-      <h4 className="mb-6 font-bold text-xl xl:text-2xl 2xl:text-[1.75rem] tracking-wide text-center text-indigo-200">
+      <h4 className="mb-6 font-bold text-xl xl:text-2xl 2xl:text-[1.75rem] tracking-wide text-center text-cyan-400">
         {subcategory.title}
       </h4>
       <div className="flex flex-wrap gap-4 md:gap-5 lg:gap-6 justify-center">

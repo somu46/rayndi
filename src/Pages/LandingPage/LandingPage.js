@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheck} from 'react-icons/fi';
-import { FaRocket, FaLightbulb, FaChartLine  } from 'react-icons/fa';
-import { GiSpaceship, GiArtificialIntelligence} from 'react-icons/gi';
+import { GiSpaceship} from 'react-icons/gi';
 import TechStack from '../../Components/TechStack/TechStack';
 import IndustryStack from '../../Pages/Industry/Industry'
 import FeedbackCard from '../../Components/UIVerse/FeedbackCard';
@@ -15,7 +14,7 @@ import { CgMenuRight } from 'react-icons/cg';
 import { RxCross2 } from 'react-icons/rx';
 import './ThankYou'
 import services from "../../Data/Services.js";
-
+import features from "../../Data/Feature.js";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,28 +43,7 @@ const LandingPage = () => {
    
     navigate('/thank-you', { state: { formData } });
   };
-  const features = [
-    {
-      icon: <FaRocket className="text-3xl text-blue-500" />,
-      title: "Lightning Fast",
-      description: "Optimized for maximum performance and speed"
-    },
-    {
-      icon: <FaLightbulb className="text-3xl text-purple-500" />,
-      title: "Innovative Solutions",
-      description: "Cutting-edge technology for modern problems"
-    },
-    {
-      icon: <FaChartLine className="text-3xl text-green-500" />,
-      title: "Data Driven",
-      description: "Metrics that matter for your business growth"
-    },
-    {
-      icon: <GiArtificialIntelligence className="text-3xl text-orange-500" />,
-      title: "AI Powered",
-      description: "Smart features that learn and adapt"
-    }
-  ];
+ 
 
 
   return (

@@ -4,7 +4,7 @@ import {  createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import Root from './Root/Root.jsx';
-import { About, Company, Contact, Services, Solutions, Work,LandingPage,IndustriesPage } from "./Pages/index.js";
+import { About, Company, Contact, Services, Solutions, Work,LandingPage,IndustriesPage, Quotation, TandC, Faq } from "./Pages/index.js";
 import ErrorPage from './Pages/Error/Error.js';
 import Layout from './Pages/Industry/Layout/Layout.js';
 import ThankYouPage from './Pages/LandingPage/ThankYou.js';
@@ -50,6 +50,18 @@ const Routes= createBrowserRouter([
       {
         path: '/industries',
         element:<IndustriesPage/>,
+      },
+      {
+        path:'/quotation',
+        element:<Quotation/>
+      },
+      {
+        path:'/terms-and-conditions',
+        element:<TandC/>        
+      },
+      {
+        path:'faqs',
+        element:<Faq/>
       }
       
       

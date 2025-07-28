@@ -6,9 +6,13 @@ import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaCloud } from 'react-icons/fa
 import ExploreButton from '../UIVerse/ExploreButton';
 import { FaChevronDown, FaStar } from 'react-icons/fa';
 import TechStack from '../../Components/TechStack/TechStack';
-import FAQSection from '../../Components/Faqs/Faqs';
+import FAQ from '../../Components/Faqs/Faqs';
+import FeedbackCard from '../../Components/UIVerse/FeedbackCard'
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+
+  const navigate = useNavigate();
   // Features data
   const features = [
     {
@@ -34,8 +38,6 @@ const HomePage = () => {
   ];
 
   // Services preview
-
-
 const services = [
   {
     title: "Web Development",
@@ -58,8 +60,6 @@ const services = [
     icon: <FaCloud className="w-10 h-10 text-purple-400" />
   }
 ];
-
-
 
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900">
@@ -180,6 +180,7 @@ const services = [
                   boxShadow: "0 8px 25px rgba(59, 130, 246, 0.5)",
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/quotation')}
                 className="relative overflow-hidden group bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <span className="relative z-10">Get Started</span>
@@ -195,6 +196,7 @@ const services = [
                   boxShadow: "0 8px 20px rgba(139, 92, 246, 0.3)"
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/work')}
                 className="border border-white/30 text-white px-4 py-4 rounded-full font-semibold backdrop-blur-md hover:bg-white/10 transition-all duration-300 flex items-center gap-4"
               >
                 <span>Explore Our Work</span>
@@ -570,9 +572,14 @@ const services = [
       {/* Process Section */}
       <OurProcess/>
 
+      {/*Testimonials*/}
+      <section className="py-20 ">
+          <FeedbackCard/>
+      </section>
+
       {/* FAQs Section */}
       <section className="py-20">
-          <FAQSection />
+          <FAQ/>
       </section>
 
       {/* CTA Section */}
@@ -594,6 +601,7 @@ const services = [
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/quotation')}
                 className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold shadow-lg"
               >
                 Get Started
@@ -601,6 +609,7 @@ const services = [
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate('/contact')}
                 className="border-2 border-white text-white px-8 py-4 rounded-full font-bold"
               >
                 Contact Our Team

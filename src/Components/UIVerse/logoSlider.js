@@ -33,18 +33,18 @@ const LogoCarousel = () => {
   }, [controls]);
 
   return (
-    <div className=" py-10 overflow-hidden">
-      <div className="container mx-auto">
+    <div className=" py-10 overflow-hidden ">
+      
         <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-center">
-              <span className="relative inline-block">
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30"></span>
-                <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  trusted by industry leaders
-                </span>
-              </span>
-            </h2>
+          <span className="relative inline-block">
+            <span className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-lg opacity-30"></span>
+            <span className="relative bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+              Trusted by Industry Leaders
+            </span>
+          </span>
+        </h2>
         
-        <div className="relative">
+        <div className="relative ">
           {/* Gradient fade effects */}
           {/* <div className="absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-gray-900 to-transparent z-10" /> */}
         {/* <div className="absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-900 to-transparent z-10" /> */}
@@ -52,7 +52,7 @@ const LogoCarousel = () => {
           {/* Main Carousel */}
           <motion.div
             ref={carouselRef}
-            className="flex"
+            className="flex "
             animate={controls}
           >
             {duplicatedLogos.map((logo, index) => (
@@ -75,7 +75,7 @@ const LogoCarousel = () => {
             ))}
           </motion.div>
         </div>
-      </div>
+      
     </div>
   );
 };

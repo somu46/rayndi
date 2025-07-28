@@ -3,18 +3,24 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiCheck} from 'react-icons/fi';
 import { GiSpaceship} from 'react-icons/gi';
-import TechStack from '../../Components/TechStack/TechStack';
-import IndustryStack from '../../Pages/Industry/Industry'
-import FeedbackCard from '../../Components/UIVerse/FeedbackCard';
-import Faqs from '../../Components/Faqs/Faqs';
-import ExploreButton from '../../Components/UIVerse/ExploreButton';
-import Team from '../../Assets/Team1.jpg'
-import LogoCarousel from '../../Components/UIVerse/logoSlider';
 import { CgMenuRight } from 'react-icons/cg';
 import { RxCross2 } from 'react-icons/rx';
-import './ThankYou'
+
+import Team from '../../Assets/Team1.jpg'
+
+import TechStack from '../../Components/TechStack/TechStack';
+import Faqs from '../../Components/Faqs/Faqs';
+import IndustryStack from '../../Pages/Industry/Industry'
+import FeedbackCard from '../../Components/UIVerse/FeedbackCard';
+import ExploreButton from '../../Components/UIVerse/ExploreButton';
+import LogoCarousel from '../../Components/UIVerse/logoSlider';
+import ProjectsCard from  '../../Components/UIVerse/ProjectsCard.js'
+
 import services from "../../Data/Services.js";
 import features from "../../Data/Feature.js";
+import projects from "../../Data/Projects.js";
+
+import './ThankYou'
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,7 +119,7 @@ const LandingPage = () => {
 
       {/* Hero Section with Lead Form */}
       <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 mb-12 lg:mb-0">
               <motion.h1 
@@ -206,7 +212,7 @@ const LandingPage = () => {
       </section>
 
       {/* Partners Logo Slider - Infinite Loop */}
-      <section className="py-12  overflow-hidden">
+      <section className="py-12 overflow-hidden sm:px-40">
         <LogoCarousel/>
       </section>
 
@@ -448,10 +454,10 @@ const LandingPage = () => {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 ">
-        <h1 className='text-xl text-center'>Project Section</h1>
-        <h2 className='text-red-500 text-center'>This Part is Under Progress</h2>
-        <p className='text-center text-gray-500'>This section will showcase various projects and case studies.</p>
+      <section className="py-20 flex flex-wrap justify-center items-center gap-4">
+        {projects.map((project) => (
+        <ProjectsCard key={project.id} project={project} />
+      ))}
       </section>
 
       {/* Technology Stack */}

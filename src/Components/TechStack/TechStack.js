@@ -63,7 +63,7 @@ const TechnologiesWeUse = () => {
             title: "CMS",
             technologies: [
               { name: "WordPress", icon: "wordpress" },
-              { name: "Shopify", icon: "shopify" }
+              { name: "Shopify", icon: "shopify" },
             ]
         }
       ]
@@ -91,28 +91,7 @@ const TechnologiesWeUse = () => {
       ]
       
     },
-    {
-      title: "Games",
-      subcategories: [
-        {
-          title: "Engine",
-            technologies: [
-                { name: "Unity", icon: "unity" },
-                { name: "Unreal Engine", icon: "unrealengine" },
-                { name: "Godot", icon: "godot" }
-            ]
-        },
-        
-        {
-          title: "Servers",
-            technologies: [
-                { name: "Photon", icon: "photon" },
-                { name: "PlayFab", icon: "playfab" },
-                { name: "Firebase", icon: "firebase" }
-            ]
-        }
-      ]
-    },
+    
     {
       title: "Database",
       subcategories: [
@@ -167,16 +146,8 @@ const TechnologiesWeUse = () => {
           title: "Design Tools",
           technologies: [
             { name: "Figma", icon: "figma" },
-            { name: "Adobe XD", icon: "adobexd" },
-            { name: "Sketch", icon: "sketch" }
-          ]
-        },
-        {
-          title: "Prototyping Tools",
-          technologies: [
-            { name: "InVision", icon: "invision" },
-            { name: "Marvel", icon: "marvel" },
-            { name: "Axure", icon: "axure" }
+            { name: "Photoshop", icon: "photoshop" },
+            { name: "Illustrator", icon: "illustrator" }
           ]
         }
       ]

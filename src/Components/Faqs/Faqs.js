@@ -1,56 +1,28 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronDown, FiChevronUp, FiArrowRight } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import Faqs from '../../Data/Faqs';
 
 const FAQSection = () => {
   const [expanded, setExpanded] = useState(false);
   const [openIndex, setOpenIndex] = useState(null);
 
-  const featuredFaqs = [
-  {
-    question: "Who should use our tech services?",
-    answer: "Startups, SMEs, and large enterprises looking for high-quality web, app, cloud, and Data Analytics solutions tailored to their business goals."
-  },
-  {
-    question: "What services do you offer?",
-    answer: "We specialize in web development, mobile app development, cloud infrastructure setup, and DevOps automation to streamline your software lifecycle."
-  }
-];
+  const navigate = useNavigate();
 
-const allFaqs = [
-  ...featuredFaqs,
-  {
-    question: "Do you provide end-to-end web development?",
-    answer: "Yes, we handle everything from UI/UX design and frontend/backend development to deployment and maintenance."
-  },
-  {
-    question: "What cloud platforms do you work with?",
-    answer: "We work with AWS, Microsoft Azure, and Google Cloud to deliver scalable and secure cloud solutions."
-  },
-  {
-    question: "Can you help us implement DevOps?",
-    answer: "Absolutely. We offer CI/CD pipeline setup, infrastructure as code, monitoring, and automation to streamline your development process."
-  },
-  {
-    question: "Do you offer support after project delivery?",
-    answer: "Yes, we provide ongoing maintenance, performance optimization, and support to ensure your product runs smoothly post-launch."
-  }
-];
-
-
+  const featuredFaqs = Faqs.slice(0, 2); // Adjust this if you want to show more featured FAQs
+  const allFaqs = Faqs; // Use the full list of FAQs
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   const handleGoToFAQPage = () => {
-    console.log("Navigating to full FAQ page");
+    navigate('/faqs');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Flex container for desktop layout */}
-      <div className="lg:flex lg:items-start lg:gap-12">
+      <div className="lg:flex lg:items-start lg:gap-12 sm:px-40 px-4">
         {/* Left Section - Desktop left / Mobile top */}
         <div className="lg:w-1/3 lg:sticky lg:top-8 mb-8 lg:mb-0 ">
           <div className="text-center lg:text-left">
@@ -139,7 +111,6 @@ const allFaqs = [
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

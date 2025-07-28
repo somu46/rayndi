@@ -7,7 +7,9 @@ import Work from "./Work/Work";
 import LandingPage from "./LandingPage/LandingPage";
 import IndustriesPage from "./Industry/Industry";
 import ErrorPage from "./Error/Error";
-
+import Quotation from "./Quotation/Quotation";
+import TandC from './TandC/TandC'
+import Faq from './Faq/Faq'
 
 export {
     About,
@@ -18,5 +20,8 @@ export {
     Work,
     LandingPage,
     IndustriesPage,
+    Quotation,
+    TandC,
+    Faq,
     ErrorPage
 };  

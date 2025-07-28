@@ -8,3 +8,5 @@ import { FiGlobe, FiUsers, FiAward, FiLayers, FiClock, FiBarChart2 } from "react
     { icon: <FiClock />, title: "Fast Delivery", description: "Agile development process" },
     { icon: <FiBarChart2 />, title: "Data-Driven", description: "Metrics-focused approach" },
   ];
+
+  export default services;

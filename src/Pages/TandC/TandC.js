@@ -3,8 +3,8 @@ import { MdAttachMoney } from 'react-icons/md';
 
 const TermsAndConditions = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto bg-gray-800 rounded-xl shadow-2xl overflow-hidden border border-gray-700">
+    
+      <div className="w-full mx-auto bg-gray-800 shadow-2xl overflow-hidden border border-gray-700">
         {/* Header */}
         <div className="bg-gradient-to-r from-blue-800 to-blue-600 p-6 sm:p-8 text-center">
           <div className="flex items-center justify-center mb-4">
@@ -207,7 +207,7 @@ const TermsAndConditions = () => {
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

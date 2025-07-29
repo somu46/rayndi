@@ -257,7 +257,19 @@ const Footer = () => {
         </div>
       </motion.div>
     </div>
-
+    {/* CTA */}
+    <div className='border-t border-slate-800 py-8'>
+      <div className='text-center'>
+      <h1 className='text-4xl font-bold'>
+        Have Questions? <span className='text-blue-400'>We can Talk</span> 
+      </h1>
+      <button className='bg-gradient-to-r from-blue-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white px-6 py-3 rounded-lg mt-4 transition-all'>
+        <Link to="/contact" onClick={handleScrollToTop}>
+          Contact Us
+        </Link>
+      </button>
+      </div>
+    </div>
     {/* Footer Bottom */}
     <motion.div 
       initial={{ opacity: 0 }}
@@ -270,17 +282,31 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} - {new Date().getFullYear() + 3} Rayndi. All rights reserved.
         </p>
         <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-          {["Privacy Policy", "Terms of Service", "Cookies"].map((item, index) => (
-            <motion.a 
-              key={index}
-              whileHover={{ y: -2 }}
-              href="/" 
-              className="text-slate-400 hover:text-transparent hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:bg-clip-text text-sm transition-all"
-            >
-              {item}
-            </motion.a>
-          ))}
-        </div>
+  <motion.a
+    whileHover={{ y: -2 }}
+    href="/"
+    className="text-sm text-slate-400 transition-all hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-transparent hover:bg-clip-text"
+  >
+    Privacy Policy
+  </motion.a>
+
+  <motion.a
+    whileHover={{ y: -2 }}
+    href="/terms-and-conditions"
+    className="text-sm text-slate-400 transition-all hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-transparent hover:bg-clip-text"
+  >
+    Terms of Service
+  </motion.a>
+
+  <motion.a
+    whileHover={{ y: -2 }}
+    href="/"
+    className="text-sm text-slate-400 transition-all hover:bg-gradient-to-r hover:from-blue-400 hover:to-purple-400 hover:text-transparent hover:bg-clip-text"
+  >
+    Cookies
+  </motion.a>
+</div>
+
       </div>
     </motion.div>
 

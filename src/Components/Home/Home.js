@@ -428,7 +428,7 @@ const services = [
         {feature.title}
       </h3>
       
-      <p className="text-gray-300 group-hover:text-gray-700 transition-colors">
+      <p className="text-gray-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-600 transition-colors">
         {feature.description}
       </p>
       

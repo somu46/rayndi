@@ -2,9 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import services from "../../Data/servicedata.js";
 
-
-
-
 const ServiceCard = ({ category, items, icon, index }) => {
   const variants = {
     hidden: { opacity: 0, y: 50 },
@@ -67,31 +64,7 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-[#152242] to-indigo-900 text-white">
       {/* Animated Background Elements */}
-      <div className="">
-        {[...Array(10)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              x: [0, 100, 0],
-              y: [0, 50, 0],
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: Math.random() * 20 + 10,
-              repeat: Infinity,
-              repeatType: "reverse",
-              ease: "linear",
-            }}
-            className="absolute rounded-full bg-blue-500/10"
-            style={{
-              width: Math.random() * 300 + 100,
-              height: Math.random() * 300 + 100,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
+      
 
       <div className="relative z-10">
         {/* Hero Section */}

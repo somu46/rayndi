@@ -21,6 +21,7 @@ import features from "../../Data/Feature.js";
 import projects from "../../Data/Projects.js";
 
 import './ThankYou'
+import CallButton from './CallButton';
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,9 +50,26 @@ const LandingPage = () => {
    
     navigate('/thank-you', { state: { formData } });
   };
+
+  const number= () => {
+  // Get current UTC time
+  const now = new Date();
+
+  // IST is UTC +5:30
+  const istOffset = 5.5 * 60; // in minutes
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+  const istTime = new Date(utc + istOffset * 60000);
+
+  const hours = istTime.getHours();
+
+  // Check if time is between 7AM and 4PM IST
+  if (hours >= 7 && hours < 16) {
+    return 7890019347; // Example number for working hours
+  } else {
+    return 9123813528;
+  }
+};
  
-
-
   return (
     <div className="bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       {/* Navigation */}
@@ -69,12 +87,15 @@ const LandingPage = () => {
               <a href="#about" className="hover:text-blue-600 transition">About</a>
               <a href="#testimonials" className="hover:text-blue-600 transition">Testimonials</a>
               <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
+              <a href={`tel:+91${number()}`}>Call Us</a>
             </div>
-            
+            <CallButton />
             <div className="hidden md:block">
+              <a href='#leadForm'>
               <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
                 Contact Us
               </button>
+              </a>
             </div>
             
             {/* Mobile Menu Button */}
@@ -109,9 +130,9 @@ const LandingPage = () => {
               <a href="#about" className="block hover:text-blue-600 transition">About</a>
               <a href="#testimonials" className="block hover:text-blue-600 transition">Testimonials</a>
               <a href="#faq" className="block hover:text-blue-600 transition">FAQ</a>
-              <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition w-full mt-2">
+              <a href='#leadForm' className="bg-black text-white px-6 py-2 rounded-full hover:bg-blue-700 transition w-full mt-2">
                 Contact Us
-              </button>
+              </a>
             </motion.div>
           )}
         </div>
@@ -137,13 +158,11 @@ const LandingPage = () => {
                 <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition shadow-lg hover:shadow-xl flex items-center justify-center">
                   Get Started <FiArrowRight className="ml-2" />
                 </button>
-                <button className="border border-white text-blue-500 px-8 py-3 rounded-full hover:bg-blue-50 transition flex items-center justify-center">
-                  Bal <FiArrowRight className="ml-2" />
-                </button>
+                
               </div>
             </div>
             {/* Lead Form */}
-            <div className="lg:w-1/2 lg:pl-12">
+            <section id='leadForm' className="lg:w-1/2 lg:pl-12">
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -206,7 +225,7 @@ const LandingPage = () => {
             </button>
           </form>
         </motion.div>
-            </div>
+            </section>
           </div>
         </div>
       </section>

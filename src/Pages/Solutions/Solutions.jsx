@@ -335,7 +335,7 @@ const SolutionsPage = () => {
       </section>
 
       {/* Industries */}
-      <section className="py-16 sm:py-20 md:py-24 px-4 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
+      <section className="py-16 sm:py-20 md:py-24 px-2 bg-gradient-to-b from-gray-900 to-gray-950 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-purple-500 blur-3xl"></div>
@@ -363,7 +363,7 @@ const SolutionsPage = () => {
             </p>
           </motion.div>
           
-          <div className="flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 ">
             {industries.map((industry, index) => (
               <div  onClick={()=>handleNavigate(industry.slug)} key={index}>
                 <motion.div
@@ -386,23 +386,23 @@ const SolutionsPage = () => {
                   <div className={`absolute inset-0 rounded-2xl ${industry.color.replace('text', 'bg')}/10 group-hover:opacity-100 opacity-0 blur-md transition-all duration-500 -z-10`} />
                   
                   {/* Main card */}
-                  <div className="bg-gray-800/30 backdrop-blur-sm p-5 sm:p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300 h-full flex flex-col items-center hover:border-blue-400/30 hover:bg-gray-800/50">
+                  <div className=" h-[160px] w-[170px] sm:h-60 sm:w-80 bg-gray-800/30 backdrop-blur-sm p-2 sm:p-6 rounded-2xl border border-gray-700/50 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col items-center hover:border-blue-400/30 hover:bg-gray-800/50">
                     {/* Animated icon container */}
-                    <div className="relative mb-4 sm:mb-5">
+                    <div className="relative mb-2 sm:mb-5">
                       <div className={`absolute inset-0 rounded-full ${industry.color.replace('text', 'bg')}/20 group-hover:opacity-100 opacity-0 blur-md transition-opacity duration-500 -z-10`} />
                       <motion.div
                         whileHover={{ scale: 1.1, rotate: 5 }}
-                        className={`p-3 sm:p-4 rounded-full ${industry.color.replace('text', 'bg')}/10 border ${industry.color.replace('text', 'border')}/20 inline-flex`}
+                        className={`p-1 sm:p-4 rounded-full ${industry.color.replace('text', 'bg')}/10 border ${industry.color.replace('text', 'border')}/20 inline-flex`}
                       >
-                        <industry.icon className={`text-3xl sm:text-4xl ${industry.color}`} />
+                        <industry.icon className={`text-2xl sm:text-4xl ${industry.color}`} />
                       </motion.div>
                     </div>
                     
-                    <h3 className="text-base sm:text-lg font-semibold text-white text-center mb-2">{industry.name}</h3>
-                    <p className="text-xs sm:text-sm text-gray-300/80 text-center mb-3">{industry.tagline}</p>
+                    <h3 className="text-base sm:text-lg font-semibold text-white text-center mb-1">{industry.name}</h3>
+                    <p className="text-xs sm:text-sm text-gray-300/80 text-center mb-1">{industry.tagline}</p>
                     
                     {/* Learn more link */}
-                    <div className="mt-auto pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
+                    <div className="my-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center">
                       <span className="text-xs sm:text-sm text-blue-400 font-medium">Explore</span>
                       <FiArrowRight className="ml-1 text-blue-400" />
                     </div>

@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import React from 'react';
 import { 
   FaLaptopCode, 
   FaMobileAlt, 
@@ -15,7 +16,8 @@ import {
   FaFilePdf,
   FaFileWord,
   FaFileImage,
-  FaFileAlt
+  FaFileAlt,
+  FaCheckCircle
 } from 'react-icons/fa';
 import { 
   MdSend,
@@ -102,7 +104,8 @@ const QuotePage = () => {
         'Responsive Design',
         'Basic SEO Setup',
         'Contact Form',
-        '1 Month Support'
+        '1 Month Maintainance',
+        
       ],
       bestFor: 'Small businesses, startups',
       icon: <HiOutlineClipboardList className="text-blue-400 text-3xl" />
@@ -346,47 +349,75 @@ const QuotePage = () => {
                   key={pkg.id} 
                   className={`rounded-xl overflow-hidden border-2 transition-all transform hover:scale-105 ${selectedPackage?.id === pkg.id ? 'border-blue-400 shadow-lg shadow-blue-500/20' : 'border-gray-700 hover:border-gray-600'}`}
                 >
-                  <div className="bg-gray-800 p-6 h-full flex flex-col">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <div className="bg-gray-700/50 p-3 rounded-full mb-3">
-                          {pkg.icon}
-                        </div>
-                        <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-3xl font-bold text-white">
-                          {currencies.find(c => c.code === formData.currency)?.symbol}
-                          {pkg.price[formData.currency]}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="text-gray-400 text-sm mb-4">{pkg.bestFor}</p>
-                    <ul className="space-y-3 mb-6 flex-grow">
-                      {pkg.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <FaCheck className="text-emerald-400 mt-1 mr-3 flex-shrink-0" />
-                          <span className="text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <button
-                      onClick={() => handlePackageSelect(pkg)}
-                      className={`w-full py-3 px-4 rounded-md font-medium transition-colors flex items-center justify-center ${selectedPackage?.id === pkg.id ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-gray-700 hover:bg-gray-600 text-gray-200'}`}
-                    >
-                      {selectedPackage?.id === pkg.id ? (
-                        <>
-                          <FaCheck className="mr-2" />
-                          Selected
-                        </>
-                      ) : (
-                        <>
-                          Select Package
-                          <FaArrowRight className="ml-2" />
-                        </>
-                      )}
-                    </button>
-                  </div>
+                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 p-6 h-full flex flex-col rounded-xl overflow-hidden border border-gray-700 hover:border-blue-500 transition-all duration-300 group shadow-lg">
+  {/* Glow effect */}
+  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+  
+  {/* Popular badge */}
+  {pkg.popular && (
+    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1 rounded-full shadow-md rotate-12">
+      POPULAR
+    </div>
+  )}
+
+  <div className="flex justify-between items-start mb-4 relative z-10">
+    <div className='flex items-center space-x-3'>
+      <div className="p-3 bg-gray-800/70 rounded-xl group-hover:bg-blue-500/20 transition-colors duration-300">
+        {React.cloneElement(pkg.icon, { className: "text-blue-400 text-xl group-hover:text-blue-300 transition-colors duration-300" })}
+      </div>
+      <h3 className="text-xl font-bold text-white">{pkg.name}</h3>
+    </div>
+    <div className="text-right">
+      <span className="text-3xl font-bold text-white">
+        {currencies.find(c => c.code === formData.currency)?.symbol}
+        {pkg.price[formData.currency]}
+      </span>
+      {pkg.billingCycle && (
+        <span className="block text-gray-400 text-xs">per {pkg.billingCycle}</span>
+      )}
+    </div>
+  </div>
+
+  <p className="text-gray-400 text-sm mb-4 relative z-10">{pkg.bestFor}</p>
+
+  <div className="relative z-10 mb-6 flex-grow">
+    <div className="h-px bg-gray-700/50 w-full mb-4"></div>
+    <ul className="space-y-3">
+      {pkg.features.map((feature, i) => (
+        <li key={i} className="flex items-start">
+          <div className="p-1 bg-emerald-500/10 rounded-full mr-3">
+            <FaCheck className="text-emerald-400 text-xs" />
+          </div>
+          <span className="text-gray-300">{feature}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <button
+    onClick={() => handlePackageSelect(pkg)}
+    className={`relative z-10 w-full py-3 px-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center ${
+      selectedPackage?.id === pkg.id 
+        ? 'bg-gradient-to-r from-blue-600 to-indigo-600 shadow-blue-500/20 hover:shadow-blue-500/30 text-white' 
+        : 'bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 hover:border-blue-500'
+    } shadow-lg hover:shadow-xl hover:-translate-y-0.5`}
+  >
+    {selectedPackage?.id === pkg.id ? (
+      <>
+        <FaCheckCircle className="mr-2 animate-pulse" />
+        Selected
+      </>
+    ) : (
+      <>
+        Get Started
+        <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+      </>
+    )}
+  </button>
+
+  {/* Subtle pattern overlay */}
+  <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjYiPgo8cmVjdCB3aWR0aD0iNiIgaGVpZ2h0PSI2IiBmaWxsPSIjMDAwMDAwIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDZMNiAwWk02IDZMMCAwWiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxMTExMTEiPjwvcGF0aD4KPC9zdmc+')]"></div>
+</div>
                 </div>
               ))}
             </div>

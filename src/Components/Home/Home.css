@@ -1,0 +1,153 @@
+.home-container {
+    font-family: Arial, sans-serif;
+    background-color: transparent;
+  }
+  .shadow-text {
+    text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6), 
+                 0 2px 4px rgba(0, 0, 0, 0.4) blur(3px);
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+    height: 100%;
+    font-size: 3rem;
+    font-weight: bolder;
+    text-shadow: 2px,2px,4px;
+    text-align: center;
+    /* padding: 60px 20px; */
+  }
+  .background-video {
+    margin-top: 4.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    background-attachment: fixed;
+    z-index: -1; /* Places the video behind other content */
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+   .hero-button {
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+    color: #0044cc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  } 
+  
+  .hero-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Services Section */
+  .services {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .services h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .services-list {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .service-item {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    padding: 20px;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .service-item h3 {
+    font-size: larger;
+    color: #0044cc;
+    margin-bottom: 10px;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #000; /* Optional: Change arrow color */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Make arrows invisible by default */
+  }
+  
+  .group:hover .swiper-button-next,
+  .group:hover .swiper-button-prev {
+    opacity: 1; /* Make arrows visible on hover */
+  }
+  
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 24px; /* Adjust size if needed */
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    
+  
+
+    .background-video{
+      height: 90%;
+      
+    }
+    .features-cards {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width:100%;
+    }
+    .feature-card{
+      width: 100%;
+    }
+    .feature-card p{
+      margin: 0 5px;
+    }
+    .services-list{
+      display: flex;
+      flex-direction: column;
+     
+      justify-content: center;
+      align-items: center;
+      width:100%;
+    }
+    .service-item{
+      width: 85%;
+    }
+    .hero h1 {
+        margin-top: 2rem;
+    }
+    
+  }
+  

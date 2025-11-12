@@ -25,7 +25,7 @@ const Gallery = () => {
           Welcome to Our Elegant Venue
         </h1>
         <p className="text-lg">
-          At Avishree Hospitality Pvt. Ltd., our spacious and versatile banquet
+          At Rayndi, our spacious and versatile banquet
           hall is the perfect setting for events of all sizes, from intimate
           gatherings to grand celebrations. Designed with elegance and
           functionality in mind, the venue boasts high ceilings, modern decor,

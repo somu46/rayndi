@@ -11,7 +11,7 @@ const AboutUs = () => {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold text-[#0c4b65]">About Us</h1>
         <p className="mx-auto my-3 text-center text-lg text-gray-700 lg:max-w-[50%]">
-          Welcome to Avishree Hospitality Pvt. Ltd.! We specialize in delivering
+          Welcome to Rayndi! We specialize in delivering
           exquisite and memorable event experiences, including catering,
           weddings, corporate events, and live shows.
         </p>
@@ -23,7 +23,7 @@ const AboutUs = () => {
           <img src={Company} alt="Aurodeep Paul" className="w-48 h-48 rounded-full object-cover mb-4" />
           <div className="lg:p-3">
             <h1 className="text-2xl font-semibold text-center my-3">
-              Avishree Hospitality Pvt. Ltd.
+              Rayndi
             </h1>
           </div>
           <p className="text-center text-gray-700">
@@ -47,7 +47,7 @@ const AboutUs = () => {
             <p className="text-lg text-gray-700">Founder & CEO</p>
             <p className="text-gray-700 mt-2">
               Aurodeep Paul brings a wealth of experience and a passion for
-              hospitality to Avishree Hospitality Pvt. Ltd. His vision is to
+              hospitality to Rayndi His vision is to
               create exceptional events with personalized service, ensuring
               that each celebration is as unique as the clients we serve.
             </p>

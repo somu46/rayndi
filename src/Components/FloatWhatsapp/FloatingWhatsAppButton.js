@@ -4,7 +4,7 @@ import './floatingWhatsAppButton.css';
 
 const FloatingWhatsAppButton = () => {
   const handleWhatsAppClick = () => {
-    const defaultMessage = "Hello! I am interested in the catering and event management services offered by Avishree Hospitality Pvt. Ltd. Could you please provide more details?";
+    const defaultMessage = "Hello! I am interested in the catering and event management services offered by Rayndi Could you please provide more details?";
 
     window.open(`https://wa.me/+918777584271?text=${encodeURIComponent(defaultMessage)}`, '_blank');
   };

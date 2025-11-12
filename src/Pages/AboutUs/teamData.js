@@ -12,7 +12,7 @@ const teamData = [
     name: 'Aurodeep Paul',
     role: 'Director Of Event',
     image: DOE,
-    description: 'Aurodeep Paul is a visionary leader and the driving force behind Avishree Hospitality Pvt. Ltd., ensuring every event is executed with perfection.'
+    description: 'Aurodeep Paul is a visionary leader and the driving force behind Rayndi, ensuring every event is executed with perfection.'
   },
   {
     id: 2,

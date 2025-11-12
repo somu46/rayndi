@@ -26,7 +26,7 @@ const Footer = () => {
                 <img src={FooterLogo} alt="Company Logo" className="footer-logo rounded-xl" />
               </Link>
             </div>
-            <p className="text-2xl text-yellow-500 ">Avishree Hospitality Pvt. Ltd.</p>
+            <p className="text-2xl text-yellow-500 ">Rayndi</p>
             <p>
               <ReactTypingEffect
                 speed={100}
@@ -113,7 +113,7 @@ const Footer = () => {
       <div className="copyRight flex justify-center items-center max-w-[100%] flex-col w-screen bottom-0 m-0">
         <div className="border-t-2 border-slate-500 w-full lg:w-[70%]"></div>
         <p className="text-center text-gray-300 font-thin">
-          Copyright 2023 Avishree Hospitality | &copy; 2024-2027. All rights reserved. 
+          Copyright 2023 Rayndi| &copy; 2024-2027. All rights reserved. 
         </p>
         <p className="text-center text-gray-300 font-thin">
           Developed by<a href="https://github.com/somu46" className="text-yellow-400"> Soumyajit Ray</a> and <a href="https://github.com/Arkajyoti333" className="text-yellow-400">Arkajyoti Kundu</a>

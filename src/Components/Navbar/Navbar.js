@@ -52,7 +52,7 @@ const handleClick=()=>{
           <NavLink to="/"
            onClick={handleHistory}>
            
-            <h1>Avishree Hospitality Pvt. Ltd.</h1>
+            <h1>Rayndi</h1>
           </NavLink>
           <p>
           <ReactTypingEffect
